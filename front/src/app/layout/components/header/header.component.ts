@@ -11,4 +11,8 @@ import {toSignal} from "@angular/core/rxjs-interop";
 })
 export class HeaderComponent {
   currentUser = toSignal<UserModel>(inject(UserService).getCurrentUser());
+
+  startRace() {
+    console.log('startRace');
+  }
 }

@@ -1,0 +1,8 @@
+@if(betConfig(); as betConfig) {
+  <div class="m-2 h-60 gap-2 rounded-md bg-amber-50">
+    <pre>{{ betConfig | json }}</pre>
+    <button class="m-2 h-14 pointer-events-auto rounded-md bg-indigo-600 p-2 font-semibold leading-5 text-white hover:bg-indigo-500 bet-button" (click)="bet(betConfig)">
+      BET
+    </button>
+  </div>
+}

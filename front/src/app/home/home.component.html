@@ -1,5 +1,7 @@
-<div class="container">
-  @for(bet of bets; track bet) {
-
+<div class="flex flex-wrap container overflow-scroll">
+  @for(bet of bets(); track bet) {
+    <app-bet-card [betConfig]="bet"/>
+  } @empty {
+    <div>No bets found</div>
   }
 </div>
