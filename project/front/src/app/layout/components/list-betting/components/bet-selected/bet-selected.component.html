@@ -1,1 +1,30 @@
-<pre>{{ bet() | json }}</pre>
+@if(betSelected(); as betSelected) {
+    <div class="m-2 rounded-md bg-teal-500">
+      <div class="m-2 flex justify-between">
+        <p class="text-gray-50 font-bold">{{ betSelected.bet.name }}</p>
+        <button (click)="deleteBet(betSelected)">
+          <img ngSrc="assets/icons/delete-icon.png" width="30" height="30"/>
+        </button>
+      </div>
+      <p class="text-2xl font-bold text-gray-50 flex justify-center">Cote: {{ betSelected.odds}}</p>
+      <div class="flex justify-center items-center">
+        <button class="m-2 h-8 w-8 pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bet-button"
+                [disabled]="validate()"
+                [ngClass]="validate() ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'"
+                (click)="updateValue(betSelected.bet.id, false)"> - </button>
+        <p>{{ betSelected.coins }}</p>
+        <button class="m-2 h-8 w-8 pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bet-button"
+                [disabled]="validate()"
+                [ngClass]="validate() ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'"
+                (click)="updateValue(betSelected.bet.id, true)"> + </button>
+      </div>
+    </div>
+} @else {
+    <div class="bet">
+        <div class="bet__header">
+            <div class="bet__header__title">
+                <h3>No bets found</h3>
+            </div>
+        </div>
+    </div>
+}

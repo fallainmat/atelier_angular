@@ -1,6 +1,7 @@
-import {Component, inject} from '@angular/core';
-import {UserModel, UserService} from "../../../core/service/user/user.service";
-import {toSignal} from "@angular/core/rxjs-interop";
+import {Component, DestroyRef, inject} from '@angular/core';
+import {UserService} from "../../../core/service/user/user.service";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {BetService} from "../../../core/service/bet/bet.service";
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,11 @@ import {toSignal} from "@angular/core/rxjs-interop";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  currentUser = toSignal<UserModel>(inject(UserService).getCurrentUser());
+  currentUser = inject(UserService).userCurrent;
+  destroyRef = inject(DestroyRef);
+  betService = inject(BetService);
 
   startRace() {
-    console.log('startRace');
+    this.betService.startRace().pipe(takeUntilDestroyed(this.destroyRef)).subscribe();
   }
 }

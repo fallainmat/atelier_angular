@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 
 export interface UserModel {
   id: number;
@@ -14,11 +14,16 @@ export interface UserModel {
   providedIn: 'root'
 })
 export class UserService {
+  userCurrent = signal<UserModel | null>(null);
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getCurrentUser(): Observable<UserModel> {
-    return this.httpClient.get<UserModel>("assets/mock/user.json");
+  getCurrentUser(): Observable<void> {
+    return this.httpClient.get<UserModel>("assets/mock/user.json").pipe(
+      map((res) => {
+        this.userCurrent.set(res);
+      })
+    );
   }
 }

@@ -1,8 +1,35 @@
 @if(betConfig(); as betConfig) {
-  <div class="m-2 h-60 gap-2 rounded-md bg-amber-50">
-    <pre>{{ betConfig | json }}</pre>
-    <button class="m-2 h-14 pointer-events-auto rounded-md bg-indigo-600 p-2 font-semibold leading-5 text-white hover:bg-indigo-500 bet-button" (click)="bet(betConfig)">
-      BET
-    </button>
+  <div class="m-2 rounded-md bg-amber-50">
+    @switch (betConfig.type) {
+      @case (BetType.SIMPLE) {
+        <div class="flex flex-col p-2">
+          <div class="flex flex-row mb-4">
+            <p class="font-bold text-2xl">{{ betConfig.name }}</p>
+          </div>
+          <div class="flex flex-row justify-between">
+            <div class="w-full flex flex-col">
+              @for (run of betConfig.runners; track run) {
+                <div class="w-full flex justify-between">
+                  <div class="font-bold">{{ run.name }}</div>
+                  <div>
+                    <button
+                      class="m-2 h-14 w-20 pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bet-button justify-end"
+                      (click)="bet(run, betConfig)"
+                      [disabled]="race().status === BetStatus.ACTIVE"
+                      [ngClass]="race().status === BetStatus.ACTIVE ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'"
+                    >
+                      {{ run.odds }}
+                    </button>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+      @default {
+        PAS DE TYPE
+      }
+    }
   </div>
 }
