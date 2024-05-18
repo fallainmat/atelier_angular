@@ -1,0 +1,13 @@
+{
+  "name": "atelier-angular",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "npm start -w front",
+    "clean:front": "rm -Rf front/node_modules node_modules",
+    "build:front": "npm run build -w front",
+    "test:front": "npm run test -w front"
+  },
+  "workspaces": [
+    "front"
+  ]
+}
