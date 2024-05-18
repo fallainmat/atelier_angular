@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {ListRobotComponent} from "./list-robot/list-robot.component";
+import {ListRobotComponent} from "./components/list-robot/list-robot.component";
 import {RouterOutlet} from "@angular/router";
-import {HeaderComponent} from "./header/header.component";
-import {ListBettingComponent} from "./list-betting/list-betting.component";
+import {HeaderComponent} from "./components/header/header.component";
+import {ListBettingComponent} from "./components/list-betting/list-betting.component";
 
 @Component({
   selector: 'app-layout',

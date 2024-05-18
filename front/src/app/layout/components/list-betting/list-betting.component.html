@@ -1,0 +1,14 @@
+<div class="flex flex-col h-full">
+  <div class="flex flex-col m-2 container-bets rounded-md bg-amber-50">
+    @for(bet of betsSelected(); track bet) {
+      <app-bet-selected [bet]="bet"/>
+    } @empty {
+      <p class="font-bold text-2xl mx-auto my-2">AUCUN BET</p>
+    }
+  </div>
+  <div>
+    <button class="mx-2 h-14 w-60 pointer-events-auto rounded-md bg-indigo-600 p-2 font-semibold leading-5 text-white hover:bg-indigo-500" (click)="validateBet()">
+      PARIER
+    </button>
+  </div>
+</div>

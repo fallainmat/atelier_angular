@@ -12,7 +12,10 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
 
+.container {
+  max-height: calc(100vh - 31rem);
+}
