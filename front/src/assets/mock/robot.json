@@ -1,0 +1,154 @@
+{
+  "robotList": [
+    {
+      "id": "1",
+      "name": "Robot 1",
+      "description": "Description 1",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "2",
+      "name": "Robot 2",
+      "description": "Description 2",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "3",
+      "name": "Robot 3",
+      "description": "Description 3",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "4",
+      "name": "Robot 4",
+      "description": "Description 4",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "5",
+      "name": "Robot 5",
+      "description": "Description 5",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "6",
+      "name": "Robot 6",
+      "description": "Description 6",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "7",
+      "name": "Robot 7",
+      "description": "Description 7",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "8",
+      "name": "Robot 8",
+      "description": "Description 8",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "9",
+      "name": "Robot 9",
+      "description": "Description 9",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "10",
+      "name": "Robot 10",
+      "description": "Description 10",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "11",
+      "name": "Robot 11",
+      "description": "Description 11",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "12",
+      "name": "Robot 12",
+      "description": "Description 12",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "13",
+      "name": "Robot 13",
+      "description": "Description 13",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "14",
+      "name": "Robot 14",
+      "description": "Description 14",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "15",
+      "name": "Robot 15",
+      "description": "Description 15",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "16",
+      "name": "Robot 16",
+      "description": "Description 16",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "17",
+      "name": "Robot 17",
+      "description": "Description 17",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "18",
+      "name": "Robot 18",
+      "description": "Description 18",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "19",
+      "name": "Robot 19",
+      "description": "Description 19",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "20",
+      "name": "Robot 20",
+      "description": "Description 20",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "21",
+      "name": "Robot 21",
+      "description": "Description 21",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "22",
+      "name": "Robot 22",
+      "description": "Description 22",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "23",
+      "name": "Robot 23",
+      "description": "Description 23",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "24",
+      "name": "Robot 24",
+      "description": "Description 24",
+      "image": "https://via.placeholder.com"
+    },
+    {
+      "id": "25",
+      "name": "Robot 25",
+      "description": "Description 25",
+      "image": "https://via.placeholder.com"
+    }
+  ]
+}

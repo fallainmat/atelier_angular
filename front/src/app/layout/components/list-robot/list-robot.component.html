@@ -1,0 +1,5 @@
+<div class="flex flex-col container overflow-scroll">
+  @for (robot of robots(); track robot) {
+    <app-card [robot]="robot"/>
+  }
+</div>

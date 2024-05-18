@@ -1,0 +1,8 @@
+@if(robot(); as robot) {
+  <div class="py-5 px-3">
+    <a class="pointer-events-auto rounded-md bg-indigo-600 p-2 font-semibold leading-5 text-white hover:bg-indigo-500" routerLink="/">Retour</a>
+    <div class="mt-3">
+      <pre>{{ robot | json }}</pre>
+    </div>
+  </div>
+}
