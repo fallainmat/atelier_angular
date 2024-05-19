@@ -1,4 +1,4 @@
-import {Injectable, signal} from '@angular/core';
+import {computed, Injectable, signal} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, of} from "rxjs";
 
@@ -12,9 +12,10 @@ export interface BetModel {
 }
 
 export interface RunnerModel {
-  id: string,
-  name: string,
-  odds: string
+  id: string;
+  name: string;
+  odds: string;
+  color?: string;
 }
 
 export interface BetSelectedModel extends RunnerModel {
@@ -51,23 +52,21 @@ export interface RaceModel {
 export class BetService {
   race = signal<RaceModel>({status: BetStatus.INACTIVE});
   betSelected = signal<BetSelectedModel[]>([]);
-  validateBet = signal(false);
+  raceActivated = computed(() => this.race().status === BetStatus.ACTIVE);
 
   constructor(private httpClient: HttpClient) {}
 
   getBets(): Observable<BetModel[]> {
-    return this.httpClient.get<any>('assets/mock/bet.json').pipe(map((res) => res['betList']));
+    return this.httpClient.get<any>('assets/mock/bet.json').pipe(map((res) => res['betList'])).pipe(
+      map((res) => res.map((bet: BetModel) => ({ ...bet, runners:
+          bet.runners.sort((a, b) => parseFloat(a.odds) - parseFloat(b.odds)) })))
+    );
   }
 
   startRace(): Observable<void> {
     this.race.update(() => ({status: BetStatus.ACTIVE}));
     this.runRace();
-    this.validateBet.set(true);
     return of();
-  }
-
-  blockValidateBet() {
-    this.validateBet.set(true);
   }
 
   saveBet(betSelected: BetSelectedModel) {
@@ -85,7 +84,6 @@ export class BetService {
   private runRace() {
     setTimeout(() => {
       this.race.update(() => ({status: BetStatus.INACTIVE}));
-      this.validateBet.set(false);
     }, 5000 )
   }
 }

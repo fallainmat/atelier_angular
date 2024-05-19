@@ -15,6 +15,7 @@ export interface UserModel {
 })
 export class UserService {
   userCurrent = signal<UserModel | null>(null);
+  moneyCurrent = signal<number>(0);
 
   constructor(private httpClient: HttpClient) {
   }
@@ -23,6 +24,7 @@ export class UserService {
     return this.httpClient.get<UserModel>("assets/mock/user.json").pipe(
       map((res) => {
         this.userCurrent.set(res);
+        this.moneyCurrent.set(res.money);
       })
     );
   }

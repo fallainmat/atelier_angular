@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
@@ -8,7 +8,8 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
   imports: [
     NgIf,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    NgOptimizedImage
   ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'

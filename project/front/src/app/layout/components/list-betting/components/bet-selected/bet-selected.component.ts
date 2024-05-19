@@ -1,5 +1,5 @@
 import {Component, inject, input} from '@angular/core';
-import {JsonPipe, NgClass, NgOptimizedImage} from "@angular/common";
+import {JsonPipe, NgClass, NgOptimizedImage, NgStyle} from "@angular/common";
 import {BetSelectedModel, BetService} from "../../../../../core/service/bet/bet.service";
 
 @Component({
@@ -8,7 +8,8 @@ import {BetSelectedModel, BetService} from "../../../../../core/service/bet/bet.
   imports: [
     JsonPipe,
     NgOptimizedImage,
-    NgClass
+    NgClass,
+    NgStyle
   ],
   templateUrl: './bet-selected.component.html',
   styleUrl: './bet-selected.component.scss'
@@ -18,7 +19,7 @@ export class BetSelectedComponent {
 
   betService = inject(BetService);
   betsSelected = this.betService.betSelected;
-  validate = this.betService.validateBet;
+  raceActivated = this.betService.raceActivated;
 
   deleteBet(betSelected: BetSelectedModel) {
     this.betService.deleteBet(betSelected);
@@ -27,7 +28,7 @@ export class BetSelectedComponent {
   updateValue(id: string, isIncrement: boolean) {
     this.betsSelected.update(v => v.map(betSelected => betSelected.bet.id === id ? {
       ...betSelected,
-      coins: isIncrement ? betSelected.coins + 1 : betSelected.coins - 1
+      coins: isIncrement ? ++betSelected.coins : --betSelected.coins
     } : betSelected));
   }
 }

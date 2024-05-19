@@ -1,35 +1,16 @@
 @if (betsSelected(); as betsSelected) {
   <div class="flex flex-col justify-between h-full">
-    <div class="flex flex-col m-2 container-bets rounded-md bg-amber-50">
+    <div class="flex flex-col m-2 container-bets overflow-scroll shadow-inner-xl rounded-md bg-slate-200">
       @for (bet of betsSelected; track bet) {
         <app-bet-selected [betSelected]="bet"/>
       } @empty {
-        <p class="font-bold text-2xl mx-auto my-2">AUCUN BET</p>
-      }
-      @if (totalCoins() > 0) {
-        <p class="flex justify-center font-bold">TOTAL GAIN :{{ totalCoins() }}</p>
+        <p class="font-bold text-2xl mx-auto my-2">AUCUN PARI</p>
       }
     </div>
     <div>
-      <button class="m-2 h-14 pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bet-button"
-              [disabled]="!betsSelected.length || validate()"
-              [ngClass]="!betsSelected.length || validate() ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'"
-              (click)="validateBet()"
-      >
-        VALIDATION PARI
-      </button>
+      @if (totalCoins() > 0) {
+        <p class="flex justify-center mb-5 font-bold text-4xl text-gray-50">GAIN POTENTIEL: {{ totalCoins() }}</p>
+      }
     </div>
   </div>
-
-  @if(validate() && openModal) {
-    <div class="fixed bottom-20 top-20 right-20 left-20 rounded-md bg-teal-950">
-      <div class="flex justify-end">
-        <button class="m-6 h-14 pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bg-black" (click)="closeModal()">FERMER</button>
-      </div>
-      <div class="flex flex-col justify-between content-center">
-        <p class="text-6xl font-bold text-gray-50">Votre pari vient d'être validé</p>
-        <p class="text-6xl font-bold text-gray-50">veuillez appuyer sur Démarrer et bonne chance</p>
-      </div>
-    </div>
-  }
 }

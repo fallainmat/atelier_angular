@@ -1,5 +1,5 @@
-import {Component, inject, input} from '@angular/core';
-import {JsonPipe, NgClass} from "@angular/common";
+import {ChangeDetectionStrategy, Component, inject, input} from '@angular/core';
+import {JsonPipe, NgClass, NgStyle} from "@angular/common";
 import {BetModel, BetService, BetStatus, BetType, RunnerModel} from "../../../core/service/bet/bet.service";
 import {FormsModule} from "@angular/forms";
 
@@ -9,15 +9,17 @@ import {FormsModule} from "@angular/forms";
   imports: [
     JsonPipe,
     NgClass,
-    FormsModule
+    FormsModule,
+    NgStyle
   ],
   templateUrl: './bet-card.component.html',
-  styleUrl: './bet-card.component.scss'
+  styleUrl: './bet-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BetCardComponent {
   betConfig = input.required<BetModel>();
   betService = inject(BetService);
-  race = this.betService.race;
+  raceActivated = this.betService.raceActivated;
 
   protected readonly BetStatus = BetStatus;
   protected readonly BetType = BetType;
