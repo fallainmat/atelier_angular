@@ -2,7 +2,9 @@
   "name": "atelier-angular",
   "version": "0.1.0",
   "scripts": {
-    "start": "npm start -w front",
+    "start": "concurrently  --names 'back,front' -c 'auto,auto' 'npm run start:back' 'npm run start:front'",
+    "start:back": "npm run start:dev -w back",
+    "start:front": "npm start -w front",
     "build:front": "npm run build -w front",
     "test:front": "npm run test -w front"
   },
@@ -10,5 +12,8 @@
     "front",
     "back",
     "presentation"
-  ]
+  ],
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
