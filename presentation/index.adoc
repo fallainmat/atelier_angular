@@ -1,0 +1,11 @@
+:source-highlighter: highlight.js
+:highlightjs-theme: atom-one-dark.css
+:autofit-option:
+:icons: font
+:revealjs_theme: white
+:revealjs_history: true
+:customcss: custom.css
+
+include::slides/cover.adoc[]
+include::slides/intro.adoc[]
+

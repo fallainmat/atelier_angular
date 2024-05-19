@@ -1,0 +1,15 @@
+{
+  "name": "stylex-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "dependencies": {
+    "@asciidoctor/reveal.js": "^5.1.0",
+    "asciidoctor": "^3.0.4",
+    "browser-sync": "^3.0.2",
+    "highlightjs": "^9.16.2"
+  }
+}

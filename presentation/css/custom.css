@@ -1,0 +1,40 @@
+/* Global */
+video {
+  pointer-events: none;
+}
+
+/* Cover */
+
+/* whoami */
+
+.whoami > .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.whoami img {
+  border-radius: 25%;
+  width: 70%;
+}
+
+.whoami .col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.whoami .col-right p {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.whoami .onepoint-logo img {
+  width: 200px;
+  margin: 0;
+  margin-left: -20px;
+}
+
+.whoami .onepoint-logo {
+  text-align: left;
+}
+

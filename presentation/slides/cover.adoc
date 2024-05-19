@@ -1,0 +1,36 @@
+= Angular change de logo, mais pas que.
+
+TODO
+
+
+[NOTE.speaker]
+--
+* StyleX, un projet de Meta récemment passé open source
+* Nous allons tenter de répondre à la question: "..."
+--
+
+== !
+
+
+
+[.whoami]
+****
+
+[.col-left]
+--
+image::./images/whoami-dm.jpg[]
+--
+
+[.col-right]
+--
+[.onepoint-logo]
+image::images/onepoint-logo-black.png[]
+
+David Maurin
+
+Dev / Architecte
+
+https://github.com/imryck
+--
+
+****

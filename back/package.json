@@ -1,0 +1,12 @@
+{
+  "name": "bot-race-back",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo 'test'"
+  },
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
