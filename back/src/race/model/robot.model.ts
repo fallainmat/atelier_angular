@@ -32,4 +32,7 @@ export class Robot {
 
   @ApiProperty({ enum: Color })
   color: Color
+
+  @ApiProperty()
+  distanceTraveled = 0
 }

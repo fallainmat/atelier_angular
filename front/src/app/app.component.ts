@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {LayoutComponent} from "./layout/layout.component";
-import {UserService} from "./core/service/user/user.service";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import { LayoutComponent } from './layout/layout.component';
+import { UserService } from './core/service/user/user.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private httpClient: HttpClient) {
     this.userService.getCurrentUser().pipe(takeUntilDestroyed()).subscribe();
   }
 }

@@ -1,17 +1,66 @@
-import { Injectable } from '@nestjs/common';
-import { Race } from '../model/race.model';
+import { Injectable, OnApplicationShutdown } from '@nestjs/common';
+import { Race, RaceState } from '../model/race.model';
 import { RobotService } from './robot.service';
+import { BehaviorSubject, filter, interval, Subject, takeUntil, tap } from 'rxjs';
+import { StatType } from '../model/robot.model';
 
 @Injectable()
-export class RaceService {
+export class RaceService implements OnApplicationShutdown {
   private activeRace: Race = null;
 
+  private raceEvents$ = new BehaviorSubject<Race | null>(null);
+
+  private shutdownServerEvent$ = new Subject();
+
   constructor(private readonly robotService: RobotService) {
+    this.startRaceLoop();
   }
+
+  onApplicationShutdown(signal?: string): void {
+    this.shutdownServerEvent$.next(true);
+  }
+
 
   create(startTime: string) {
     this.activeRace = new Race(new Date(startTime));
     this.activeRace.registerRobots(this.robotService.findAll());
+    this.raceEvents$.next(this.activeRace);
     return this.activeRace;
+  }
+
+  getRaceEvents$() {
+    return this.raceEvents$.asObservable();
+  }
+
+  private startRaceLoop() {
+    interval(1000).pipe(
+      takeUntil(this.shutdownServerEvent$),
+      filter(() => this.activeRace !== null),
+      tap(() => this.updateRace(this.activeRace))
+    ).subscribe();
+  }
+
+  private updateRace(race: Race) {
+
+    if (race.state === RaceState.BetsOpened && new Date().getTime() > race.endBetTime.getTime()) {
+      race.state = RaceState.BetsClosed;
+      this.raceEvents$.next(race)
+    } else if (race.state === RaceState.BetsClosed && new Date().getTime() > race.startTime.getTime()) {
+      race.state = RaceState.InProgress;
+      this.raceEvents$.next(race)
+    } else if (race.state === RaceState.InProgress) {
+      this.raceEvents$.next(this.computeBotsPositions(race))
+    }
+  }
+
+  private computeBotsPositions(race: Race): Race {
+    race.robots = race.robots.map(robot => ({
+      ...robot,
+      distanceTraveled: robot.distanceTraveled + robot.stats.find(s => s.type === StatType.Speed).value
+    }));
+    if (race.robots.find(r => r.distanceTraveled > race.raceLength)) {
+      race.state = RaceState.Finished;
+    }
+    return race;
   }
 }

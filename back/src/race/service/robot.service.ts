@@ -4,12 +4,12 @@ import { Color, Robot, RobotStat, StatType } from '../model/robot.model';
 @Injectable()
 export class RobotService {
   private robots: Array<Robot> = [
-    { name: 'Megan Man', color: Color.Blue, stats: [] },
-    { name: 'Optimus Prime', color: Color.Red, stats: [] },
-    { name: 'Clank', color: Color.Green, stats: [] },
-    { name: 'Johnny 5', color: Color.Orange, stats: [] },
-    { name: 'Bishop', color: Color.Yellow, stats: [] },
-    { name: 'Sonny', color: Color.Purple, stats: [] }
+    { name: 'Mega Man', color: Color.Blue, stats: [], distanceTraveled: 0 },
+    { name: 'Optimus Prime', color: Color.Red, stats: [], distanceTraveled: 0 },
+    { name: 'Clank', color: Color.Green, stats: [], distanceTraveled: 0 },
+    { name: 'Johnny 5', color: Color.Orange, stats: [], distanceTraveled: 0 },
+    { name: 'Bishop', color: Color.Yellow, stats: [], distanceTraveled: 0 },
+    { name: 'Sonny', color: Color.Purple, stats: [], distanceTraveled: 0 }
   ];
 
   findAll(): Array<Robot> {
@@ -20,7 +20,8 @@ export class RobotService {
           this.generateStat(StatType.Stamina),
           this.generateStat(StatType.Intelligence),
           this.generateStat(StatType.Speed)
-        ]
+        ],
+        distanceTraveled: 0
       })
     );
   }
