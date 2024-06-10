@@ -43,7 +43,7 @@
         <ul>
           @for (robot of race.robots; track robot.name) {
             <li class="bot-point"
-                [ngStyle]="{'background-color': robot.color, 'margin-left': robot.distanceTraveled + 'px'}"></li>
+                [ngStyle]="{'background-color': robot.color, 'margin-left': robot.state.distanceTraveled + 'px'}"></li>
           }
         </ul>
         @if (race.state === RaceState.BetsClosed) {
@@ -56,7 +56,7 @@
       @if (race.state === RaceState.Finished) {
         <ul>
           @for (robot of race.robots; track robot.name) {
-            <li>{{ robot.name }} - {{ robot.distanceTraveled }} m</li>
+            <li>{{ robot.name }} - {{ robot.state.distanceTraveled }} m</li>
           }
         </ul>
       }

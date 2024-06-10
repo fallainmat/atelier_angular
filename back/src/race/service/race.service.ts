@@ -2,7 +2,7 @@ import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { Race, RaceState } from '../model/race.model';
 import { RobotService } from './robot.service';
 import { BehaviorSubject, filter, interval, Subject, takeUntil, tap } from 'rxjs';
-import { StatType } from '../model/robot.model';
+import { RunningPace, speedPaceRate, StatType } from '../model/robot.model';
 
 @Injectable()
 export class RaceService implements OnApplicationShutdown {
@@ -54,13 +54,59 @@ export class RaceService implements OnApplicationShutdown {
   }
 
   private computeBotsPositions(race: Race): Race {
-    race.robots = race.robots.map(robot => ({
-      ...robot,
-      distanceTraveled: robot.distanceTraveled + robot.stats.find(s => s.type === StatType.Speed).value
-    }));
-    if (race.robots.find(r => r.distanceTraveled > race.raceLength)) {
+
+    race.robots = race.robots.map(robot => {
+      const robotStamina = robot.stats.find(s => s.type === StatType.Stamina).value;
+      const speed = Math.floor(
+        speedPaceRate[robot.state.pace] * robot.stats.find(s => s.type === StatType.Speed).value
+      );
+      robot.state.energy = this.computeRemainingEnergy(
+        robot.state.pace,
+        robot.state.energy,
+        robotStamina,
+        speed
+      );
+      robot.state.pace = this.computeNextBehavior(
+        robot.state.pace,
+        robot.state.energy,
+        robotStamina,
+        robot.stats.find(s => s.type === StatType.Intelligence).value
+      );
+      robot.state.distanceTraveled = robot.state.distanceTraveled + speed;
+      return robot;
+    });
+    if (race.robots.find(r => r.state.distanceTraveled > race.raceLength)) {
       race.state = RaceState.Finished;
     }
     return race;
+  }
+
+  private computeRemainingEnergy(state: RunningPace, energy: number, stamina: number, speed: number): number {
+    const restEnergyGain = 5;
+    let remainingEnergy = 0;
+    if (state === RunningPace.Rest || state === RunningPace.Exhausted) {
+      remainingEnergy = energy + restEnergyGain >= stamina
+        ? stamina
+        : energy + restEnergyGain;
+    } else {
+      remainingEnergy = energy - speed <= 0
+        ? 0
+        : energy - speed;
+    }
+    return remainingEnergy;
+  }
+
+  private computeNextBehavior(pace: RunningPace, energy: number, stamina: number, intelligence): RunningPace {
+    const energyRate = energy / stamina;
+    const intelligenceRate = intelligence / 100;
+    let newPace = pace
+    if (energy === 0) {
+      newPace = RunningPace.Exhausted;
+    } else if (pace === RunningPace.Rest && Math.random() < (energyRate * intelligenceRate)) {
+      newPace = RunningPace.Sprint;
+    } else if (Math.random() > ((1 - energyRate) * intelligenceRate)) {
+      newPace = RunningPace.Rest;
+    }
+    return newPace;
   }
 }

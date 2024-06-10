@@ -1,29 +1,50 @@
 import { Injectable } from '@nestjs/common';
-import { Color, Robot, RobotStat, StatType } from '../model/robot.model';
+import { Color, Robot, RobotStat, RunningPace, StatType } from '../model/robot.model';
 
 @Injectable()
 export class RobotService {
-  private robots: Array<Robot> = [
-    { name: 'Mega Man', color: Color.Blue, stats: [], distanceTraveled: 0 },
-    { name: 'Optimus Prime', color: Color.Red, stats: [], distanceTraveled: 0 },
-    { name: 'Clank', color: Color.Green, stats: [], distanceTraveled: 0 },
-    { name: 'Johnny 5', color: Color.Orange, stats: [], distanceTraveled: 0 },
-    { name: 'Bishop', color: Color.Yellow, stats: [], distanceTraveled: 0 },
-    { name: 'Sonny', color: Color.Purple, stats: [], distanceTraveled: 0 }
-  ];
+  private robots: Array<Robot> = [];
+
+  constructor() {
+    const robotLis: Array<{ name: string, color: Color }> = [
+      {
+        name: 'Mega Man',
+        color: Color.Blue
+      },
+      {
+        name: 'Optimus Prime',
+        color: Color.Red
+      },
+      {
+        name: 'Johnny 5',
+        color: Color.Orange
+      },
+      {
+        name: 'Bishop',
+        color: Color.Yellow
+      }
+    ];
+    this.robots = robotLis.map((robotInfos) => ({
+      name: robotInfos.name,
+      color: robotInfos.color,
+      stats: [],
+      state: { energy: 0, distanceTraveled: 0, pace: RunningPace.Rest }
+    }));
+  }
 
   findAll(): Array<Robot> {
-    return this.robots.map(robot => ({
-        name: robot.name,
-        color: robot.color,
+    return this.robots.map(robot => {
+      const stamina = this.generateStat(StatType.Stamina);
+      return {
+        ...robot,
         stats: [
-          this.generateStat(StatType.Stamina),
+          stamina,
           this.generateStat(StatType.Intelligence),
           this.generateStat(StatType.Speed)
         ],
-        distanceTraveled: 0
-      })
-    );
+        state: { ...robot.state, energy: stamina.value }
+      }
+    });
   }
 
   private generateStat(type: StatType): RobotStat {
