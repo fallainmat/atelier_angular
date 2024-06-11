@@ -4,7 +4,8 @@ export enum RaceState {
   BetsOpened = 'BetsOpened',
   BetsClosed = 'BetsClosed',
   InProgress = 'InProgress',
-  Finished = 'Finished'
+  Finished = 'Finished',
+  Started = 'Started'
 }
 
 export interface Race {

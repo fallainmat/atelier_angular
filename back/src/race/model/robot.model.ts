@@ -15,6 +15,12 @@ export enum StatType {
   Intelligence = 'Intelligence',
 }
 
+export const statsRanges: Record<StatType, { min: number, max: number }> = {
+  [StatType.Intelligence]: { min: 1, max: 100 },
+  [StatType.Speed]: { min: 60, max: 100 },
+  [StatType.Stamina]: { min: 20, max: 60 }
+}
+
 export enum RunningPace {
   Sprint = 'Sprint',
   Rest = 'Rest',
@@ -25,6 +31,12 @@ export const speedPaceRate: Record<RunningPace, number> = {
   [RunningPace.Sprint]: 1.5,
   [RunningPace.Rest]: 1,
   [RunningPace.Exhausted]: 0.5
+}
+
+export const staminaPaceConsumption: Record<RunningPace, number> = {
+  [RunningPace.Sprint]: 15,
+  [RunningPace.Rest]: 3,
+  [RunningPace.Exhausted]: 0
 }
 
 export class RobotStat {

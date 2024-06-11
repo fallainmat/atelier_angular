@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Color, Robot, RobotStat, RunningPace, StatType } from '../model/robot.model';
+import { Color, Robot, RobotStat, RunningPace, statsRanges, StatType } from '../model/robot.model';
 
 @Injectable()
 export class RobotService {
@@ -48,6 +48,9 @@ export class RobotService {
   }
 
   private generateStat(type: StatType): RobotStat {
-    return { type, value: 1 + Math.floor(Math.random() * 99) };
+    return {
+      type,
+      value: Math.floor(Math.random() * (statsRanges[type].max - statsRanges[type].min + 1) + statsRanges[type].min)
+    };
   }
 }
