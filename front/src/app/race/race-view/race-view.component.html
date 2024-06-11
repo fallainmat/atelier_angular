@@ -1,0 +1,46 @@
+<div class="flex flex-col">
+  <div class="m-2 p-2 bg-gray-400 h-96 rounded-md">
+    @if (raceInfos(); as race) {
+      <div class="flex flex-row justify-around">
+        <div class="grow">
+          Race status : {{ race.state }}
+        </div>
+        <div class="grow">
+          Race end bet time: {{ race.endBetTime | date:'H:mm:ss' }}
+        </div>
+        <div class="grow">
+          Race Start time: {{ race.startTime | date:'H:mm:ss' }}
+        </div>
+      </div>
+      @if (race.state === RaceState.BetsOpened) {
+        @if (raceStartTime() > 0) {
+          <div class="flex flex-row">
+            Les paris seront cloturés dans {{ raceStartTime() }}s
+          </div>
+        }
+      } @else if (race.state === RaceState.BetsClosed || race.state === RaceState.InProgress) {
+        <ul>
+          @for (robot of race.robots; track robot.name) {
+            <li class="bot-point"
+                [ngStyle]="{'background-color': robot.color, 'margin-left': robot.state.distanceTraveled + 'px'}"></li>
+          }
+        </ul>
+        @if (race.state === RaceState.BetsClosed) {
+          <div class="flex flex-row">
+            La course va bientôt débuter
+          </div>
+        }
+      }
+
+      @if (race.state === RaceState.Finished) {
+        <ul>
+          @for (robot of race.robots; track robot.name) {
+            <li>{{ robot.name }} - {{ robot.state.distanceTraveled }} m</li>
+          }
+        </ul>
+      }
+    } @else {
+      <p>No race yet !</p>
+    }
+  </div>
+</div>

@@ -1,15 +1,17 @@
 @if (betsSelected(); as betsSelected) {
   <div class="flex flex-col justify-between h-full">
-    <div class="flex flex-col m-2 container-bets overflow-scroll shadow-inner-xl rounded-md bg-slate-200">
+    <div class="flex flex-col m-2 container-bets overflow-auto shadow-inner-xl rounded-md bg-slate-200">
       @for (bet of betsSelected; track bet) {
         <app-bet-selected [betSelected]="bet"/>
       } @empty {
-        <p class="font-bold text-2xl mx-auto my-2">AUCUN PARI</p>
+        <p class="font-bold text-base text-center my-2">Aucun pari</p>
       }
     </div>
     <div>
       @if (totalCoins() > 0) {
-        <p class="flex justify-center mb-5 font-bold text-4xl text-gray-50">GAIN POTENTIEL: {{ totalCoins() }}</p>
+        <p class="flex justify-center mb-5 font-bold text-base text-gray-50">
+          Gain potentiel: {{ totalCoins() }}
+        </p>
       }
     </div>
   </div>

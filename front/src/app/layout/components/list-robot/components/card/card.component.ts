@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {NgIf, NgOptimizedImage} from "@angular/common";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import { Component, Input } from '@angular/core';
+import { NgIf, NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Robot } from '../../../../../core/service/robot/robot.model';
 
 @Component({
   selector: 'app-card',
@@ -15,6 +16,5 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input({ required: true }) robot: any;
-
+  @Input({ required: true }) robot: Robot | null = null;
 }

@@ -1,5 +1,7 @@
-<div class="flex flex-col container-robot overflow-scroll">
-  @for (robot of robots(); track robot) {
-    <app-card [robot]="robot"/>
+<div class="flex flex-col container-robot overflow-auto">
+  @if (race(); as race) {
+    @for (robot of race.robots; track robot) {
+      <app-card [robot]="robot"/>
+    }
   }
 </div>

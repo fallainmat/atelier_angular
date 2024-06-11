@@ -1,7 +1,8 @@
-import {Component, DestroyRef, inject} from '@angular/core';
-import {BetCardComponent} from "./components/bet-card/bet-card.component";
-import {BetService} from "../core/service/bet/bet.service";
-import {takeUntilDestroyed, toSignal} from "@angular/core/rxjs-interop";
+import { Component, inject } from '@angular/core';
+import { BetCardComponent } from './components/bet-card/bet-card.component';
+import { BetService } from '../core/service/bet/bet.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { RaceService } from '../core/service/race/race.service';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +14,11 @@ import {takeUntilDestroyed, toSignal} from "@angular/core/rxjs-interop";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  raceService = inject(RaceService);
+
   bets = toSignal(inject(BetService).getBets());
-  destroyRef = inject(DestroyRef);
-  betService = inject(BetService);
 
   startRace() {
-    this.betService.startRace().pipe(takeUntilDestroyed(this.destroyRef)).subscribe();
+    this.raceService.launchNextRace();
   }
 }
