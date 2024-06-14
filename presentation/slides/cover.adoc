@@ -1,36 +1,32 @@
-= Angular change de logo, mais pas que.
+=== Angular change de logo, mais pas que!
 
-TODO
-
-
-[NOTE.speaker]
---
-* StyleX, un projet de Meta récemment passé open source
-* Nous allons tenter de répondre à la question: "..."
---
+image::./images/logo_angular_17.png[width=250, align=center]
 
 == !
-
-
 
 [.whoami]
 ****
 
-[.col-left]
+[.block]
 --
 image::./images/whoami-dm.jpg[]
+
+- David Maurin
+- https://github.com/imryck
+- Dev / Architecte
 --
 
-[.col-right]
+[.block]
 --
-[.onepoint-logo]
-image::images/onepoint-logo-black.png[]
+image::./images/florian_allainmat.jpg[]
 
-David Maurin
+- Florian Allainmat
+- https://github.com/fallainmat
+- Dev / TechLead
 
-Dev / Architecte
-
-https://github.com/imryck
 --
-
 ****
+
+=== !
+
+image::./images/logo_angular_17.png[width=250, align=center]

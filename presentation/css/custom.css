@@ -7,34 +7,44 @@ video {
 
 /* whoami */
 
-.whoami > .content {
+.whoami {
+  margin-top: -60px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .whoami img {
   border-radius: 25%;
-  width: 70%;
+  width: 400px;
 }
 
-.whoami .col-right {
+.whoami .openblock {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.whoami .col-right p {
-  text-align: left;
-  font-size: 0.8em;
+.whoami .block > .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.whoami .onepoint-logo img {
-  width: 200px;
-  margin: 0;
-  margin-left: -20px;
+.whoami .block > .content .ulist ul {
+  list-style: none;
 }
 
-.whoami .onepoint-logo {
-  text-align: left;
-}
+/* intro */
+
+/* standalone */
+
+/* control-flow */
+
+/* defer */
+
+/* signal */
+
+/* zoneless */
+
+/* conclusion */
+
 

@@ -1,8 +1,8 @@
-== Premier slide intro
+== Quand Angular change de logo
 
-TODO
-
-[NOTE.speaker]
---
-* TODO
---
+[.column.is-one-third]
+image::images/logo_angular_js.png[]
+[.column.is-one-third]
+image::images/logo_angular.png[]
+[.column.is-one-third]
+image::images/logo_angular_17.png[]

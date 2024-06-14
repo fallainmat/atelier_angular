@@ -8,4 +8,10 @@
 
 include::slides/cover.adoc[]
 include::slides/intro.adoc[]
+include::slides/standalone.adoc[]
+include::slides/control-flow.adoc[]
+include::slides/defer.adoc[]
+include::slides/signal.adoc[]
+include::slides/zoneless.adoc[]
+include::slides/conclusion.adoc[]
 
