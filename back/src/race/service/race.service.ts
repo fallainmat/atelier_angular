@@ -2,7 +2,7 @@ import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { Race, RaceState } from '../model/race.model';
 import { RobotService } from './robot.service';
 import { BehaviorSubject, filter, interval, Subject, takeUntil, tap } from 'rxjs';
-import { RunningPace, speedPaceRate, StatType } from '../model/robot.model';
+import { RunningPace, speedPaceRate, staminaPaceConsumption, StatType } from '../model/robot.model';
 
 @Injectable()
 export class RaceService implements OnApplicationShutdown {
@@ -19,7 +19,6 @@ export class RaceService implements OnApplicationShutdown {
   onApplicationShutdown(signal?: string): void {
     this.shutdownServerEvent$.next(true);
   }
-
 
   create(startTime: string) {
     this.activeRace = new Race(new Date(startTime));
@@ -46,9 +45,10 @@ export class RaceService implements OnApplicationShutdown {
       race.state = RaceState.BetsClosed;
       this.raceEvents$.next(race)
     } else if (race.state === RaceState.BetsClosed && new Date().getTime() > race.startTime.getTime()) {
+      race.state = RaceState.Started;
+      this.raceEvents$.next(this.computeBotsPositions(race))
+    } else if (race.state === RaceState.Started || race.state === RaceState.InProgress) {
       race.state = RaceState.InProgress;
-      this.raceEvents$.next(race)
-    } else if (race.state === RaceState.InProgress) {
       this.raceEvents$.next(this.computeBotsPositions(race))
     }
   }
@@ -57,25 +57,30 @@ export class RaceService implements OnApplicationShutdown {
 
     race.robots = race.robots.map(robot => {
       const robotStamina = robot.stats.find(s => s.type === StatType.Stamina).value;
-      const speed = Math.floor(
-        speedPaceRate[robot.state.pace] * robot.stats.find(s => s.type === StatType.Speed).value
-      );
-      robot.state.energy = this.computeRemainingEnergy(
-        robot.state.pace,
-        robot.state.energy,
-        robotStamina,
-        speed
-      );
+
       robot.state.pace = this.computeNextBehavior(
         robot.state.pace,
         robot.state.energy,
         robotStamina,
         robot.stats.find(s => s.type === StatType.Intelligence).value
       );
+
+      const speed = Math.floor(
+        speedPaceRate[robot.state.pace] * robot.stats.find(s => s.type === StatType.Speed).value
+      );
+
+      robot.state.energy = this.computeRemainingEnergy(
+        robot.state.pace,
+        robot.state.energy,
+        robotStamina,
+        speed
+      );
+
       robot.state.distanceTraveled = robot.state.distanceTraveled + speed;
+
       return robot;
     });
-    if (race.robots.find(r => r.state.distanceTraveled > race.raceLength)) {
+    if (race.robots.findIndex(r => r.state.distanceTraveled < race.raceLength) === -1) {
       race.state = RaceState.Finished;
     }
     return race;
@@ -89,9 +94,9 @@ export class RaceService implements OnApplicationShutdown {
         ? stamina
         : energy + restEnergyGain;
     } else {
-      remainingEnergy = energy - speed <= 0
+      remainingEnergy = energy - staminaPaceConsumption[state] <= 0
         ? 0
-        : energy - speed;
+        : energy - staminaPaceConsumption[state];
     }
     return remainingEnergy;
   }
@@ -102,9 +107,11 @@ export class RaceService implements OnApplicationShutdown {
     let newPace = pace
     if (energy === 0) {
       newPace = RunningPace.Exhausted;
+    } else if (pace === RunningPace.Exhausted && energy >= stamina) {
+      newPace = RunningPace.Rest;
     } else if (pace === RunningPace.Rest && Math.random() < (energyRate * intelligenceRate)) {
       newPace = RunningPace.Sprint;
-    } else if (Math.random() > ((1 - energyRate) * intelligenceRate)) {
+    } else if (pace === RunningPace.Sprint && Math.random() > ((1 - energyRate) * intelligenceRate)) {
       newPace = RunningPace.Rest;
     }
     return newPace;

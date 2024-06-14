@@ -2,12 +2,13 @@ import { Robot } from './robot.model';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
 
-const DELAY_BETWEEN_BETS_AND_START_MS = 5000;
+const DELAY_BETWEEN_BETS_AND_START_MS = 3000;
 
 export enum RaceState {
   BetsOpened = 'BetsOpened',
   BetsClosed = 'BetsClosed',
   InProgress = 'InProgress',
+  Started = 'Started',
   Finished = 'Finished'
 }
 
@@ -29,7 +30,7 @@ export class Race {
 
   constructor(startTime: Date) {
     if (startTime.getTime() < new Date().getTime() + DELAY_BETWEEN_BETS_AND_START_MS) {
-      throw new HttpException(`A race must start at least 15 seconds after its creation`, HttpStatus.BAD_REQUEST);
+      throw new HttpException(`A race must start at least 3 seconds after its creation`, HttpStatus.BAD_REQUEST);
     }
     this.startTime = startTime;
     this.endBetTime = new Date(startTime.getTime() - DELAY_BETWEEN_BETS_AND_START_MS);
