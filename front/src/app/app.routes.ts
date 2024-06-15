@@ -10,5 +10,9 @@ export const routes: Routes = [
     path: 'robot-detail/:name',
     loadComponent: () => import('./robot-detail/robot-detail.component').then(m => m.RobotDetailComponent),
     resolve: { robot: robotDetailResolver }
+  },
+  {
+    path: 'examples',
+    loadChildren: () => import('./examples/examples.route').then(m => m.routes)
   }
 ];

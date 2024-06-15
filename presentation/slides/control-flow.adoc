@@ -1,1 +1,159 @@
 == control-flow
+
+[.control-flow-cover]
+--
+*ngIf vs @if
+--
+image::./images/flow/control-flow-blank.drawio.svg[]
+
+[NOTE.speaker]
+--
+* Timing ~ 15min
+* Définition de l'ordre d'exécution des expression dans le template
+* Identique depuis la version 2
+* A été complétement revue en V17
+--
+
+=== Directives structurelles
+
+[.code-example-lg]
+--
+
+[source,html,highlight="1..2,6..9|3..5|10..12"]
+----
+<ng-container
+    *ngIf="messages$ | async as messages; else noMessages">
+  <p *ngFor="let message of messages; trackBy: trackByFn">
+    {{message.body}}
+  </p>
+</ng-container>
+<ng-template #noMessages>
+    <p>No messages</p>
+</ng-template>
+<ng-template [ngIf]="messages$ | async" let-messages>
+  ...
+</ng-template>
+----
+
+--
+
+[NOTE.speaker]
+--
+* Historiquement basé sur les directives structurelle
+* https://angular.dev/guide/directives/structural-directives
+* Microsyntaxe, ng-template est implicite, consomme le template
+* quelques subtilités comme le let
+* Contrainte d'une seule directive par noeud
+--
+
+=== Pourquoi changer ?
+
+image::./images/flow/why-change-everything.jpg[]
+RFC : https://github.com/angular/angular/discussions/50719
+
+[NOTE.speaker]
+--
+* RFC https://github.com/angular/angular/discussions/50719
+* Why ?
+** Améliorer l'expérience des développeur (retour utilisateurs), par exemple les expressions et template pas toujours évident à lire
+** L'occasion d'améliorations (ex track par défault)
+* Why now ?
+** Préparer/faciliter le chemin vers les application zoneless
+--
+
+=== Nouvelle syntaxe
+
+[source,jsx,highlight]
+----
+@if (messages$ | async; as messages) {
+  @for (message of messages; track message.id) {
+    <p>{{ message.body }}</p>
+  }
+} @else {
+  <p>No messages<p>
+}
+----
+
+[NOTE.speaker]
+--
+*
+--
+
+=== Un autre exemple ?
+
+[.control-flow-demo-image]
+--
+image::./images/common/demo.png[]
+--
+
+[NOTE.speaker]
+--
+* TODO refacto race-view template, ajouter un switch ?
+* Montrer la partie du code de l'application qui affiche les différents états de la course
+--
+
+=== Migration ?
+
+[%step]
+
+A la main &#128533;
+
+[%step]
+--
+Ou avec un schematic
+
+[source,shell,highlight]
+----
+npx ng g @angular/core:control-flow \
+  --path ./src/app/examples/control-flow
+----
+--
+[NOTE.speaker]
+--
+* Revenir sur le code si possible pour effectivement mettre l'accent sur le fait que cela demande beaucoup de travail
+* Afficher la commande du schématic
+* Faire une démo sur l'exemple de code `src/app/flow/...`
+* Marche bien mais attention
+** A tendance à toucher des alignements de lignes sans rapport (polution)
+** track à revoir pour que ce soit pertinent
+--
+
+=== La fin des directives structurelles ?
+
+[%step]
+--
+Non, toujours utiles.
+--
+
+[%step]
+
+[.code-example-lg]
+--
+[source,html,highlight]
+----
+<th mat-header-cell *matHeaderCellDef>Name</th>
+<td mat-cell *matCellDef="let element">{{element.name}}</td>
+----
+--
+
+[%step]
+
+[.code-example-lg]
+--
+[source,html,highlight]
+----
+<ul>
+    ...
+    <li *loggedIn><a routerLink="/account">Mon compte</a></li>
+    ...
+</ul>
+----
+--
+
+[NOTE.speaker]
+--
+* Il n'est pas prévu de retirer les directives structurelle qui présentent toujours un intérêt (factorisation de code, expression courte pour la récupération de templates)
+* Très utilisée dans les bibliothèques tierce
+* La syntaxe control flow n'est pas ouverte ni extensible pour le moment
+* Pourrait changer ?
+--
