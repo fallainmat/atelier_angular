@@ -2,19 +2,19 @@
 == Quand Angular change de logo
 
 [.column.is-one-third]
-image::images/logo_angular_js.png[]
+image::images/intro/angular/logo_angular_js.png[]
 [.column.is-one-third]
-image::images/logo_angular.png[]
+image::images/intro/angular/logo_angular.png[]
 [.column.is-one-third]
-image::images/logo_angular_17.png[]
+image::images/common/logo_angular_17.png[]
 
 === Chronologie
 
-image::images/chronologie-angular1.png[]
+image::images/intro/angular/chronologie-angular1.png[]
 
 === Chronologie
 
-image::images/chronologie-angular2.png[]
+image::images/intro/angular/chronologie-angular2.png[]
 
 === Philosophie du Framework
 
@@ -26,20 +26,20 @@ image::images/chronologie-angular2.png[]
 
 === Présentation de RaceBot
 
-image::images/bot-race.png[]
+image::images/intro/bot-race/bot-race.png[]
 
 === Race
 
-image::images/race.png[]
+image::images/intro/bot-race/race.png[]
 
 === Liste des coureurs
 
-image::images/runner.png[]
+image::images/intro/bot-race/runner.png[]
 
 === Liste des paris possibles
 
-image::images/bet-list.png[]
+image::images/intro/bot-race/bet-list.png[]
 
 === Liste des paris effectués
 
-image::images/bet.png[]
+image::images/intro/bot-race/bet.png[]

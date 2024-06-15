@@ -1,1 +1,12 @@
 == Signal
+
+[.notes]
+****
+Signal est arrivé avec Angular 16 suite à la RFC https://github.com/angular/angular/discussions/49685.
+****
+
+=== Detection de changement avant Angular 16
+
+ZoneJs est utilisé pour la détection de changement.
+
+

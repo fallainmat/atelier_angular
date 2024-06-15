@@ -1,6 +1,6 @@
 === Angular change de logo, mais pas que!
 
-image::./images/logo_angular_17.png[width=250, align=center]
+image::./images/common/logo_angular_17.png[width=250, align=center]
 
 == !
 

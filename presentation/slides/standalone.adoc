@@ -2,12 +2,12 @@
 
 === Module
 
-image::images/module.png[]
+image::images/standalone/module.png[]
 
 
 === Standalone
 
-image::images/standalone.png[]
+image::images/standalone/standalone.png[]
 
 === Schematic Standalone
 
@@ -16,4 +16,6 @@ image::images/standalone.png[]
 ng generate @angular/core:standalone
 --
 
-=== Live coding
+=== !
+
+image::images/common/demo.png[]
