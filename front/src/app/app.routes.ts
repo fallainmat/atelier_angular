@@ -8,5 +8,9 @@ export const routes: Routes = [
   {
     path: 'robot-detail',
     loadChildren: () => import('./robot-detail/robot-detail.module').then(m => m.RobotDetailModule),
+  },
+  {
+    path: 'examples',
+    loadChildren: () => import('./examples/examples.route').then(m => m.routes)
   }
 ];
