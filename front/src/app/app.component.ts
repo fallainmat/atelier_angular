@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
 import { UserService } from './core/service/user/user.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { HttpClient } from '@angular/common/http';
+import { LayoutModule } from './layout/layout.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent],
-  templateUrl: './app.component.html'
+  imports: [RouterOutlet, LayoutModule],
+  templateUrl: './app.component.html',
+
 })
 export class AppComponent {
-  constructor(private userService: UserService, private httpClient: HttpClient) {
+  constructor(private userService: UserService) {
     this.userService.getCurrentUser().pipe(takeUntilDestroyed()).subscribe();
   }
 }

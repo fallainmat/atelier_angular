@@ -1,1 +1,19 @@
 == Standalone
+
+=== Module
+
+image::images/module.png[]
+
+
+=== Standalone
+
+image::images/standalone.png[]
+
+=== Schematic Standalone
+
+[script]
+--
+ng generate @angular/core:standalone
+--
+
+=== Live coding

@@ -1,3 +1,4 @@
+[.columns]
 == Quand Angular change de logo
 
 [.column.is-one-third]
@@ -6,3 +7,39 @@ image::images/logo_angular_js.png[]
 image::images/logo_angular.png[]
 [.column.is-one-third]
 image::images/logo_angular_17.png[]
+
+=== Chronologie
+
+image::images/chronologie-angular1.png[]
+
+=== Chronologie
+
+image::images/chronologie-angular2.png[]
+
+=== Philosophie du Framework
+
+- **Retrocompatible** : Depuis Angular 2, les versions sont rétrocompatibles
+- **Structuré** : Angular impose une structure pour faciliter la maintenance
+- **Verbeux** : Angular est verbeux, oups... expressif
+- **Modulaire** : Angular est construit autour des modules
+- **Performant** : Angular est performant, mais il faut respecter les bonnes pratiques
+
+=== Présentation de RaceBot
+
+image::images/bot-race.png[]
+
+=== Race
+
+image::images/race.png[]
+
+=== Liste des coureurs
+
+image::images/runner.png[]
+
+=== Liste des paris possibles
+
+image::images/bet-list.png[]
+
+=== Liste des paris effectués
+
+image::images/bet.png[]

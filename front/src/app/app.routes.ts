@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { robotDetailResolver } from './robot-detail/robot-detail.resolver';
 
 export const routes: Routes = [
   {
@@ -7,8 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
   },
   {
-    path: 'robot-detail/:name',
-    loadComponent: () => import('./robot-detail/robot-detail.component').then(m => m.RobotDetailComponent),
-    resolve: { robot: robotDetailResolver }
+    path: 'robot-detail',
+    loadChildren: () => import('./robot-detail/robot-detail.module').then(m => m.RobotDetailModule),
   }
 ];

@@ -29,4 +29,8 @@ image::./images/florian_allainmat.jpg[]
 
 === !
 
-image::./images/logo_angular_17.png[width=250, align=center]
+image::./images/onepoint.jpg[]
+
+=== Ecole Onepoint
+
+image::./images/onepoint.jpg[]
