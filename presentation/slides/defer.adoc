@@ -1,1 +1,136 @@
-== Defer
+== Reporter à plus tard ?
+
+[.defer-cover]
+--
+I will render that [.cross-word]#now# [.later-word]#later#
+--
+
+[NOTE.speaker]
+--
+* Timing ~20min
+* Nouveau système permettant d'enrichir les systèmes lazy loading déjà présents
+* Introduction en v17
+--
+
+=== Un problème de poids
+
+[.defer-spa-heavy]
+--
+image::images/defer/npm-heaviest.webp[]
+[.html]#HTML#
+[.htmlcss]#HTML CSS#
+[.htmlcssjs]#HTML CSS JS#
+[.angular]#Angular#
+--
+
+[NOTE.speaker]
+--
+* Problématique du poids dans les applications JS CSR (afficher l'illustration)
+* Expliquer le principe de lazy loading
+--
+
+=== Le lazy loading dans angular
+
+[%step.code-example-lg]
+--
+Lazy loaded routes
+
+[source,typescript]
+----
+'./feature/feature.module#FeatureModule'
+
+() => import('./feature/feature.module').then(m => m.FeatureModule)
+----
+--
+
+[%step.code-example-lg]
+--
+Lazy loaded components
+
+[source,typescript]
+----
+import('./lazy.component').then((m) => m.LazyComponent)
+----
+--
+
+[%step]
+Micro frontend / module federation https://www.angulararchitects.io/blog/the-microfrontend-revolution-part-2-module-federation-with-angular/
+
+[NOTE.speaker]
+--
+* Le chargement dynamique des routes présent depuis le début qui est passé par un système d'expression avant d'utiliser les import EmacScript
+* Expliquer le principe avec l'intégration dans le build et la création de fragments indépendants
+* Le chargement dynamique des composants qui est passé par plusieurs phase
+** bricolage avec les modules, propriété "lazyModules" qui permettait de définir les fragments avant ivy
+** création des fragment basés sur les imports EmacScript à partir d'ivy
+--
+
+=== Simplification avec @defer
+
+[source,jsx,highlight="1..12|1,3|2|4,6|5|7,9|8|10,12|11"]
+----
+@defer (when list?.length > 0 ) {
+  <gros-composant [participants]="list" />
+}
+@placeholder (minimum 200ms) {
+  <p>Le contenu par défaut</p>
+}
+@error {
+  <p>Erreur lors du chargement</p>
+}
+@loading(after 200ms; minimum 1s) {
+  <p>Chargement du composant...</p>
+}
+----
+
+[NOTE.speaker]
+--
+* Les composant doivent être standalone et non référencé en dehors d'un bloc defer
+* La présence du bloc defer permet d'identifier les fragments à créer lors de la construction du livrable
+* Placeholder pour afficher un contenu par défaut
+* Erreur en cas de problème de chargement du/des fragments
+* Loading message de chargement remplaçant le placeholder si présent
+--
+
+=== triggers
+
+[%step.defer-2-col]
+* when
+* on idle
+* on interaction
+* on hover
+* on viewport
+* on timer
+* on immediate
+* prefetch
+
+[NOTE.speaker]
+--
+* Le bloc @defer supporte plusieurs méthodes
+* when de gère pas le fait de masquer
+* on idle (par défaut)
+* interaction (click, keydown)
+* on hover (mouseenter, focusin)
+* prefetch peut être associé avec un trigger
+--
+
+=== @defer en vrai
+
+[.control-flow-demo-image]
+--
+image::./images/common/demo.png[]
+--
+
+[NOTE.speaker]
+--
+* Ouvrir le composant dans l'url `example/defer/simple`
+* Montrer le code expliquer le comportement
+* faire un démo à blanc pour montrer le chargement
+* Tiens on ne vois pas le loading ? Réponse : Si le chargement au prefetch est suffisament rapide alors le chargement n'apparait même pas (le delay permet de régler le seuil)
+* Démo en augmentant le délais
+* Changer l'interraction pour un timer, on voit que le prefetch n'a plus aucune intérêt
+* Ajouter du texte en haut pour montre le chargement on viewport
+* Couper le réseau pour montrer l'erreur
+* Un mot sur l'accessibilité
+* Ouverture, hydratation partielle ?
+--

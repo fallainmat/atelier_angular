@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ExampleDirectiveComponent } from './control-flow/example-directive.component';
 import { ExampleSyntaxeComponent } from './control-flow/example-syntaxe.component';
+import { ExampleDeferComponent } from './defer/example-defer.component';
 
 export const routes: Routes = [
   {
@@ -10,5 +11,9 @@ export const routes: Routes = [
   {
     path: 'flow/syntaxe',
     component: ExampleSyntaxeComponent
+  },
+  {
+    path: 'defer/simple',
+    component: ExampleDeferComponent
   }
 ];
