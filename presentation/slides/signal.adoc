@@ -1,9 +1,10 @@
 == Signal
 
-[.notes]
+[NOTE.speaker]
 ****
 Signal est arrivé avec Angular 16 suite à la RFC https://github.com/angular/angular/discussions/49685.
 ****
+
 
 === Detection de changement avant Signal
 
@@ -11,15 +12,33 @@ Signal est arrivé avec Angular 16 suite à la RFC https://github.com/angular/an
 
 ZoneJs est utilisé pour la détection de changement.
 
+[NOTE.speaker]
+--
+* Détection de changement avec un exemple simple.
+* Aborder le concept de zone et de propagation.
+--
+
 === !
 
 image::images/signal/event.png[]
+
+[NOTE.speaker]
+--
+* Exemple simple d'un événement déclencher sur le composant child2.
+* Il n'y a qu'un seul impact sur le composant subChild2.
+--
 
 === !
 
 image::images/signal/zone.png[]
 
 === Detection de changement avec Signal
+
+[NOTE.speaker]
+--
+* Le principe de propagation est explicite dans le visuel.
+* La propagation est propagé sur tous les enfants.
+--
 
 === !
 
@@ -101,6 +120,11 @@ export class AppComponent {
 }
 ----
 
+[NOTE.speaker]
+--
+* Le computed est un signal qui dépend d'un autre signal.
+--
+
 === !
 
 [source,html,linenums]
@@ -131,6 +155,11 @@ export class AppComponent {
   }
 }
 ----
+
+[NOTE.speaker]
+--
+* L'ensemble de l'effect est exécuté à chaque fois que le signal count est modifié.
+--
 
 === !
 

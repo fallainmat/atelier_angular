@@ -31,6 +31,18 @@ image::./images/florian_allainmat.jpg[]
 
 image::./images/onepoint.jpg[]
 
+[NOTE.speaker]
+--
+* Présentation de Onepoint très rapide
+--
+
 === Ecole Onepoint
 
 image::./images/onepoint.jpg[]
+
+
+[NOTE.speaker]
+--
+* Présentation de l'école Onepoint
+* Lien du Qrcode vers la formation Angular Onepoint
+--

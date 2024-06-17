@@ -23,9 +23,23 @@ image::images/standalone/module.png[]
 export class LayoutModule {}
 ----
 
+
+[NOTE.speaker]
+--
+* Présentation d'un module Angular, valider le visuel sur les providers, "Quelques questionnements dessus".
+* Présentation des différentes parties du module.
+--
+
 === Standalone
 
 image::images/standalone/standalone.png[]
+
+
+[NOTE.speaker]
+--
+* Présentation de composant Standalone.
+* Les enjeux de cette refonte, historique "Travail à voir dessus".
+--
 
 === !
 
@@ -43,11 +57,25 @@ export class LayoutComponent {
 }
 ----
 
+
+[NOTE.speaker]
+--
+* Présentation de composant Standalone.
+* Reprise de l'ensemble des fonctionnalités.
+* Préparation d'une nouvelle façon d'importer les composants.
+--
+
 === Schematic Standalone
 
 [script]
 --
 ng generate @angular/core:standalone
+--
+
+
+[NOTE.speaker]
+--
+* Présentation de la schématics et précisant que ça ne fait pas tout.
 --
 
 === !
