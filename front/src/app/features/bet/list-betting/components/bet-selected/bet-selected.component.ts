@@ -18,17 +18,15 @@ import { RaceState } from '../../../../../core/service/race/race.model';
   styleUrl: './bet-selected.component.scss'
 })
 export class BetSelectedComponent {
-  race = toSignal(inject(RaceService).getCurrentRace$());
+  raceState = toSignal(inject(RaceService).getRaceState$());
+
+  betsClosed = computed(() => this.raceState() !== RaceState.BetsOpened);
 
   betSelected = input.required<BetSelectedModel>();
 
   betService = inject(BetService);
 
   betsSelected = this.betService.betsSelected;
-
-  betsClosed = computed(() => {
-    return this.race()?.state !== RaceState.BetsOpened
-  });
 
   deleteBet(betSelected: BetSelectedModel) {
     this.betService.deleteBet(betSelected);

@@ -17,15 +17,13 @@ import { RaceState } from '../../core/service/race/race.model';
 export class HomeComponent {
   raceService = inject(RaceService);
 
-  race = toSignal(this.raceService.getCurrentRace$());
-
-  betsOpened = computed(() => {
-    return this.race()?.state === RaceState.BetsOpened
-  });
+  raceState = toSignal(this.raceService.getRaceState$());
 
   bets = toSignal(inject(BetService).getBets());
 
   startRace() {
     this.raceService.launchNextRace();
   }
+
+  protected readonly RaceState = RaceState;
 }

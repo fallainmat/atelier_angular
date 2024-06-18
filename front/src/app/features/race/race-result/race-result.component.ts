@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { Robot } from '../../../core/service/robot/robot.model';
 import { Race } from '../../../core/service/race/race.model';
 
@@ -17,5 +17,7 @@ export class RaceResultComponent {
     return race
       ? race.robots.sort((r1, r2) => r2.state.distanceTraveled - r1.state.distanceTraveled)
       : [];
-  })
+  });
+
+  cpt = signal(0);
 }

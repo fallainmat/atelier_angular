@@ -2,9 +2,9 @@
   <div class="m-2 rounded-md bg-sky-50 shadow-2xl">
     <div class="mx-2 flex justify-between">
       <p class="mt-2 text-gray-600 text-xs font-bold">{{ betSelected.bet.name }}</p>
-      @if (!betsClosed()) {
+      @if (betsClosed()) {
         <button (click)="deleteBet(betSelected)">
-          <img ngSrc="../../../../../assets/icons/delete.png" alt="" width="25" height="25"/>
+          <img ngSrc="assets/icons/delete.png" alt="" width="25" height="25"/>
         </button>
       }
     </div>

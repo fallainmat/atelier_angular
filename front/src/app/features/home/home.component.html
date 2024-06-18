@@ -1,6 +1,6 @@
 <div class="flex flex-col">
   <div class="grid grid-cols-3 container-bets overflow-auto rounded-md w-full">
-    @if (betsOpened()) {
+    @if (raceState() === RaceState.BetsOpened) {
       @for (bet of bets(); track bet) {
         <app-bet-card [betConfig]="bet"/>
       } @empty {
