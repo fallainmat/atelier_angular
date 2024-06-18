@@ -12,5 +12,5 @@ import { Race } from '../../../core/service/race/race.model';
   styleUrl: './list-robot.component.scss'
 })
 export class ListRobotComponent {
-  protected race = toSignal<Race | null>(inject(RaceService).getCurrentRace$());
+  race = toSignal<Race | null>(inject(RaceService).getCurrentRace$());
 }

@@ -1,6 +1,6 @@
 <div class="flex flex-col container-robot overflow-auto">
   @if (race(); as race) {
-    @for (robot of race.robots; track robot) {
+    @for (robot of race.robots; track robot.name) {
       <app-card [robot]="robot"/>
     }
   }

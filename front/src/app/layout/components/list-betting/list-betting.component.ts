@@ -18,7 +18,7 @@ export class ListBettingComponent {
   betService = inject(BetService);
   userService = inject(UserService);
 
-  betsSelected = this.betService.betSelected;
+  betsSelected = this.betService.betsSelected;
   totalCoins = computed(() => this.betsSelected().reduce((acc, bet) => acc + (bet.coins * parseInt(bet.odds)), 0));
 
   openModal = false;
@@ -30,13 +30,5 @@ export class ListBettingComponent {
         return user ? {...user, money: untracked(this.userService.moneyCurrent) - coinsUsing} : null
       });
     }, {allowSignalWrites: true});
-  }
-
-  validateBet() {
-    this.openModal = true;
-  }
-
-  closeModal() {
-    this.openModal = false;
   }
 }

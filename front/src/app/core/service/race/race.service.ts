@@ -9,7 +9,7 @@ import { Robot } from '../robot/robot.model';
 })
 export class RaceService {
 
-  static RACE_DUE_TIME = 15000;
+  static RACE_DUE_TIME = 8000;
 
   eventSource?: EventSource;
 
@@ -20,7 +20,7 @@ export class RaceService {
   }
 
   getCurrentRace$(): Observable<Race | null> {
-    return this.currentRace$;
+    return this.currentRace$.asObservable();
   }
 
   getRobotByName(name: string): Robot | undefined {

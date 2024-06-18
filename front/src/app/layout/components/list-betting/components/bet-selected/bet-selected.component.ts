@@ -1,6 +1,9 @@
-import {Component, inject, input} from '@angular/core';
-import {JsonPipe, NgClass, NgOptimizedImage, NgStyle} from "@angular/common";
-import {BetSelectedModel, BetService} from "../../../../../core/service/bet/bet.service";
+import { Component, computed, inject, input } from '@angular/core';
+import { JsonPipe, NgClass, NgOptimizedImage, NgStyle } from '@angular/common';
+import { BetSelectedModel, BetService } from '../../../../../core/service/bet/bet.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { RaceService } from '../../../../../core/service/race/race.service';
+import { RaceState } from '../../../../../core/service/race/race.model';
 
 @Component({
   selector: 'app-bet-selected',
@@ -15,11 +18,17 @@ import {BetSelectedModel, BetService} from "../../../../../core/service/bet/bet.
   styleUrl: './bet-selected.component.scss'
 })
 export class BetSelectedComponent {
+  race = toSignal(inject(RaceService).getCurrentRace$());
+
   betSelected = input.required<BetSelectedModel>();
 
   betService = inject(BetService);
-  betsSelected = this.betService.betSelected;
-  raceActivated = this.betService.raceActivated;
+
+  betsSelected = this.betService.betsSelected;
+
+  betsClosed = computed(() => {
+    return this.race()?.state !== RaceState.BetsOpened
+  });
 
   deleteBet(betSelected: BetSelectedModel) {
     this.betService.deleteBet(betSelected);
