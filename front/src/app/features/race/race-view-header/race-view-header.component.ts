@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Race } from '../../core/service/race/race.model';
+import { Race } from '../../../core/service/race/race.model';
 
 @Component({
   selector: 'app-race-view-header',

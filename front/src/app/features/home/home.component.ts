@@ -1,9 +1,9 @@
 import { Component, computed, inject } from '@angular/core';
-import { BetCardComponent } from './components/bet-card/bet-card.component';
-import { BetService } from '../core/service/bet/bet.service';
+import { BetCardComponent } from '../bet/bet-card/bet-card.component';
+import { BetService } from '../../core/service/bet/bet.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { RaceService } from '../core/service/race/race.service';
-import { RaceState } from '../core/service/race/race.model';
+import { RaceService } from '../../core/service/race/race.service';
+import { RaceState } from '../../core/service/race/race.model';
 
 @Component({
   selector: 'app-home',

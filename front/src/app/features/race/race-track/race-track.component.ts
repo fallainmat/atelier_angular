@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Race, RaceState } from '../../core/service/race/race.model';
+import { Race, RaceState } from '../../../core/service/race/race.model';
 import { NgStyle } from '@angular/common';
 
 @Component({

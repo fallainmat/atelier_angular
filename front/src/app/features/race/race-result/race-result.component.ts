@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
-import { Robot } from '../../core/service/robot/robot.model';
-import { Race } from '../../core/service/race/race.model';
+import { Robot } from '../../../core/service/robot/robot.model';
+import { Race } from '../../../core/service/race/race.model';
 
 @Component({
   selector: 'app-race-result',

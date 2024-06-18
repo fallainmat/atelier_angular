@@ -3,11 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '', pathMatch: 'full',
-    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'robot-detail',
-    loadChildren: () => import('./robot-detail/robot-detail.module').then(m => m.RobotDetailModule),
+    loadChildren: () => import('./features/robot/robot-detail/robot-detail.module').then(m => m.RobotDetailModule),
   },
   {
     path: 'examples',

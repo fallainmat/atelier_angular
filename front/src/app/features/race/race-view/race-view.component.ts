@@ -1,7 +1,7 @@
 import { Component, computed, effect, inject } from '@angular/core';
-import { RaceState } from '../../core/service/race/race.model';
+import { RaceState } from '../../../core/service/race/race.model';
 import { AsyncPipe, DatePipe, JsonPipe, NgStyle } from '@angular/common';
-import { RaceService } from '../../core/service/race/race.service';
+import { RaceService } from '../../../core/service/race/race.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RaceStartTimerComponent } from '../race-start-timer/race-start-timer.component';
 import { RaceViewHeaderComponent } from '../race-view-header/race-view-header.component';

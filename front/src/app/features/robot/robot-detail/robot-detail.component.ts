@@ -1,7 +1,5 @@
-import {Component, input} from '@angular/core';
-import {RouterLink} from "@angular/router";
-import {JsonPipe} from "@angular/common";
-import {RobotModel} from "../core/service/robot/robot.service";
+import { Component, input } from '@angular/core';
+import { RobotModel } from '../../../core/service/robot/robot.service';
 
 @Component({
   selector: 'app-robot-detail',

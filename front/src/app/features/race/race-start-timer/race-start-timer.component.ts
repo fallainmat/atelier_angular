@@ -1,5 +1,5 @@
 import { Component, computed, effect, input, OnDestroy, signal } from '@angular/core';
-import { Race, RaceState } from '../../core/service/race/race.model';
+import { Race, RaceState } from '../../../core/service/race/race.model';
 
 @Component({
   selector: 'app-race-start-timer',
