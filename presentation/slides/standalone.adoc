@@ -5,7 +5,7 @@
 image::images/standalone/module.png[]
 
 === !
-[source,javascript,highlight="1|2|3..5|6..11|12"]
+[source,javascript,highlight="1|2,12|3..5|6..11"]
 ----
 @NgModule({
     declarations: [LayoutComponent],
@@ -30,7 +30,7 @@ export class LayoutModule {}
 * Présentation des différentes parties du module.
 --
 
-=== Standalone
+=== Standalone Component
 
 image::images/standalone/standalone.png[]
 
@@ -43,18 +43,16 @@ image::images/standalone/standalone.png[]
 
 === !
 
-[source,javascript,highlight="1|2|3|4|5|9"]
+[source,javascript,highlight="1|2|3|4|5"]
 ----
 @Component({
   selector: 'layout-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TestComponent],
   templateUrl: './layout.component.html',
 
 })
-export class LayoutComponent {
-    testService = inject(TestService);
-}
+export class LayoutComponent {}
 ----
 
 
@@ -64,6 +62,17 @@ export class LayoutComponent {
 * Reprise de l'ensemble des fonctionnalités.
 * Préparation d'une nouvelle façon d'importer les composants.
 --
+
+=== Bootstrap Angular
+
+image::images/standalone/bootstrap-app.png[]
+
+[NOTE.speaker]
+--
+* Définition du bootstraping d'angular.
+* Présentation de la méthode des nouveaux providers environment.
+--
+
 
 === Schematic Standalone
 

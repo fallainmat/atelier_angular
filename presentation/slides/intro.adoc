@@ -41,16 +41,21 @@ image::images/intro/angular/chronologie-angular2.png[]
 === Philosophie du Framework
 
 - **Retrocompatible** : Depuis Angular 2, les versions sont rétrocompatibles
-- **Structuré** : Angular impose une structure pour faciliter la maintenance
+- **Complet** : Angular propose un ensemble complet d'outils pour le développement de votre projet, l'utilisation de ces outils fait que les projets Angular sont souvent similaires.
 - **Verbeux** : Angular est verbeux, oups... expressif
-- **Modulaire** : Angular est construit autour des modules
-- **Performant** : Angular est performant, mais il faut respecter les bonnes pratiques
+- **Modulaire** : Angular peut être fragmenter en composant réutilisable (Angular lib par exemple) ou petit module.
+- **Performant** : Angular est construit pour être performant
+
+=== Documentation
+
+----
+https://angular.dev/
+----
 
 
 [NOTE.speaker]
 --
-* "A compléter", je pense qu'il est nécessaire de rappeler les principes du framework pour bien comprendre les choix de l'équipe de développement
-
+* Rappel que la documentation est en working progress aussi. Des éléments peuvent être manquants ou incomplets.
 --
 
 === Présentation de RaceBot
@@ -61,45 +66,4 @@ image::images/intro/bot-race/bot-race.png[]
 [NOTE.speaker]
 --
 * Présentation de BotRace, un projet de démonstration pour illustrer les concepts d'Angular
---
-
-=== Race
-
-image::images/intro/bot-race/race.png[]
-
-
-[NOTE.speaker]
---
-* Présentation de la race, un ensemble de coureurs qui vont s'affronter
---
-
-=== Liste des coureurs
-
-image::images/intro/bot-race/runner.png[]
-
-
-[NOTE.speaker]
---
-* Présentation des coureurs, un ensemble de robots qui vont s'affronter
---
-
-=== Liste des paris possibles
-
-image::images/intro/bot-race/bet-list.png[]
-
-
-[NOTE.speaker]
---
-* Présentation des paris possibles, un ensemble de paris que l'on peut effectuer
---
-
-=== Liste des paris effectués
-
-image::images/intro/bot-race/bet.png[]
-
-
-[NOTE.speaker]
---
-* Présentation des paris effectués, un ensemble de paris que l'on a effectué
-* Nous avons lié les paris effectués à la course et rendu réactif l'interface
 --

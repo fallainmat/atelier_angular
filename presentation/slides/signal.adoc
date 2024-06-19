@@ -10,7 +10,7 @@ Signal est arrivé avec Angular 16 suite à la RFC https://github.com/angular/an
 
 === !
 
-ZoneJs est utilisé pour la détection de changement.
+Zone.js planifie la détection de changement.
 
 [NOTE.speaker]
 --
@@ -51,7 +51,6 @@ image::images/signal/event.png[]
 === !
 
 image::images/signal/signal.png[]
-
 
 === C'est quoi un signal ?
 
@@ -164,3 +163,78 @@ export class AppComponent {
 === !
 
 image::images/common/demo.png[]
+
+=== Preview TIME
+
+image::images/signal/slalom.gif[]
+
+=== Signal Input
+
+Nouvelle façon d'utiliser l'input dans un composant enfant. input()
+
+[%auto-animate]
+=== Signal Input
+
+Pourquoi utiliser input() au lieu du décorateur @Input() ?
+
+[%auto-animate]
+=== Signal Model
+
+Nouvelle façon d'utiliser l'input/output dans un seul "signal". plus besoin de faire un set/update pour changer la valeur.
+
+[%auto-animate]
+=== Signal Queries
+
+On dénombre 2 types de Query :
+
+- View Queries.
+- Content Queries.
+
+[%auto-animate]
+=== Signal Queries
+
+View remplace ViewChild et Content remplace ContentChild.
+
+[%auto-animate]
+=== HttpClient
+
+[%auto-animate]
+=== HttpClient
+
+Pourquoi je vous parle d'HttpClient ?
+
+HttpClient fonctionne toujours avec les observables
+
+[%auto-animate]
+=== HttpClient
+
+* toSignal()
+* toObservable()
+
+[%auto-animate]
+=== !
+[source,typescript,linenums,data-id=component, highlight="2|4..6"]
+----
+export class TestService {
+  httpClient = inject(HttpClient);
+
+  get(date: string): Observable<Interface> {
+    return this.httpClient.get<Interface>(`url`);
+  }
+}
+----
+
+=== !
+[source,typescript,linenums,data-id=component, highlight="5|1..2,7|1..2,9"]
+----
+import {toSignal, toObservable} from
+"@angular/core/rxjs-interop";
+
+export class TestComponent {
+    $test: Observable<number> = of(1)
+
+    test: Signal<number> = toSignal(this.$test);
+
+    $test2: Observable<number> = toObservable(this.test);
+}
+----
