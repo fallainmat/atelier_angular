@@ -153,3 +153,8 @@ video {
 /* conclusion */
 
 
+.conclusion-ng-next {
+  background: var(--ng-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
