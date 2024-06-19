@@ -9,6 +9,7 @@ export enum RaceState {
 }
 
 export interface Race {
+  uuid: string;
   robots: Array<Robot>;
   startTime: Date;
   endBetTime: Date;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Race } from './race.model';
+import { Race, RaceState } from './race.model';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, filter, map, Observable, tap } from 'rxjs';
 import { Robot } from '../robot/robot.model';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Robot } from '../robot/robot.model';
 })
 export class RaceService {
 
-  static RACE_DUE_TIME = 15000;
+  static RACE_DUE_TIME = 8000;
 
   eventSource?: EventSource;
 
@@ -20,7 +20,23 @@ export class RaceService {
   }
 
   getCurrentRace$(): Observable<Race | null> {
-    return this.currentRace$;
+    return this.currentRace$.asObservable();
+  }
+
+  getRaceState$(): Observable<RaceState> {
+    return this.getCurrentRace$().pipe(
+      filter((race): race is Race  => race !== null),
+      map((race: Race) => race.state),
+      distinctUntilChanged()
+    );
+  }
+
+  getRaceRobots$() {
+    return this.getCurrentRace$().pipe(
+      filter((race): race is Race  => race !== null),
+      distinctUntilChanged((a: Race, b: Race) => a.uuid !== b.uuid),
+      map((race: Race) => race.robots)
+    );
   }
 
   getRobotByName(name: string): Robot | undefined {

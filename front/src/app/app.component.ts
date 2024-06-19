@@ -8,8 +8,7 @@ import { LayoutModule } from './layout/layout.module';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, LayoutModule],
-  templateUrl: './app.component.html',
-
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   constructor(private userService: UserService) {

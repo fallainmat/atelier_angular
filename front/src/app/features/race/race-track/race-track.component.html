@@ -1,0 +1,21 @@
+@if (race(); as raceInfos) {
+  <div class="flex mt-4">
+    <ul class="flex-1 overflow-hidden track" #raceTrack>
+      @for (robot of raceInfos.robots; track robot.name) {
+        <li>
+          <a class="bot-point" [attr.data-face]="robot.state.pace"
+             [class.started]="raceInfos.state === RaceState.Started"
+             [ngStyle]="{'background-color': robot.color, 'margin-left': robot.state.distanceTraveled / 1000 * raceTrack.clientWidth  + 'px'}"></a>
+        </li>
+      }
+    </ul>
+    <div class="finish-line"></div>
+  </div>
+  @if (raceInfos.state === RaceState.BetsClosed) {
+    <div class="grow-0 flex mt-4 justify-center">
+      <div class="flex flex-col p-4 rounded-md bg-sky-900 text-white">
+        <p>La course va bientôt débuter</p>
+      </div>
+    </div>
+  }
+}

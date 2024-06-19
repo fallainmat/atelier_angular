@@ -1,6 +1,6 @@
-import {computed, Injectable, signal} from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import {map, Observable, of} from "rxjs";
+import { computed, Injectable, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 
 export interface BetModel {
   id: string;
@@ -50,40 +50,37 @@ export interface RaceModel {
   providedIn: 'root'
 })
 export class BetService {
-  race = signal<RaceModel>({status: BetStatus.INACTIVE});
-  betSelected = signal<BetSelectedModel[]>([]);
+  race = signal<RaceModel>({ status: BetStatus.INACTIVE });
+  betsSelected = signal<BetSelectedModel[]>([]);
   raceActivated = computed(() => this.race().status === BetStatus.ACTIVE);
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+  }
 
   getBets(): Observable<BetModel[]> {
-    return this.httpClient.get<any>('assets/mock/bet.json').pipe(map((res) => res['betList'])).pipe(
-      map((res) => res.map((bet: BetModel) => ({ ...bet, runners:
-          bet.runners.sort((a, b) => parseFloat(a.odds) - parseFloat(b.odds)) })))
+    return this.httpClient.get<{ betList: BetModel[] }>('assets/mock/bet.json').pipe(
+      map((res) => res.betList),
+      map((res) => res.map((bet: BetModel) => ({
+            ...bet,
+            runners: bet.runners.sort((a, b) => parseFloat(a.odds) - parseFloat(b.odds))
+          })
+        )
+      )
     );
   }
 
-  startRace(): Observable<void> {
-    this.race.update(() => ({status: BetStatus.ACTIVE}));
-    this.runRace();
-    return of();
-  }
-
-  saveBet(betSelected: BetSelectedModel) {
-    this.betSelected.update((prev) => {
-      return !!prev.find(pre => pre.bet.id === betSelected.bet.id) ? prev.map(pre => {
-        return pre.bet.id === betSelected.bet.id ? betSelected : pre;
-      }) :[...prev, betSelected];
+  saveBet(newBet: BetSelectedModel) {
+    this.betsSelected.update((prev) => {
+      const existingBet = prev.find(bs => bs.bet.id === newBet.bet.id);
+      return existingBet
+        ? prev.map(bs => bs.bet.id === newBet.bet.id ? newBet : bs)
+        : [...prev, newBet];
     })
   }
 
   deleteBet(betDeleted: BetSelectedModel) {
-    this.betSelected.update((prev) => prev.filter(pre => pre.bet.id !== betDeleted.bet.id));
-  }
-
-  private runRace() {
-    setTimeout(() => {
-      this.race.update(() => ({status: BetStatus.INACTIVE}));
-    }, 5000 )
+    this.betsSelected.update((prev) =>
+      prev.filter(pre => pre.bet.id !== betDeleted.bet.id)
+    );
   }
 }

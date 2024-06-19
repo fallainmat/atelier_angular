@@ -1,0 +1,13 @@
+@if (race(); as raceInfos) {
+  <div class="flex flex-row justify-around p-2 rounded-md shadow-inner-xl bg-slate-200">
+    <div class="grow">
+      <span class="font-bold">Statut de la course :</span> {{ raceInfos.state }}
+    </div>
+    <div class="grow">
+      <span class="font-bold">Fin des paris :</span> {{ raceInfos.endBetTime | date:'H:mm:ss' }}
+    </div>
+    <div class="grow">
+      <span class="font-bold">Début de la course :</span> {{ raceInfos.startTime | date:'H:mm:ss' }}
+    </div>
+  </div>
+}
