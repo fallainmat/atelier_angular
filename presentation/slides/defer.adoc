@@ -76,7 +76,7 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
   <p>Le contenu par défaut</p>
 }
 @error {
-  <p>Erreur lors du chargement</p>
+  <p>Erreur lors de la création</p>
 }
 @loading(after 200ms; minimum 1s) {
   <p>Chargement du composant...</p>
