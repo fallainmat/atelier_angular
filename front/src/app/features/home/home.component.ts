@@ -4,15 +4,20 @@ import { BetService } from '../../core/service/bet/bet.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RaceService } from '../../core/service/race/race.service';
 import { RaceState } from '../../core/service/race/race.model';
+import { ListBettingComponent } from '../bet/list-betting/list-betting.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    BetCardComponent
+    BetCardComponent,
+    ListBettingComponent,
+    RouterOutlet
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  host: {class: 'h-full'}
 })
 export class HomeComponent {
   raceService = inject(RaceService);

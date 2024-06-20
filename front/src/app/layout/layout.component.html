@@ -1,19 +1,11 @@
-<div class="h-full flex flex-col my-0 mx-auto">
-  <div class="m-2 p-2 rounded-md bg-sky-900">
+<div class="page-container h-full">
+  <div class="row-header m-2 p-2 rounded-md bg-sky-900">
     <app-header></app-header>
   </div>
-  <div class="grid grid-cols-12 mx-2 gap-3">
-    <div class="col-span-12 rounded-md bg-sky-900">
-      <app-race-view />
-    </div>
-    <div class="col-span-2 rounded-md bg-sky-900">
-      <app-list-robot/>
-    </div>
-    <div class="col-span-8 rounded-md bg-sky-900">
-      <router-outlet/>
-    </div>
-    <div class="col-span-2 rounded-md bg-sky-900">
-      <app-list-betting/>
-    </div>
+  <div class="row-race col-span-12 rounded-md bg-sky-900 m-2">
+    <app-race-view />
+  </div>
+  <div class="row-main m-2 flex flex-col ">
+    <router-outlet />
   </div>
 </div>

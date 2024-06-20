@@ -1,10 +1,11 @@
 <div class="flex flex-col">
-  <div class="p-2 h-96 rounded-md">
+  <div class="p-2 rounded-md">
     @if (race(); as raceInfos) {
       <app-race-view-header [race]="race()"/>
       @switch (raceViewState()) {
         @case (RaceViewState.Bet) {
           <app-race-start-timer [race]="race()"/>
+          <app-list-robot/>
         }
         @case (RaceViewState.Run) {
           <app-race-track [race]="race()"/>

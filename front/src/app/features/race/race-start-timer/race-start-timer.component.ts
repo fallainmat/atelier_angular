@@ -5,7 +5,8 @@ import { Race, RaceState } from '../../../core/service/race/race.model';
   selector: 'app-race-start-timer',
   standalone: true,
   imports: [],
-  templateUrl: './race-start-timer.component.html'
+  templateUrl: './race-start-timer.component.html',
+  styleUrl: './race-start-timer.component.scss'
 })
 export class RaceStartTimerComponent implements OnDestroy {
 

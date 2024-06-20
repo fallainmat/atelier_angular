@@ -7,6 +7,7 @@ import { RaceStartTimerComponent } from '../race-start-timer/race-start-timer.co
 import { RaceViewHeaderComponent } from '../race-view-header/race-view-header.component';
 import { RaceTrackComponent } from '../race-track/race-track.component';
 import { RaceResultComponent } from '../race-result/race-result.component';
+import { ListRobotComponent } from '../../robot/list-robot/list-robot.component';
 
 enum RaceViewState {
   Bet = 'Bet',
@@ -33,7 +34,8 @@ const raceViewStateMap: Record<RaceState, RaceViewState> = {
     RaceStartTimerComponent,
     RaceViewHeaderComponent,
     RaceTrackComponent,
-    RaceResultComponent
+    RaceResultComponent,
+    ListRobotComponent
   ],
   templateUrl: './race-view.component.html'
 })

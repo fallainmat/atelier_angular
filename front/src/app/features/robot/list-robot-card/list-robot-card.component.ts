@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgIf, NgOptimizedImage } from '@angular/common';
+import { NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Robot } from '../../../core/service/robot/robot.model';
 
@@ -10,7 +10,8 @@ import { Robot } from '../../../core/service/robot/robot.model';
     NgIf,
     RouterLink,
     RouterLinkActive,
-    NgOptimizedImage
+    NgOptimizedImage,
+    NgStyle
   ],
   templateUrl: './list-robot-card.component.html',
   styleUrl: './list-robot-card.component.scss'

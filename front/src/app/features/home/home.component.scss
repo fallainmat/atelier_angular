@@ -1,3 +1,11 @@
 .container-bets {
   height: calc(100vh - 36rem);
 }
+
+.col-bet {
+  flex: 1;
+}
+
+.col-control {
+  flex: 3
+}

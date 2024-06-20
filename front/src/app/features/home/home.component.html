@@ -1,23 +1,28 @@
-<div class="flex flex-col">
-  <div class="grid grid-cols-3 container-bets overflow-auto rounded-md w-full">
-    @if (raceState() === RaceState.BetsOpened) {
-      @for (bet of bets(); track bet) {
-        <app-bet-card [betConfig]="bet"/>
-      } @empty {
-        <div>No bets found</div>
+<div class="flex h-full">
+  <div class="col-control flex flex-col justify-between rounded-md bg-sky-900 mr-2">
+    <div class="grow grid grid-cols-3 container-bets overflow-auto rounded-md w-full">
+      @if (raceState() === RaceState.BetsOpened) {
+        @for (bet of bets(); track bet) {
+          <app-bet-card [betConfig]="bet"/>
+        } @empty {
+          <div>No bets found</div>
+        }
       }
-    }
+    </div>
+    <div class="flex">
+      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
+              (click)="startRace(2500000)">
+        Nouvelle course
+      </button>
+      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
+              (click)="startRace(8000)">
+        Course rapide
+      </button>
+    </div>
   </div>
-  <div class="flex">
-    <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
-    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
-            (click)="startRace(25000)">
-      Nouvelle course
-    </button>
-    <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
-    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
-            (click)="startRace(8000)">
-      Course rapide
-    </button>
+  <div class="col-bet col-span-3 rounded-md bg-sky-900">
+    <app-list-betting/>
   </div>
 </div>

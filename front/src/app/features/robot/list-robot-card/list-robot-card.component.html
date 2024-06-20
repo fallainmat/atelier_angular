@@ -1,6 +1,14 @@
 <a *ngIf="robot" [routerLink]="'robot-detail/' + robot.name" routerLinkActive>
-  <div class="flex h-10 m-1 rounded-md shadow-inner-xl bg-slate-200">
+  <div class="flex flex-col m-1 p-2 rounded-md shadow-inner-xl bg-slate-200">
     <h2 class="text-gray-600 flex-1 content-center text-center font-bold text-1s">{{ robot.name}}</h2>
+    <ul>
+      @for(stat of robot.stats; track stat.type) {
+        <li class="flex justify-between mb-1">
+          <span class="flex-1">{{stat.type}}:</span>
+          <span class="bg-white flex-1"><span class="stat-bar stat-bar-{{stat.type}}" [ngStyle]="{width: stat.value + 'px'}"></span></span>
+        </li>
+      }
+    </ul>
     <!-- TODO image in details -->
 <!--    <img [ngSrc]="'/assets/images/robot-bolt.jpg'"-->
 <!--         class="m-2 border-2 border-teal-800" alt="robot image" width="60" height="30">-->
