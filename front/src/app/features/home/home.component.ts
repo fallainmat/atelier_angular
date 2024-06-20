@@ -21,12 +21,8 @@ export class HomeComponent {
 
   bets = toSignal(inject(BetService).getBets());
 
-  constructor() {
-    console.log(this.raceState());
-  }
-
-  startRace() {
-    this.raceService.launchNextRace();
+  startRace(raceDueTimeMs: number) {
+    this.raceService.launchNextRace(raceDueTimeMs);
   }
 
   protected readonly RaceState = RaceState;

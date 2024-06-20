@@ -1,6 +1,8 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { distinctUntilChanged, map, Observable } from 'rxjs';
+import { RaceService } from '../race/race.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 export interface BetModel {
   id: string;
@@ -53,8 +55,15 @@ export class BetService {
   race = signal<RaceModel>({ status: BetStatus.INACTIVE });
   betsSelected = signal<BetSelectedModel[]>([]);
   raceActivated = computed(() => this.race().status === BetStatus.ACTIVE);
+  raceChange = toSignal(inject(RaceService).getCurrentRace$().pipe(
+    distinctUntilChanged((a, b) => a?.uuid === b?.uuid))
+  );
 
   constructor(private httpClient: HttpClient) {
+    effect(() => {
+      this.raceChange();
+      this.betsSelected.set([]);
+    }, { allowSignalWrites: true });
   }
 
   getBets(): Observable<BetModel[]> {

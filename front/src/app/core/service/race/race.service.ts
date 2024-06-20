@@ -9,8 +9,6 @@ import { Robot } from '../robot/robot.model';
 })
 export class RaceService {
 
-  static RACE_DUE_TIME = 8000;
-
   eventSource?: EventSource;
 
   private currentRace$ = new BehaviorSubject<Race | null>(null);
@@ -44,11 +42,11 @@ export class RaceService {
     return robots.find(r => r.name === name);
   }
 
-  launchNextRace() {
+  launchNextRace(raceDueTimeMs: number) {
     this.currentRace$.next(null);
     return this.httpClient
       .post<Race>('/api/race', {
-        startTime: this.toISOStringWithTimezone(new Date(new Date().getTime() + RaceService.RACE_DUE_TIME))
+        startTime: this.toISOStringWithTimezone(new Date(new Date().getTime() + raceDueTimeMs))
       }).subscribe();
   }
 
