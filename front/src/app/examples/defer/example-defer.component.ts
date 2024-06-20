@@ -13,7 +13,7 @@ import { HugeComponentComponent } from './huge-component.component';
     @placeholder () {
       <p>Default content</p>
     } @error {
-      <p>Network error</p>
+      <p>Component creation error</p>
     }
     @loading (minimum 4000ms) {
       <p>Chargement en cours</p>

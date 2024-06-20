@@ -35,5 +35,7 @@ bs.watch(['**/*.adoc', 'css/**.css']).on('change', () => {
 
 bs.init({
   server: true,
-  startPath: 'dist'
+  startPath: 'dist',
+  port: 8081,
+  ui: false
 });
