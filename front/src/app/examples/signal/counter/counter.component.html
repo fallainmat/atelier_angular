@@ -1,0 +1,62 @@
+<div class="flex flex-col items-center">
+  <div>
+    <div>
+      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500">Signal
+      </button>
+      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500"
+              (click)="comptutedActivated = !comptutedActivated">Computed
+      </button>
+      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500"
+              (click)="effectActivated = !effectActivated">Effect
+      </button>
+    </div>
+  </div>
+  <div style="border: thick double #9CD9F0; width: 90%; padding: 10px; background-color: white">
+    <div style="display: flex; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column">
+        <h1>Count: {{ count() }}</h1>
+        <h1>DoubleCount: {{ doubleCount() }}</h1>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <h1>CountObs: {{ countObs }}</h1>
+        <h1>DoubleCountObs: {{ doubleCountObs$ | async }}</h1>
+      </div>
+    </div>
+    <div style="margin-top: 50px; display: flex; justify-content: center">
+      <button (click)="resetValue()">Reset</button>
+      <button (click)="decrementValue()">Decrement</button>
+      <button (click)="incrementValue()">Increment</button>
+    </div>
+  </div>
+  @if (comptutedActivated) {
+    <div style="border: thick double #9CD9F0; width: 90%; padding: 10px">
+      <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
+        <h1>{{ conditionalCount() }}</h1>
+        <button (click)="changeConditionalDouble()" style="margin-top: 40px">Je veux voir un
+          double count
+        </button>
+      </div>
+      <div style="margin-top: 50px">
+        <button (click)="changeStopCount()">{{ stopCount ? 'REBOUGE' : 'ARRETE DE BOUGER' }} DOUBLE COUNT</button>
+      </div>
+    </div>
+  }
+
+  @if (effectActivated) {
+    <div
+      style="border: thick double #9CD9F0; width: 90%; padding: 10px; display: flex; flex-direction: column; align-items: center">
+      <div>
+        <button (click)="changeDisplayChild()">remove child</button>
+        <button (click)="changeDisplayChild()">add child</button>
+      </div>
+      <div style="margin: 20px 0">
+        @if (displayChild) {
+          <app-counter-child></app-counter-child>
+        }
+      </div>
+    </div>
+  }
+</div>

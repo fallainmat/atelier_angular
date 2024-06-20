@@ -7,6 +7,22 @@
         <p class="text-6xl font-bold text-gray-50">R</p>
         <p class="font-bold text-gray-50">ace</p>
       </div>
+      <select class="text-gray-600 rounded-md flex-1 content-center text-center font-bold text-1s max-w-36" (change)="onNavigate($event)">
+        <option value="/">Race
+        </option>
+        <option value="/examples/flow/syntaxe">Directive
+        </option>
+        <option value="/examples/flow/syntaxe">Syntaxe
+        </option>
+        <option value="/examples/defer/simple">Defer
+        </option>
+        <option value="/examples/signal/counter">Signal
+        </option>
+        <option value="/examples/signal/input">Signal Input
+        </option>
+        <option value="/examples/zoneless/triggers">Zoneless Triggers
+        </option>
+      </select>
       <div class="flex mt-2">
         <p class="font-bold text-2xl text-gray-50 mr-5">{{ currentUser.firstname + ' ' + currentUser.lastname }}</p>
         <p class="font-bold text-2xl text-gray-50">Coins: {{ currentUser.money }}</p>

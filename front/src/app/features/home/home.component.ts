@@ -21,6 +21,10 @@ export class HomeComponent {
 
   bets = toSignal(inject(BetService).getBets());
 
+  constructor() {
+    console.log(this.raceState());
+  }
+
   startRace() {
     this.raceService.launchNextRace();
   }
