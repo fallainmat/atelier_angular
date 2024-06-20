@@ -14,43 +14,48 @@
       </button>
     </div>
   </div>
-  <div style="border: thick double #9CD9F0; width: 90%; padding: 10px; background-color: white">
-    <div style="display: flex; justify-content: space-between;">
-      <div style="display: flex; flex-direction: column">
-        <h1>Count: {{ count() }}</h1>
-        <h1>DoubleCount: {{ doubleCount() }}</h1>
+  <div style="border: thick double #9CD9F0; width: 90%; padding: 10px; background-color: white" class="rounded-md">
+    <div class="flex justify-between">
+      <div class="flex flex-col">
+        <h1 class="font-semibold leading-5">Count: {{ count() }}</h1>
+        <h1 class="font-semibold leading-5">DoubleCount: {{ doubleCount() }}</h1>
       </div>
-      <div style="display: flex; flex-direction: column">
-        <h1>CountObs: {{ countObs }}</h1>
-        <h1>DoubleCountObs: {{ doubleCountObs$ | async }}</h1>
+      <div class="flex flex-col">
+        <h1 class="font-semibold leading-5">CountObs: {{ countObs }}</h1>
+        <h1 class="font-semibold leading-5">DoubleCountObs: {{ doubleCountObs$ | async }}</h1>
       </div>
     </div>
-    <div style="margin-top: 50px; display: flex; justify-content: center">
-      <button (click)="resetValue()">Reset</button>
-      <button (click)="decrementValue()">Decrement</button>
-      <button (click)="incrementValue()">Increment</button>
+    <div class="flex justify-center mt-8">
+      <button (click)="resetValue()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-400 hover:bg-red-800">Reset</button>
+      <button (click)="decrementValue()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Decrement</button>
+      <button (click)="incrementValue()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Increment</button>
     </div>
   </div>
   @if (comptutedActivated) {
-    <div style="border: thick double #9CD9F0; width: 90%; padding: 10px">
-      <div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center">
-        <h1>{{ conditionalCount() }}</h1>
-        <button (click)="changeConditionalDouble()" style="margin-top: 40px">Je veux voir un
-          double count
+    <div style="border: thick double #9CD9F0; width: 90%; padding: 10px; background-color: white" class="m-1 rounded-md">
+      <div class="flex flex-col items-center mt-2">
+        <h1 class="font-semibold leading-5">{{ conditionalCount() }}</h1>
+        <button (click)="changeConditionalDouble()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Je veux voir un
+          count
         </button>
-      </div>
-      <div style="margin-top: 50px">
-        <button (click)="changeStopCount()">{{ stopCount ? 'REBOUGE' : 'ARRETE DE BOUGER' }} DOUBLE COUNT</button>
       </div>
     </div>
   }
 
   @if (effectActivated) {
     <div
-      style="border: thick double #9CD9F0; width: 90%; padding: 10px; display: flex; flex-direction: column; align-items: center">
+      style="border: thick double #9CD9F0; width: 90%; padding: 10px; display: flex; flex-direction: column; align-items: center; background-color: white"
+      class="m-1 rounded-md"
+    >
       <div>
-        <button (click)="changeDisplayChild()">remove child</button>
-        <button (click)="changeDisplayChild()">add child</button>
+        <button (click)="changeDisplayChild()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Remove child</button>
+        <button (click)="changeDisplayChild()" class="m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Add child</button>
       </div>
       <div style="margin: 20px 0">
         @if (displayChild) {

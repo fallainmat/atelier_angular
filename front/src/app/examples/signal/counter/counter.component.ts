@@ -43,7 +43,6 @@ export class CounterComponent implements OnInit {
     }
   });
 
-  stopCount: boolean = false;
   injector: Injector = inject(Injector);
   displayChild = false;
 
@@ -85,10 +84,6 @@ export class CounterComponent implements OnInit {
 
   changeConditionalDouble() {
     this.showCount.update((value) => !value);
-  }
-
-  changeStopCount() {
-    this.stopCount = !this.stopCount
   }
 
   changeDisplayChild() {
