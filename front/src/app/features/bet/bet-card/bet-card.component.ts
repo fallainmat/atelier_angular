@@ -19,7 +19,6 @@ import { FormsModule } from '@angular/forms';
 export class BetCardComponent {
   betConfig = input.required<BetModel>();
   betService = inject(BetService);
-  raceActivated = this.betService.raceActivated;
 
   protected readonly BetType = BetType;
 

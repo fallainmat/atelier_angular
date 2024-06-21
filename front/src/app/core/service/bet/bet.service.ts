@@ -1,8 +1,9 @@
-import { computed, effect, inject, Injectable, signal } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { distinctUntilChanged, map, Observable } from 'rxjs';
+import { distinctUntilChanged, map, Observable, switchMap } from 'rxjs';
 import { RaceService } from '../race/race.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { StatType } from '../robot/robot.model';
 
 export interface BetModel {
   id: string;
@@ -17,7 +18,7 @@ export interface RunnerModel {
   id: string;
   name: string;
   odds: string;
-  color?: string;
+  color: string;
 }
 
 export interface BetSelectedModel extends RunnerModel {
@@ -41,7 +42,6 @@ export enum BetStatus {
 
 export enum BetType {
   SIMPLE = 'simple',
-
 }
 
 export interface RaceModel {
@@ -52,12 +52,13 @@ export interface RaceModel {
   providedIn: 'root'
 })
 export class BetService {
-  race = signal<RaceModel>({ status: BetStatus.INACTIVE });
   betsSelected = signal<BetSelectedModel[]>([]);
-  raceActivated = computed(() => this.race().status === BetStatus.ACTIVE);
-  raceChange = toSignal(inject(RaceService).getCurrentRace$().pipe(
+
+  private raceService = inject(RaceService);
+  private raceChange = toSignal(this.raceService.getCurrentRace$().pipe(
     distinctUntilChanged((a, b) => a?.uuid === b?.uuid))
   );
+  private betsTypes = toSignal(inject(HttpClient).get<BetModel[]>('assets/mock/bet.json'))
 
   constructor(private httpClient: HttpClient) {
     effect(() => {
@@ -67,12 +68,25 @@ export class BetService {
   }
 
   getBets(): Observable<BetModel[]> {
-    return this.httpClient.get<{ betList: BetModel[] }>('assets/mock/bet.json').pipe(
-      map((res) => res.betList),
-      map((res) => res.map((bet: BetModel) => ({
-            ...bet,
-            runners: bet.runners.sort((a, b) => parseFloat(a.odds) - parseFloat(b.odds))
-          })
+    return this.httpClient.get<BetModel[]>('assets/mock/bet.json').pipe(
+      switchMap(bets => this.raceService.getRaceRobots$().pipe(
+          map(robots => robots.sort((a, b) => {
+            const aSpeed = a.stats.find(s => s.type === StatType.Speed)?.value || 0;
+            const bSpeed = b.stats.find(s => s.type === StatType.Speed)?.value || 0;
+            return aSpeed - bSpeed;
+          })),
+          map(robots => bets.map(bet => ({
+              ...bet,
+              runners: bet.runners
+                .slice(0, robots.length)
+                .map((runner, index) => ({
+                  ...runner,
+                  name: robots[index].name,
+                  color: robots[index].color
+                }))
+                .sort((a, b) => parseFloat(a.odds) - parseFloat(b.odds))
+            }))
+          )
         )
       )
     );

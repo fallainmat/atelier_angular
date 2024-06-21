@@ -1,282 +1,119 @@
-{
-  "betList": [
-    {
-      "name": "Vainqueur de la course",
-      "id": "1",
-      "status": "active",
-      "type": "simple",
-      "action": "win",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "5.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "13.5",
-          "color": "#ef4444"
-        }
-      ]
-
-    },
-    {
-      "name": "Second de la course",
-      "id": "2",
-      "status": "inactive",
-      "type": "simple",
-      "action": "second",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "4.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "2",
-          "color": "#4ade80"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "11.5",
-          "color": "#ef4444"
-        }
-      ]
-    },
-    {
-      "name": "Dernier de la course",
-      "id": "3",
-      "status": "active",
-      "type": "simple",
-      "action": "last",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "11.5",
-          "color": "#ef4444"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "7.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "8.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "1.5",
-          "color": "#4ade80"
-        }
-      ]
-    },
-    {
-      "name": "Vainqueur de la course",
-      "id": "1",
-      "status": "active",
-      "type": "simple",
-      "action": "win",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "5.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "13.5",
-          "color": "#ef4444"
-        }
-      ]
-
-    },
-    {
-      "name": "Vainqueur de la course",
-      "id": "1",
-      "status": "active",
-      "type": "simple",
-      "action": "win",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "5.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "13.5",
-          "color": "#ef4444"
-        }
-      ]
-
-    },
-    {
-      "name": "Vainqueur de la course",
-      "id": "1",
-      "status": "active",
-      "type": "simple",
-      "action": "win",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "5.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "13.5",
-          "color": "#ef4444"
-        }
-      ]
-
-    },
-    {
-      "name": "Vainqueur de la course",
-      "id": "1",
-      "status": "active",
-      "type": "simple",
-      "action": "win",
-      "runners": [
-        {
-          "id": "1",
-          "name": "Robot 1",
-          "odds": "1.5",
-          "color": "#4ade80"
-        },
-        {
-          "id": "2",
-          "name": "Robot 2",
-          "odds": "5.5",
-          "color": "#fb923c"
-        },
-        {
-          "id": "3",
-          "name": "Robot 3",
-          "odds": "2.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "4",
-          "name": "Robot 4",
-          "odds": "3.5",
-          "color": "#facc15"
-        },
-        {
-          "id": "5",
-          "name": "Robot 5",
-          "odds": "13.5",
-          "color": "#ef4444"
-        }
-      ]
-
-    }
-  ]
-}
+[
+  {
+    "name": "Vainqueur",
+    "id": "1",
+    "status": "active",
+    "type": "simple",
+    "action": "win",
+    "runners": [
+      {
+        "id": "1",
+        "name": "Robot 1",
+        "odds": "1.5",
+        "color": "#4ade80"
+      },
+      {
+        "id": "2",
+        "name": "Robot 2",
+        "odds": "5.5",
+        "color": "#fb923c"
+      },
+      {
+        "id": "3",
+        "name": "Robot 3",
+        "odds": "2.5",
+        "color": "#facc15"
+      },
+      {
+        "id": "4",
+        "name": "Robot 4",
+        "odds": "3.5",
+        "color": "#facc15"
+      },
+      {
+        "id": "5",
+        "name": "Robot 5",
+        "odds": "13.5",
+        "color": "#ef4444"
+      }
+    ]
+  },
+  {
+    "name": "Second",
+    "id": "2",
+    "status": "inactive",
+    "type": "simple",
+    "action": "second",
+    "runners": [
+      {
+        "id": "1",
+        "name": "Robot 1",
+        "odds": "2.5",
+        "color": "#facc15"
+      },
+      {
+        "id": "2",
+        "name": "Robot 2",
+        "odds": "4.5",
+        "color": "#facc15"
+      },
+      {
+        "id": "3",
+        "name": "Robot 3",
+        "odds": "1.5",
+        "color": "#4ade80"
+      },
+      {
+        "id": "4",
+        "name": "Robot 4",
+        "odds": "2",
+        "color": "#4ade80"
+      },
+      {
+        "id": "5",
+        "name": "Robot 5",
+        "odds": "11.5",
+        "color": "#ef4444"
+      }
+    ]
+  },
+  {
+    "name": "Dernier",
+    "id": "3",
+    "status": "active",
+    "type": "simple",
+    "action": "last",
+    "runners": [
+      {
+        "id": "1",
+        "name": "Robot 1",
+        "odds": "11.5",
+        "color": "#ef4444"
+      },
+      {
+        "id": "2",
+        "name": "Robot 2",
+        "odds": "3.5",
+        "color": "#facc15"
+      },
+      {
+        "id": "3",
+        "name": "Robot 3",
+        "odds": "7.5",
+        "color": "#fb923c"
+      },
+      {
+        "id": "4",
+        "name": "Robot 4",
+        "odds": "8.5",
+        "color": "#fb923c"
+      },
+      {
+        "id": "5",
+        "name": "Robot 5",
+        "odds": "1.5",
+        "color": "#4ade80"
+      }
+    ]
+  }
+]

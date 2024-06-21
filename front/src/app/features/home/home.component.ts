@@ -6,6 +6,7 @@ import { RaceService } from '../../core/service/race/race.service';
 import { RaceState } from '../../core/service/race/race.model';
 import { ListBettingComponent } from '../bet/list-betting/list-betting.component';
 import { RouterOutlet } from '@angular/router';
+import { RaceViewComponent } from '../race/race-view/race-view.component';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +14,19 @@ import { RouterOutlet } from '@angular/router';
   imports: [
     BetCardComponent,
     ListBettingComponent,
-    RouterOutlet
+    RouterOutlet,
+    RaceViewComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  host: {class: 'h-full'}
+  host: {class: 'h-full flex flex-col'}
 })
 export class HomeComponent {
   raceService = inject(RaceService);
 
   raceState = toSignal(this.raceService.getRaceState$());
 
+  // TODO Race change computed
   bets = toSignal(inject(BetService).getBets());
 
   startRace(raceDueTimeMs: number) {

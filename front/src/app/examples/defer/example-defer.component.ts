@@ -14,7 +14,8 @@ import { HugeComponentComponent } from './huge-component.component';
       }
       @placeholder () {
         <p>Huge component default content</p>
-      } @error {
+      }
+      @error {
         <p>Component creation error</p>
       }
       @loading (minimum 4000ms) {

@@ -11,8 +11,7 @@
                 <button
                   class="flex-auto w-32 h-8 pointer-events-auto rounded-md font-semibold text-white shadow-lg"
                   (click)="bet(runner, betConfig)"
-                  [disabled]="raceActivated()"
-                  [ngStyle]="{'background-color': (raceActivated() ? '#a8a29e' : runner.color) }"
+                  [ngStyle]="{'background-color': runner.color }"
                 >
                   {{ runner.odds }}
                 </button>

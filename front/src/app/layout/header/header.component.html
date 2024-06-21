@@ -1,5 +1,6 @@
 <div class="flex flex-col">
   <div class="flex justify-between">
+
     @if (currentUser(); as currentUser) {
       <div class="flex items-end">
         <p class="text-6xl font-bold text-gray-50">B</p>
@@ -7,22 +8,25 @@
         <p class="text-6xl font-bold text-gray-50">R</p>
         <p class="font-bold text-gray-50">ace</p>
       </div>
-      <select class="text-gray-600 rounded-md flex-1 content-center text-center font-bold text-1s max-w-36" (change)="onNavigate($event)">
-        <option value="/">Race
-        </option>
-        <option value="/examples/flow/syntaxe">Directive
-        </option>
-        <option value="/examples/flow/syntaxe">Syntaxe
-        </option>
-        <option value="/examples/defer/simple">Defer
-        </option>
-        <option value="/examples/signal/counter">Signal
-        </option>
-        <option value="/examples/signal/input">Signal Input
-        </option>
-        <option value="/examples/zoneless/triggers">Zoneless Triggers
-        </option>
-      </select>
+
+      <button (click)="toggleMenu()" class="relative flex items-center text-white">
+        Exemples
+        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+        <div [class.hidden]="!menuDisplayed()" class="absolute top-12 z-10 bg-white rounded-lg w-44 border-2">
+          <ul class="py-2 text-sm text-gray-700">
+            @for(item of menuItems; track item.title) {
+              <li>
+                <a [routerLink]="item.link" routerLinkActive="active" class="block px-4 py-2 hover:bg-gray-100">
+                  {{ item.title }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </button>
+
       <div class="flex mt-2">
         <p class="font-bold text-2xl text-gray-50 mr-5">{{ currentUser.firstname + ' ' + currentUser.lastname }}</p>
         <p class="font-bold text-2xl text-gray-50">Coins: {{ currentUser.money }}</p>

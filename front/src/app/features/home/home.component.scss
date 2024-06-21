@@ -2,6 +2,15 @@
   height: calc(100vh - 36rem);
 }
 
+.row-race {
+  min-height: 316px;
+}
+
+.row-main {
+  flex-grow: 1;
+}
+
+
 .col-bet {
   flex: 1;
 }
