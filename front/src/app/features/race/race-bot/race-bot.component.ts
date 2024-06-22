@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { RaceState } from '../../../core/service/race/race.model';
 import { Robot } from '../../../core/service/robot/robot.model';
 import { NgStyle } from '@angular/common';
@@ -14,6 +14,12 @@ import { NgStyle } from '@angular/common';
 })
 export class RaceBotComponent {
   robot = input.required<Robot>()
+
   trackLength = input.required<number>();
+
+  position = computed<number>(() => {
+    return this.robot().state.distanceTraveled / 1000 * this.trackLength()
+  })
+
   protected readonly RaceState = RaceState;
 }
