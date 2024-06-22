@@ -1,4 +1,4 @@
-import { Component, computed, effect, input, OnDestroy, signal } from '@angular/core';
+import { Component, computed, effect, input, signal } from '@angular/core';
 import { Race, RaceState } from '../../../core/service/race/race.model';
 
 @Component({
@@ -8,32 +8,25 @@ import { Race, RaceState } from '../../../core/service/race/race.model';
   templateUrl: './race-start-timer.component.html',
   styleUrl: './race-start-timer.component.scss'
 })
-export class RaceStartTimerComponent implements OnDestroy {
+export class RaceStartTimerComponent {
 
   race = input.required<Race | null>();
 
   raceRemainingTime = signal(0);
 
   raceTimer = computed(() => {
-    if (this.race()?.state === RaceState.BetsOpened) {
-      return this.raceRemainingTime()
-    } else {
-      return 0;
-    }
+    return this.race()?.state === RaceState.BetsOpened ? this.raceRemainingTime() : 0;
   });
 
   private raceTimerTask = 0;
 
   constructor() {
-    effect(() => {
+    effect((onCleanup) => {
       if (this.race()?.state === RaceState.BetsOpened) {
         this.startTimer();
       }
-    });
-  }
-
-  ngOnDestroy(): void {
-    clearInterval(this.raceTimerTask);
+      onCleanup(() => this.stopTimer());
+    })
   }
 
   private startTimer() {
@@ -42,8 +35,12 @@ export class RaceStartTimerComponent implements OnDestroy {
       const remainingTime = Math.ceil((endBetTime - new Date().getTime()) / 1000);
       this.raceRemainingTime.set(remainingTime);
       if (remainingTime <= 0) {
-        clearInterval(this.raceTimerTask);
+        this.stopTimer();
       }
     }, 1000);
+  }
+
+  private stopTimer() {
+    clearInterval(this.raceTimerTask);
   }
 }
