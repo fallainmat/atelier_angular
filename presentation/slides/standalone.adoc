@@ -3,9 +3,8 @@
 === !
 --
 [.module]
-image::images/standalone/component.png[]
+image::images/standalone/module.png[]
 --
-
 [%step]
 --
 [.component]
@@ -13,6 +12,7 @@ image::images/standalone/component.png[]
 --
 
 === !
+
 image::images/standalone/fusion.png[]
 
 === !
@@ -21,15 +21,14 @@ image::images/standalone/fusion.png[]
 [.module]
 image::images/standalone/component.png[]
 --
-
 --
 [.component]
-image::images/standalone/component.png[]
+image::images/standalone/module.png[]
 --
 [%step]
 --
 [.standalone]
-image::images/standalone/component.png[]
+image::images/standalone/standalone.png[]
 --
 
 === !
@@ -54,9 +53,18 @@ export class LayoutComponent {}
 * Préparation d'une nouvelle façon d'importer les composants.
 --
 
-=== Bootstrap Angular
+=== [.sub_title]#Bootstrap Angular#
 
-image::images/standalone/bootstrap-app.png[]
+[%step]
+--
+[.bootstrap-module]
+image::images/standalone/bootstrap-module.png[]
+--
+[%step]
+--
+[.bootstrap-application]
+image::images/standalone/bootstrap-application.png[]
+--
 
 [NOTE.speaker]
 --
@@ -65,10 +73,11 @@ image::images/standalone/bootstrap-app.png[]
 --
 
 
-=== Schematic Standalone
+=== [.sub_title]#Schematic Standalone#
 
-[script]
+[%step]
 --
+[.text]
 ng generate @angular/core:standalone
 --
 
