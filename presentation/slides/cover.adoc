@@ -1,4 +1,4 @@
-=== Angular change de logo, mais pas que!
+=== [.title]#Angular change de logo, mais pas que!#
 
 image::./images/common/logo_angular_17.png[width=250, align=center]
 
@@ -42,7 +42,7 @@ image::./images/onepoint.jpg[]
 * Présentation de Onepoint très rapide
 --
 
-=== Ecole
+=== !
 image::./images/ecole-onepoint.png[width=250, align=center]
 
 

@@ -1,5 +1,6 @@
 [.columns]
-== Quand Angular change de logo
+
+== !
 
 [.column.is-one-third]
 image::images/intro/angular/logo_angular_js.png[]
@@ -60,10 +61,7 @@ image::images/intro/angular/chronologie-angular2.png[]
 * Rappel que la documentation est en working progress aussi. Des éléments peuvent être manquants ou incomplets.
 --
 
-=== Présentation de RaceBot
-
-image::images/intro/bot-race/bot-race.png[]
-
+=== [.title]#Présentation de RaceBot#
 
 [NOTE.speaker]
 --

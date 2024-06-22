@@ -1,6 +1,6 @@
-== Standalone
+== [.title]#Standalone#
 
-=== Module
+=== [.title]#Module#
 
 image::images/standalone/module.png[]
 
