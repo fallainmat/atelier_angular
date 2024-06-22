@@ -1,9 +1,10 @@
-<div class="row-race col-span-12 rounded-md bg-sky-900 m-2">
+<div [appContainer]="'sky'" class="row-race col-span-12">
   <app-race-view/>
 </div>
 <div class="row-main m-2 flex container-bets">
-  <div class="col-control flex flex-col justify-between rounded-md bg-sky-900 mr-2  overflow-auto">
-    <div class=" grow grid grid-cols-3 rounded-md w-full">
+  <div [appContainer]="'sky'" [margin]="false"
+       class="col-control flex flex-col justify-between overflow-auto mr-2">
+    <div class="grow grid grid-cols-3 gap-2 m-2">
       @if (raceState() === RaceState.BetsOpened) {
         @for (bet of bets(); track bet.id) {
           <app-bet-card [betConfig]="bet"/>
@@ -13,19 +14,16 @@
       }
     </div>
     <div class="flex">
-      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
-  font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
-              (click)="startRace(2500000)">
-        Nouvelle course
-      </button>
-      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
-  font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500 "
-              (click)="startRace(8000)">
-        Course rapide
-      </button>
+      @for (raceOption of raceStartOptions; track raceOption.title) {
+        <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2 font-semibold leading-5
+                       text-white bet-button bg-red-600 hover:bg-red-500"
+                (click)="startRace(raceOption.timer)">
+          {{ raceOption.title }}
+        </button>
+      }
     </div>
   </div>
-  <div class="col-bet col-span-3 rounded-md bg-sky-900">
+  <div [appContainer]="'sky'" [margin]="false" class="col-bet col-span-3">
     <app-list-betting/>
   </div>
 </div>

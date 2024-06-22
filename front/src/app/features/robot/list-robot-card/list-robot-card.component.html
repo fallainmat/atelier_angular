@@ -1,5 +1,6 @@
-<a *ngIf="robot" [routerLink]="'robot-detail/' + robot.name" routerLinkActive>
-  <div class="flex flex-col m-1 p-2 rounded-md shadow-inner-xl bg-slate-200">
+<a *ngIf="robot"
+   [routerLink]="'robot-detail/' + robot.name" routerLinkActive>
+  <div [appContainer]="'light'" [margin]="false" class="flex flex-col mr-2">
     <h2 class="text-gray-600 flex-1 content-center text-center font-bold text-1s">{{ robot.name}}</h2>
     <ul>
       @for(stat of robot.stats; track stat.type) {
