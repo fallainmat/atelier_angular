@@ -1,4 +1,6 @@
-== ZoneJS
+== [.title]#Signal#
+
+=== [.title]#Zone.js#
 
 [NOTE.speaker]
 --
@@ -95,7 +97,7 @@ image::images/signal/last1sub2child2a.png[]
 * Il n'y a qu'un seul impact sur le composant subChild2.
 --
 
-=== Signal
+=== [.title]#Signal#
 
 [%step]
 RFC https://github.com/angular/angular/discussions/49685
@@ -161,7 +163,7 @@ image::images/signal/sub2child2i.png[]
 image::images/signal/sub2child2a.png[]
 --
 
-=== Signal Writable
+=== [.title]#Signal Writable#
 
 [%step.defer-2-col]
 
@@ -188,7 +190,7 @@ export class AppComponent {
 <p>{{count()}}</p>
 ----
 
-=== Signaux Read-only
+=== [.title]#Signaux Read-only#
 
 [%step.defer-2-col]
 
@@ -196,7 +198,7 @@ export class AppComponent {
 * Effect
 
 [%auto-animate]
-=== Computed
+=== [.title]#Computed#
 
 === !
 
@@ -228,7 +230,7 @@ export class AppComponent {
 ----
 
 [%auto-animate]
-=== Effect
+=== [.title]#Effect#
 
 [%auto-animate]
 === !
@@ -260,21 +262,21 @@ export class AppComponent {
 
 image::images/common/demo.png[]
 
-=== Preview TIME
+=== [.title]#Preview Time#
 
 image::images/signal/slalom.gif[]
 
-=== Signal Input
+=== [.title]#Signal Input#
 
-=== Signal Model
+=== [.title]#Signal Model#
 
-=== Signal Queries
-
-[%auto-animate]
-=== HttpClient
+=== [.title]#Signal Queries#
 
 [%auto-animate]
-=== HttpClient
+=== [.title]#HttpClient#
+
+[%auto-animate]
+=== [.title]#HttpClient#
 
 [%step.defer-2-col]
 * toSignal()
@@ -307,3 +309,7 @@ export class TestComponent {
     $test2: Observable<number> = toObservable(this.test);
 }
 ----
+
+=== !
+
+image::images/signal/signal-observable.png[]
