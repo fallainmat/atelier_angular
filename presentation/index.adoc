@@ -5,6 +5,7 @@
 :revealjs_theme: white
 :revealjs_history: true
 :customcss: custom.css
+:revealjs_width: 1280
 
 include::slides/cover.adoc[]
 include::slides/intro.adoc[]

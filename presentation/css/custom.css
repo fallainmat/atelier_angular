@@ -76,6 +76,91 @@ video {
 
 /* intro */
 
+.frise {
+  position: relative;
+  margin-top: 10%;
+}
+
+.frise-step {
+  position: relative;
+  margin-top: -10%;
+}
+
+.frise .frise-background img {
+  width: 150%;
+}
+
+.frise-item {
+  position: absolute;
+}
+
+.frise-item img {
+  width: 50px;
+}
+
+.frise-top {
+  top: -35px;
+}
+
+.frise-bottom {
+  top: 65px;
+}
+
+.frise-date,
+.frise-text {
+  position: absolute;
+  font-size: 0.6em;
+  color: rgb(75, 75, 75);
+  font-weight: bold;
+  text-align: center;
+  max-width: 100px;
+}
+
+.frise-text {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.frise-text.frise-bottom {
+  margin-top: 80px;
+  margin-left: -60px;
+  width: 180px;
+  max-width: 180px;
+}
+
+.frise-date p {
+  line-height: 2.0em;
+}
+
+.frise-item-ng1 {
+  left: 38px;
+}
+
+.frise-item-ng2 {
+  left: 168px;
+}
+
+.frise-item-mat5 {
+  left: 310px;
+}
+
+.frise-item-rx6 {
+  left: 478px;
+}
+
+.frise-item-ivy {
+  left: 668px;
+}
+
+.frise-item-ng2022 {
+  left: 878px;
+}
+
+.frise-item-ngnew {
+  left: 1090px;
+}
+
 /* standalone */
 
 .module {

@@ -69,7 +69,7 @@ Planifier dès maintenant
 
 [%step]
 --
-⚠️ Attention à ce qui est encore en developper preview
+⚠️ Attention à ce qui est encore en _developer preview_
 --
 
 [NOTE.speaker]

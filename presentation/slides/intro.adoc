@@ -15,28 +15,114 @@ image::images/common/logo_angular_17.png[]
 * Petit laïus sur les logos Onepoint en lien avec le titre de la conférence
 --
 
-=== Chronologie
+=== 12 ans...
 
-image::images/intro/angular/chronologie-angular1.png[]
+// image::images/intro/angular/chronologie-angular1.png[]
 
+[.frise]
+--
+
+[.frise-background]
+image::./images/intro/angular/frise-chrono-vide.drawio.svg[]
+--
+
+// ng1
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-ng1]
+2012
+
+[.frise-item.frise-bottom.frise-item-ng1]
+image::./images/intro/angular/logo_angular_js.png[]
+--
+
+// ng2
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-bottom.frise-item-ng2]
+2016
+
+[.frise-item.frise-top.frise-item-ng2]
+image::./images/intro/angular/Angular_full_color_logo.png[]
+--
+
+// mat
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-mat5]
+2017
+
+[.frise-item.frise-bottom.frise-item-mat5]
+image::./images/intro/angular/material.png[]
+[.frise-text.frise-bottom.frise-item-mat5]
+ng update +
+Material 5 +
+PWA
+--
+
+// rxjs6
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-bottom.frise-item-rx6]
+2018
+
+[.frise-item.frise-top.frise-item-rx6]
+image::./images/intro/angular/logo-rxjs.png[]
+[.frise-text.frise-bottom.frise-item-rx6]
+RxJs 6 +
+Custom Element
+--
+
+// ivy
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-ivy]
+2020
+
+[.frise-item.frise-bottom.frise-item-ivy]
+image::./images/intro/angular/Angular_IVY_logo.png[]
+[.frise-text.frise-bottom.frise-item-ivy]
+Webpack 5
+--
+
+// ng 2022
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-bottom.frise-item-ng2022]
+2022
+
+[.frise-item.frise-top.frise-item-ng2022]
+image::./images/intro/angular/Angular_full_color_logo.png[]
+[.frise-text.frise-bottom.frise-item-ng2022]
+Standalone +
+Typed forms +
+Host Directive
+--
+
+// ng new
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-ngnew]
+2023
+
+[.frise-item.frise-bottom.frise-item-ngnew]
+image::./images/common/logo_angular_17.png[]
+[.frise-text.frise-bottom.frise-item-ngnew]
+Signal +
+Defer +
+Esbuild
+ControlFlow
+--
 
 [NOTE.speaker]
 --
-* Présentation des 10 premières versions d'Angular
-* Prendre un peu de temps pour présenter le breaking change de 2015, Ecmascript 6 et la refonte d'Angular vers sa version 2.
-* RXJS est arrivé directement en version 5 et il est devenu un élément central de l'écosystème Angular sur la version 6.
---
-
-=== Chronologie
-
-image::images/intro/angular/chronologie-angular2.png[]
-
-
-[NOTE.speaker]
---
-* Changement de gouvernance côté Angular
-* Sollicitation de la communauté pour les versions ou les nouveautés proposées
-* RFC sur Signal a marqué un tournant dans le framework
+* Présentation des 12 dernières années
+* AngularJS un autre framework (petite révolution)
+* Mais une autre révolution (React) a forcé à revoir la copie (ng2)
+* v3 ? Quelle v3 ?
+* Des évolution régulières
+* Petit creux entre v9 (2020) et v14 (2022)
+* Coup d'accelerateur avec les changements de gouvernance
 --
 
 === Philosophie du Framework
