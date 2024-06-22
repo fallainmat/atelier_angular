@@ -1,14 +1,14 @@
 <div class="row-race col-span-12 rounded-md bg-sky-900 m-2">
-  <app-race-view />
+  <app-race-view/>
 </div>
 <div class="row-main m-2 flex container-bets">
   <div class="col-control flex flex-col justify-between rounded-md bg-sky-900 mr-2  overflow-auto">
     <div class=" grow grid grid-cols-3 rounded-md w-full">
       @if (raceState() === RaceState.BetsOpened) {
-        @for (bet of bets(); track bet) {
+        @for (bet of bets(); track bet.id) {
           <app-bet-card [betConfig]="bet"/>
         } @empty {
-          <div>No bets found</div>
+          <div class="text-white m-2">No bets found</div>
         }
       }
     </div>

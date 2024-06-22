@@ -29,6 +29,13 @@ export class RaceService {
     );
   }
 
+  newRace$(): Observable<Race> {
+    return this.getCurrentRace$().pipe(
+      filter((race): race is Race  => race !== null),
+      distinctUntilChanged((a, b) => a?.uuid === b?.uuid)
+    )
+  }
+
   getRaceRobots$() {
     return this.getCurrentRace$().pipe(
       filter((race): race is Race  => race !== null),

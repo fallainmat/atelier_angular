@@ -1,28 +1,19 @@
 @if (betConfig(); as betConfig) {
-  <div class="m-2 rounded-md shadow-inner-xl bg-slate-200">
-    @switch (betConfig.type) {
-      @case (BetType.SIMPLE) {
-        <div class="flex flex-col p-2">
-          <p class="mb-4 font-bold text-base">{{ betConfig.name }}</p>
-          <div class="flex flex-col">
-            @for (runner of betConfig.runners; track runner) {
-              <div class="flex mb-2">
-                <div class="flex-auto w-64 text-sm content-center font-bold">{{ runner.name }}</div>
-                <button
-                  class="flex-auto w-32 h-8 pointer-events-auto rounded-md font-semibold text-white shadow-lg"
-                  (click)="bet(runner, betConfig)"
-                  [ngStyle]="{'background-color': runner.color }"
-                >
-                  {{ runner.odds }}
-                </button>
-              </div>
-            }
-          </div>
+  <div class="p-2 m-2 rounded-md shadow-inner-xl bg-slate-200">
+    <p class="mb-4 font-bold text-base">{{ betConfig.name }}</p>
+    <div class="flex flex-col">
+      @for (runner of betConfig.runners; track runner.id) {
+        <div class="flex mb-2">
+          <div class="w-64 text-sm content-center font-bold">{{ runner.name }}</div>
+          <button
+            class="w-32 h-8 pointer-events-auto rounded-md font-semibold text-white shadow-lg"
+            (click)="bet(runner, betConfig)"
+            [ngStyle]="{'background-color': runner.color }"
+          >
+            {{ runner.odds }}
+          </button>
         </div>
       }
-      @default {
-        PAS DE TYPE
-      }
-    }
+    </div>
   </div>
 }

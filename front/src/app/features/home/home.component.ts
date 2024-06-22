@@ -27,7 +27,7 @@ export class HomeComponent {
   raceState = toSignal(this.raceService.getRaceState$());
 
   // TODO Race change computed
-  bets = toSignal(inject(BetService).getBets());
+  bets = inject(BetService).bets;
 
   startRace(raceDueTimeMs: number) {
     this.raceService.launchNextRace(raceDueTimeMs);
