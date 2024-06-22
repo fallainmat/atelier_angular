@@ -17,5 +17,5 @@ import { Robot } from '../../../core/service/robot/robot.model';
   styleUrl: './list-robot-card.component.scss'
 })
 export class ListRobotCardComponent {
-  @Input({ required: true }) robot: Robot | null = null;
+  @Input({ required: true }) robot!: Robot;
 }

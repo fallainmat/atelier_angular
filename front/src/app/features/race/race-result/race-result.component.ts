@@ -10,7 +10,7 @@ import { Race } from '../../../core/service/race/race.model';
   styleUrl: './race-result.component.scss'
 })
 export class RaceResultComponent {
-  race = input<Race | null | undefined>();
+  race = input.required<Race | null>();
 
   courseResult = computed<Array<Robot>>(() => {
     const race = this.race();
