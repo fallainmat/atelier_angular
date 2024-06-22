@@ -1,5 +1,7 @@
 :root {
   --ng-gradient: linear-gradient(90deg, rgba(133,20,245,1) 0%, rgba(253,29,29,1) 92%, rgba(250,44,5,1) 100%);
+  --sub_title: #313178;
+  --list: #6a6af4;
 }
 /* Global */
 video {
@@ -11,6 +13,28 @@ video {
   background: var(--ng-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.sub_title {
+  font-family: system-ui;
+  color: var(--sub_title);
+  font-style: italic;
+}
+
+.list ul {
+  columns: 2;
+  column-gap: 160px;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.list ul li {
+  list-style: none;
+  color: var(--list);
+  font-weight: bold;
+  font-style: italic;
+  padding-top: 1px;
+
 }
 
 /* Cover */
@@ -46,6 +70,36 @@ video {
 /* intro */
 
 /* standalone */
+
+.module {
+  position: absolute;
+  top: -150px;
+  left: -100px;
+}
+
+.component {
+  position: absolute;
+  top: -150px;
+  left: 450px;
+}
+
+.standalone {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.module-declaration {
+  position: absolute;
+  top: 160px;
+  left: 150px;
+}
+
+.module-declaration {
+  position: absolute;
+  top: 160px;
+  left: 150px;
+}
 
 /* control-flow */
 

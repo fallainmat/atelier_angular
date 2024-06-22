@@ -1,6 +1,6 @@
 == [.title]#Signal#
 
-=== [.title]#Zone.js#
+=== [.sub_title]#Zone.js#
 
 [NOTE.speaker]
 --
@@ -97,7 +97,7 @@ image::images/signal/last1sub2child2a.png[]
 * Il n'y a qu'un seul impact sur le composant subChild2.
 --
 
-=== [.title]#Signal#
+=== [.sub_title]#Signal#
 
 [%step]
 RFC https://github.com/angular/angular/discussions/49685
@@ -163,9 +163,9 @@ image::images/signal/sub2child2i.png[]
 image::images/signal/sub2child2a.png[]
 --
 
-=== [.title]#Signal Writable#
+=== [.sub_title]#Signal Writable#
 
-[%step.defer-2-col]
+[%step.list]
 
 * Signal
 
@@ -190,15 +190,15 @@ export class AppComponent {
 <p>{{count()}}</p>
 ----
 
-=== [.title]#Signaux Read-only#
+=== [.sub_title]#Signaux Read-only#
 
-[%step.defer-2-col]
+[%step.list]
 
 * Computed
 * Effect
 
 [%auto-animate]
-=== [.title]#Computed#
+=== [.sub_title]#Computed#
 
 === !
 
@@ -230,7 +230,7 @@ export class AppComponent {
 ----
 
 [%auto-animate]
-=== [.title]#Effect#
+=== [.sub_title]#Effect#
 
 [%auto-animate]
 === !
@@ -252,33 +252,28 @@ export class AppComponent {
   }
 }
 ----
-
-[NOTE.speaker]
---
-* L'ensemble de l'effect est exécuté à chaque fois que le signal count est modifié.
---
-
 === !
 
 image::images/common/demo.png[]
 
-=== [.title]#Preview Time#
+=== [.sub_title]#Preview Time#
 
 image::images/signal/slalom.gif[]
 
-=== [.title]#Signal Input#
+=== !
 
-=== [.title]#Signal Model#
-
-=== [.title]#Signal Queries#
-
-[%auto-animate]
-=== [.title]#HttpClient#
+[%step.list]
+* Signal Input
+* Signal Model
+* Signal Queries
 
 [%auto-animate]
-=== [.title]#HttpClient#
+=== [.sub_title]#Observable#
 
-[%step.defer-2-col]
+[%auto-animate]
+=== [.sub_title]#Observable#
+
+[%step.list]
 * toSignal()
 * toObservable()
 

@@ -1,44 +1,35 @@
 == [.title]#Standalone#
 
-=== [.title]#Module#
+=== !
+--
+[.module]
+image::images/standalone/component.png[]
+--
 
-image::images/standalone/module.png[]
+[%step]
+--
+[.component]
+image::images/standalone/component.png[]
+--
 
 === !
-[source,javascript,highlight="1|2,12|3..5|6..11"]
-----
-@NgModule({
-    declarations: [LayoutComponent],
-    imports: [
-        CommonModule
-    ],
-    providers: [
-        TestService,
-        { provide: Test2Service,
-          useClass: OverTest2Service
-        }
-    ],
-    exports: [LayoutComponent]
-})
-export class LayoutModule {}
-----
+image::images/standalone/fusion.png[]
 
+=== !
 
-[NOTE.speaker]
 --
-* Présentation d'un module Angular, valider le visuel sur les providers, "Quelques questionnements dessus".
-* Présentation des différentes parties du module.
+[.module]
+image::images/standalone/component.png[]
 --
 
-=== Standalone Component
-
-image::images/standalone/standalone.png[]
-
-
-[NOTE.speaker]
 --
-* Présentation de composant Standalone.
-* Les enjeux de cette refonte, historique "Travail à voir dessus".
+[.component]
+image::images/standalone/component.png[]
+--
+[%step]
+--
+[.standalone]
+image::images/standalone/component.png[]
 --
 
 === !
