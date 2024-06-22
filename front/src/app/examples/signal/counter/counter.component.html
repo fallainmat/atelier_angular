@@ -1,20 +1,27 @@
 <div class="flex flex-col items-center">
   <div>
-    <div>
-      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
-    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500">Signal
-      </button>
-      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    <div class="mt-8">
+      <a class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
     font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500"
-              (click)="comptutedActivated = !comptutedActivated">Computed
-      </button>
-      <button class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+         [class.active]="type() === 'signal'"
+         routerLink="/examples/signal/counter" [queryParams]="{type: 'signal'}"
+      >Signal
+      </a>
+      <a class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
     font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500"
-              (click)="effectActivated = !effectActivated">Effect
-      </button>
+         [class.active]="type() === 'computed'"
+         routerLink="/examples/signal/counter" [queryParams]="{type: 'computed'}">
+        Computed
+      </a>
+      <a class="flex-1 m-2 h-12 pointer-events-auto rounded-md p-2
+    font-semibold leading-5 text-white bet-button bg-red-600 hover:bg-red-500"
+         [class.active]="type() === 'effect'"
+         routerLink="/examples/signal/counter" [queryParams]="{type: 'effect'}"
+      >Effect
+      </a>
     </div>
   </div>
-  <div class="border-solid border-blue-600 border-4 w-full rounded">
+  <div class="border-solid border-blue-600 border-4 w-11/12 rounded p-8 m-8">
     <div class="flex justify-between">
       <div class="flex flex-col">
         <h1 class="font-semibold leading-5">Count: {{ count() }}</h1>
@@ -34,8 +41,8 @@
     font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Increment</button>
     </div>
   </div>
-  @if (comptutedActivated) {
-    <div style="border: thick double #9CD9F0; width: 90%; padding: 10px; background-color: white" class="m-1 rounded-md">
+  @if (type() === 'computed') {
+    <div class="border-solid border-blue-600 border-4 w-11/12 rounded p-8 m-8">
       <div class="flex flex-col items-center mt-2">
         <h1 class="font-semibold leading-5">{{ conditionalCount() }}</h1>
         <button (click)="changeConditionalDouble()" class="m-2 h-12 pointer-events-auto rounded-md p-2
@@ -46,11 +53,8 @@
     </div>
   }
 
-  @if (effectActivated) {
-    <div
-      style="border: thick double #9CD9F0; width: 90%; padding: 10px; display: flex; flex-direction: column; align-items: center; background-color: white"
-      class="m-1 rounded-md"
-    >
+  @if (type() === 'effect') {
+    <div class="border-solid border-blue-600 border-4 w-11/12 rounded p-8 m-8">
       <div>
         <button (click)="changeDisplayChild()" class="m-2 h-12 pointer-events-auto rounded-md p-2
     font-semibold leading-5 text-white bet-button bg-cyan-400 hover:bg-cyan-800">Remove child</button>

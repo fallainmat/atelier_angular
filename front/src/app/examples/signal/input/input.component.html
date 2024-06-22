@@ -1,11 +1,10 @@
-<div
-  style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; margin-top: 20px;">
-  <div>
-    <h1 class="font-semibold leading-5 text-amber-50 mb-3"> Je suis check : {{ checked() }}</h1>
-    <h1 class="font-semibold leading-5 text-amber-50 mb-8"> Je suis disabled : {{ disabled() }}</h1>
+<div class="w-full flex flex-col justify-center items-center">
+  <div class="mt-24">
+    <h1 class="font-semibold leading-5 mb-12"> Je suis check : {{ checked() }}</h1>
+    <h1 class="font-semibold leading-5"> Je suis disabled : {{ disabled() }}</h1>
   </div>
 
-  <div>
+  <div class="mt-24">
     <app-input-child [disabled]="disabled()" [(checked)]="checked"></app-input-child>
   </div>
 </div>

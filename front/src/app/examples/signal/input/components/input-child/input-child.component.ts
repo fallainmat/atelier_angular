@@ -1,7 +1,5 @@
 import {Component, input, model} from '@angular/core';
-import {toObservable, toSignal} from "@angular/core/rxjs-interop";
 import {AsyncPipe} from "@angular/common";
-import {map} from "rxjs";
 
 @Component({
   selector: 'app-input-child',

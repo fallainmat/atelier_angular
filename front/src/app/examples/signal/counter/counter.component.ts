@@ -2,9 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  DestroyRef,
   effect,
   inject,
-  Injector,
+  Injector, input,
   OnInit,
   Signal,
   signal,
@@ -14,7 +15,8 @@ import {BehaviorSubject, map, Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {CounterChildComponent} from "./components/counter-child/counter-child.component";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {NasaService} from "../../../core/service/test/nasa.service";
 
 @Component({
   selector: 'app-counter',
@@ -30,9 +32,15 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterComponent implements OnInit {
+  type = input<string>();
+
+  router = inject(Router);
+  destroyRef = inject(DestroyRef);
+  newNasaService = inject(NasaService);
+  injector = inject(Injector);
+
   count: WritableSignal<number> = signal(0);
   doubleCount: Signal<number> = computed(() => this.count() * 2);
-
 
   showCount = signal(false);
   conditionalCount = computed(() => {
@@ -43,13 +51,11 @@ export class CounterComponent implements OnInit {
     }
   });
 
-  injector: Injector = inject(Injector);
   displayChild = false;
 
   countObs$ = new BehaviorSubject(0);
   doubleCountObs$: Observable<number> = this.countObs$.pipe(map(value => value * 2));
   countObs: number = 0;
-
 
   comptutedActivated = false;
   effectActivated = false;
@@ -59,9 +65,7 @@ export class CounterComponent implements OnInit {
       this.countObs = value
     });
     effect(() => {
-      console.log(this.count);
     });
-
   }
 
   ngOnInit() {
@@ -88,5 +92,15 @@ export class CounterComponent implements OnInit {
 
   changeDisplayChild() {
     this.displayChild = !this.displayChild;
+  }
+
+  sectionChange(type: string) {
+    this.router.navigate([`/examples/signal/counter`],{ queryParams: { type } });
+  }
+
+  getNasaApi() {
+    let date = new Date();
+    date.setMonth(date.getMonth() - 1);
+    this.newNasaService.getListOfDailyImages(date).pipe(takeUntilDestroyed(this.destroyRef)).subscribe();
   }
 }
