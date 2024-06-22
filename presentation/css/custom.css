@@ -87,13 +87,49 @@ video {
 .component {
   position: absolute;
   top: -150px;
-  left: 450px;
+  left: 420px;
 }
 
 .standalone {
   position: absolute;
   top: 150px;
-  left: 150px;
+  left: -100px;
+}
+
+.declarations {
+  position: absolute;
+  top: -90px;
+  left: -60px;
+}
+
+.imports {
+  position: absolute;
+  top: -90px;
+  left: 95px;
+}
+
+.providers {
+  position: absolute;
+  top: -90px;
+  left: 250px;
+}
+
+.exports {
+  position: absolute;
+  top: 0;
+  left: -60px;
+}
+
+.schemas {
+  position: absolute;
+  top: 0;
+  left: 95px;
+}
+
+.autres {
+  position: absolute;
+  top: 0;
+  left: 250px;
 }
 
 .module-declaration {
@@ -106,6 +142,102 @@ video {
   position: absolute;
   top: 160px;
   left: 150px;
+}
+
+.selector {
+  position: absolute;
+  top: -90px;
+  left: 460px;
+}
+
+.templateUrls {
+  position: absolute;
+  top: -90px;
+  left: 615px;
+}
+
+.styleUrls {
+  position: absolute;
+  top: -90px;
+  left: 770px;
+}
+
+.changeDetection {
+  position: absolute;
+  top: 0;
+  left: 460px;
+}
+
+.encapsulation {
+  position: absolute;
+  top: 0;
+  left: 615px;
+}
+
+.autres-component {
+  position: absolute;
+  top: 0;
+  left: 770px;
+}
+
+.standalone-standalone {
+  position: absolute;
+  top: 200px;
+  left: -40px;
+}
+
+.imports-standalone {
+  position: absolute;
+  top: 300px;
+  left: -40px;
+}
+
+.schemas-standalone {
+  position: absolute;
+  top: 200px;
+  left: 115px;
+}
+
+.providers-standalone {
+  position: absolute;
+  top: 300px;
+  left: 115px;
+}
+
+.selector-standalone {
+  position: absolute;
+  top: 200px;
+  left: 270px;
+}
+
+.changeDetection-standalone {
+  position: absolute;
+  top: 300px;
+  left: 270px;
+}
+
+.templateUrls-standalone {
+  position: absolute;
+  top: 200px;
+  left: 425px;
+}
+
+.encapsulation-standalone {
+  position: absolute;
+  top: 300px;
+  left: 425px;
+}
+
+.styleUrls-standalone {
+  position: absolute;
+  top: 200px;
+  left: 580px;
+}
+
+.autres-standalone {
+  position: absolute;
+  top: 300px;
+  left: 580px;
 }
 
 /* control-flow */
