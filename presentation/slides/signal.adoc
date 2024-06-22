@@ -267,6 +267,10 @@ image::images/signal/slalom.gif[]
 * Signal Model
 * Signal Queries
 
+=== !
+
+image::images/common/demo.png[]
+
 [%auto-animate]
 === [.sub_title]#Observable#
 
