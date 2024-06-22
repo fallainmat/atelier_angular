@@ -1,16 +1,4 @@
-== Signal
-
-[NOTE.speaker]
-****
-Signal est arrivé avec Angular 16 suite à la RFC https://github.com/angular/angular/discussions/49685.
-****
-
-
-=== Detection de changement avant Signal
-
-=== !
-
-Zone.js planifie la détection de changement.
+== ZoneJS
 
 [NOTE.speaker]
 --
@@ -20,7 +8,86 @@ Zone.js planifie la détection de changement.
 
 === !
 
-image::images/signal/event.png[]
+--
+[.arbo]
+image::images/signal/app.png[]
+
+--
+
+[%step]
+--
+[.arbo-2-1]
+image::images/signal/child1.png[]
+
+[.arbo-2-2]
+image::images/signal/child2.png[]
+--
+
+[%step]
+--
+[.arbo-3-1]
+image::images/signal/sub1child1.png[]
+
+[.arbo-3-2]
+image::images/signal/sub2child1.png[]
+
+[.arbo-3-3]
+image::images/signal/sub1child2.png[]
+
+[.arbo-3-4]
+image::images/signal/sub2child2.png[]
+--
+
+[%step]
+--
+[.arbo-4-1]
+image::images/signal/last1sub1child1.png[]
+
+[.arbo-4-2]
+image::images/signal/last2sub1child1.png[]
+
+[.arbo-4-3]
+image::images/signal/last1sub2child1.png[]
+
+[.arbo-4-4]
+image::images/signal/last1sub1child2.png[]
+
+[.arbo-4-5]
+image::images/signal/last1sub2child2.png[]
+
+[.arbo-4-6]
+image::images/signal/last2sub2child2.png[]
+--
+
+[%step]
+--
+[.arbo-2-2]
+image::images/signal/child2a.png[]
+--
+
+[%step]
+--
+[.arbo-3-4]
+image::images/signal/sub2child2i.png[]
+--
+
+[%step]
+--
+[.arbo-3-3]
+image::images/signal/sub1child2a.png[]
+[.arbo-3-4]
+image::images/signal/sub2child2a.png[]
+--
+
+[%step]
+--
+[.arbo-4-4]
+image::images/signal/last1sub1child2a.png[]
+[.arbo-4-5]
+image::images/signal/last1sub2child2a.png[]
+[.arbo-4-6]
+image::images/signal/last1sub2child2a.png[]
+--
 
 [NOTE.speaker]
 --
@@ -28,44 +95,75 @@ image::images/signal/event.png[]
 * Il n'y a qu'un seul impact sur le composant subChild2.
 --
 
+=== Signal
+
+[%step]
+RFC https://github.com/angular/angular/discussions/49685
+
 === !
 
-image::images/signal/zone.png[]
-
-=== Detection de changement avec Signal
-
-[NOTE.speaker]
 --
-* Le principe de propagation est explicite dans le visuel.
-* La propagation est propagé sur tous les enfants.
+[.arbo]
+image::images/signal/app.png[]
+
+[.arbo-2-1]
+image::images/signal/child1.png[]
+
+[.arbo-2-2]
+image::images/signal/child2.png[]
+
+[.arbo-3-1]
+image::images/signal/sub1child1.png[]
+
+[.arbo-3-2]
+image::images/signal/sub2child1.png[]
+
+[.arbo-3-3]
+image::images/signal/sub1child2.png[]
+
+[.arbo-3-4]
+image::images/signal/sub2child2.png[]
+
+[.arbo-4-1]
+image::images/signal/last1sub1child1.png[]
+
+[.arbo-4-2]
+image::images/signal/last2sub1child1.png[]
+
+[.arbo-4-3]
+image::images/signal/last1sub2child1.png[]
+
+[.arbo-4-4]
+image::images/signal/last1sub1child2.png[]
+
+[.arbo-4-5]
+image::images/signal/last1sub2child2.png[]
+
+[.arbo-4-6]
+image::images/signal/last2sub2child2.png[]
 --
 
-=== !
+[%step]
+--
+[.arbo-2-2]
+image::images/signal/child2a.png[]
+--
 
-Un signal est modifié, il va émettre qu'auprès des composants qui consomment ce signal.
+[%step]
+--
+[.arbo-3-4]
+image::images/signal/sub2child2i.png[]
+--
 
-=== !
+[%step]
+--
+[.arbo-3-4]
+image::images/signal/sub2child2a.png[]
+--
 
-image::images/signal/event.png[]
-
-=== !
-
-image::images/signal/signal.png[]
-
-=== C'est quoi un signal ?
-
-=== !
-
-Deux Types de Signaux
-
-* Writable
-* Read-only
-
-[%auto-animate]
 === Signal Writable
 
-[%auto-animate]
-=== Signal Writable
+[%step.defer-2-col]
 
 * Signal
 
@@ -90,11 +188,9 @@ export class AppComponent {
 <p>{{count()}}</p>
 ----
 
-[%auto-animate]
 === Signaux Read-only
 
-[%auto-animate]
-=== Signaux Read-only
+[%step.defer-2-col]
 
 * Computed
 * Effect
@@ -170,44 +266,17 @@ image::images/signal/slalom.gif[]
 
 === Signal Input
 
-Nouvelle façon d'utiliser l'input dans un composant enfant. input()
-
-[%auto-animate]
-=== Signal Input
-
-Pourquoi utiliser input() au lieu du décorateur @Input() ?
-
-[%auto-animate]
 === Signal Model
 
-Nouvelle façon d'utiliser l'input/output dans un seul "signal". plus besoin de faire un set/update pour changer la valeur.
-
-[%auto-animate]
 === Signal Queries
 
-On dénombre 2 types de Query :
-
-- View Queries.
-- Content Queries.
-
-[%auto-animate]
-=== Signal Queries
-
-View remplace ViewChild et Content remplace ContentChild.
-
 [%auto-animate]
 === HttpClient
 
 [%auto-animate]
 === HttpClient
 
-Pourquoi je vous parle d'HttpClient ?
-
-HttpClient fonctionne toujours avec les observables
-
-[%auto-animate]
-=== HttpClient
-
+[%step.defer-2-col]
 * toSignal()
 * toObservable()
 

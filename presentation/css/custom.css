@@ -148,6 +148,82 @@ video {
 
 /* signal */
 
+.arbo {
+  position: absolute;
+  bottom: 100px;
+  left: 400px
+}
+
+.arbo-2-1 {
+  position: absolute;
+  bottom: 25px;
+  left: 320px
+}
+
+.arbo-2-2 {
+  position: absolute;
+  bottom: 25px;
+  left: 480px
+}
+
+.arbo-3-1 {
+  position: absolute;
+  bottom: -50px;
+  left: 160px
+}
+
+.arbo-3-2 {
+  position: absolute;
+  bottom: -50px;
+  left: 320px
+}
+.arbo-3-3 {
+  position: absolute;
+  bottom: -50px;
+  left: 480px
+}
+
+.arbo-3-4 {
+  position: absolute;
+  bottom: -50px;
+  left: 640px
+}
+
+.arbo-4-1 {
+  position: absolute;
+  bottom: -125px;
+  left: 0px
+}
+
+.arbo-4-2 {
+  position: absolute;
+  bottom: -125px;
+  left: 160px
+}
+.arbo-4-3 {
+  position: absolute;
+  bottom: -125px;
+  left: 320px
+}
+
+.arbo-4-4 {
+  position: absolute;
+  bottom: -125px;
+  left: 480px
+}
+
+.arbo-4-5 {
+  position: absolute;
+  bottom: -125px;
+  left: 640px
+}
+
+.arbo-4-6 {
+  position: absolute;
+  bottom: -125px;
+  left: 800px
+}
+
 /* zoneless */
 
 /* conclusion */
