@@ -1,0 +1,6 @@
+@if (robot(); as robot) {
+  <a class="bot-point"
+     [attr.data-face]="robot.state.pace"
+     [ngStyle]="{'background-color': robot.color, 'margin-left': robot.state.distanceTraveled / 1000 * trackLength()  + 'px'}"></a>
+}
+

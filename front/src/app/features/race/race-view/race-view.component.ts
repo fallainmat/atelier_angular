@@ -42,7 +42,7 @@ const raceViewStateMap: Record<RaceState, RaceViewState> = {
 export class RaceViewComponent {
   raceService = inject(RaceService);
 
-  race = toSignal(this.raceService.getCurrentRace$());
+  race = toSignal(this.raceService.getCurrentRace$(), { initialValue: null });
 
   raceViewState = computed(() => {
     const raceInfos = this.race();
@@ -50,6 +50,7 @@ export class RaceViewComponent {
   });
 
   protected readonly RaceState = RaceState;
+  protected readonly RaceViewState = RaceViewState;
 
   constructor() {
     effect(() => {
@@ -59,6 +60,4 @@ export class RaceViewComponent {
       }
     })
   }
-
-  protected readonly RaceViewState = RaceViewState;
 }

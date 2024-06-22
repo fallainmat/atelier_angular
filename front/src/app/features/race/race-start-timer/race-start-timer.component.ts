@@ -10,7 +10,7 @@ import { Race, RaceState } from '../../../core/service/race/race.model';
 })
 export class RaceStartTimerComponent implements OnDestroy {
 
-  race = input<Race | null | undefined>(null);
+  race = input.required<Race | null>();
 
   raceRemainingTime = signal(0);
 

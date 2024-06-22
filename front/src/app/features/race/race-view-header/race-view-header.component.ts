@@ -11,5 +11,5 @@ import { Race } from '../../../core/service/race/race.model';
   templateUrl: './race-view-header.component.html'
 })
 export class RaceViewHeaderComponent {
-  race = input<Race | null | undefined>(null)
+  race = input.required<Race | null>()
 }
