@@ -15,6 +15,12 @@ image::./images/whoami-dm.jpg[]
 - https://github.com/imryck
 - Dev / Architecte
 --
+****
+
+=== !
+
+[.whoami]
+****
 
 [.block]
 --
@@ -36,9 +42,8 @@ image::./images/onepoint.jpg[]
 * Présentation de Onepoint très rapide
 --
 
-=== Ecole Onepoint
-
-image::./images/onepoint.jpg[]
+=== Ecole
+image::./images/ecole-onepoint.png[width=250, align=center]
 
 
 [NOTE.speaker]

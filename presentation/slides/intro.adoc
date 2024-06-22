@@ -40,17 +40,19 @@ image::images/intro/angular/chronologie-angular2.png[]
 
 === Philosophie du Framework
 
-- **Retrocompatible** : Depuis Angular 2, les versions sont rétrocompatibles
-- **Complet** : Angular propose un ensemble complet d'outils pour le développement de votre projet, l'utilisation de ces outils fait que les projets Angular sont souvent similaires.
-- **Verbeux** : Angular est verbeux, oups... expressif
-- **Modulaire** : Angular peut être fragmenter en composant réutilisable (Angular lib par exemple) ou petit module.
-- **Performant** : Angular est construit pour être performant
+[%step.defer-2-col]
+* Retrocompatible
+* Complet
+* Verbeux
+* Modulaire
+* Performant
 
 === Documentation
 
-----
-https://angular.dev/
-----
+[%step]
+* https://v17.angular.io/docs
+
+* https://angular.dev/
 
 
 [NOTE.speaker]
