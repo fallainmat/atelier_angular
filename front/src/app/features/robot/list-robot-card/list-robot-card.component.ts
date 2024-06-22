@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Robot } from '../../../core/service/robot/robot.model';
+import { ContainerDirective } from '../../../shared/container.directive';
 
 @Component({
   selector: 'app-card',
@@ -11,7 +12,8 @@ import { Robot } from '../../../core/service/robot/robot.model';
     RouterLink,
     RouterLinkActive,
     NgOptimizedImage,
-    NgStyle
+    NgStyle,
+    ContainerDirective
   ],
   templateUrl: './list-robot-card.component.html',
   styleUrl: './list-robot-card.component.scss'

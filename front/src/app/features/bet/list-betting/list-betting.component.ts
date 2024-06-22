@@ -3,13 +3,15 @@ import {BetSelectedComponent} from "./components/bet-selected/bet-selected.compo
 import {BetService} from "../../../core/service/bet/bet.service";
 import {NgClass} from "@angular/common";
 import {UserService} from "../../../core/service/user/user.service";
+import { ContainerDirective } from '../../../shared/container.directive';
 
 @Component({
   selector: 'app-list-betting',
   standalone: true,
   imports: [
     BetSelectedComponent,
-    NgClass
+    NgClass,
+    ContainerDirective
   ],
   templateUrl: './list-betting.component.html',
   styleUrl: './list-betting.component.scss'

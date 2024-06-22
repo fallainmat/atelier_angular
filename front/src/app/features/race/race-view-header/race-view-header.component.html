@@ -1,5 +1,5 @@
 @if (race(); as raceInfos) {
-  <div class="flex flex-row justify-around p-2 rounded-md shadow-inner-xl bg-slate-200">
+  <div [appContainer]="'light'" [margin]="false" class="flex flex-row justify-around">
     <div class="grow">
       <span class="font-bold">Statut de la course :</span> {{ raceInfos.state }}
     </div>
