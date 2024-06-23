@@ -5,16 +5,18 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RaceService } from '../../../../../core/service/race/race.service';
 import { RaceState } from '../../../../../core/service/race/race.model';
 import { BetSelectedModel } from '../../../../../core/service/bet/bet.model';
+import {OddsColorPipe} from "../../../odds-color.pipe";
 
 @Component({
   selector: 'app-bet-selected',
   standalone: true,
-  imports: [
-    JsonPipe,
-    NgOptimizedImage,
-    NgClass,
-    NgStyle
-  ],
+    imports: [
+        JsonPipe,
+        NgOptimizedImage,
+        NgClass,
+        NgStyle,
+        OddsColorPipe
+    ],
   templateUrl: './bet-selected.component.html',
   styleUrl: './bet-selected.component.scss'
 })

@@ -10,7 +10,8 @@
     </div>
     <div class="flex flex-col justify-between pb-1">
       <p class="text-xs m-1 p-1 font-bold text-center text-gray-50 rounded-md"
-         [ngStyle]="{'background-color': betSelected.color}">Cote: {{ betSelected.odds }}
+         [ngClass]="(betSelected.odds | oddsColor: 'color')"
+      >Cote: {{ betSelected.odds }}
       </p>
       <div class="flex justify-center m-1 items-center">
         <button class="h-6 w-6 pointer-events-auto rounded-md font-semibold text-white bet-button"

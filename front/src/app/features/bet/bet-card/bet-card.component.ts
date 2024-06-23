@@ -4,6 +4,7 @@ import { BetService } from '../../../core/service/bet/bet.service';
 import { FormsModule } from '@angular/forms';
 import { BetModel, BetRunnerModel } from '../../../core/service/bet/bet.model';
 import { ContainerDirective } from '../../../shared/container.directive';
+import {OddsColorPipe} from "../odds-color.pipe";
 
 @Component({
   selector: 'app-bet-card',
@@ -13,7 +14,8 @@ import { ContainerDirective } from '../../../shared/container.directive';
     NgClass,
     FormsModule,
     NgStyle,
-    ContainerDirective
+    ContainerDirective,
+    OddsColorPipe
   ],
   templateUrl: './bet-card.component.html',
   styleUrl: './bet-card.component.scss',

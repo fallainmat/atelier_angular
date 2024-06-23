@@ -7,6 +7,9 @@ export enum Color {
   Purple = '#8e44ad',
   Yellow = '#f1c40f',
   Orange = '#e67e22',
+  Pink = '#f43f5e',
+  Cyan = '#0891b2',
+  Emeraude = '#10b981',
 }
 
 export enum StatType {
@@ -15,11 +18,11 @@ export enum StatType {
   Intelligence = 'Intelligence',
 }
 
-export const statsRanges: Record<StatType, { min: number, max: number }> = {
+export const statsRanges: Record<StatType, { min: number; max: number }> = {
   [StatType.Intelligence]: { min: 1, max: 100 },
   [StatType.Speed]: { min: 60, max: 100 },
-  [StatType.Stamina]: { min: 20, max: 60 }
-}
+  [StatType.Stamina]: { min: 20, max: 60 },
+};
 
 export enum RunningPace {
   Sprint = 'Sprint',
@@ -30,14 +33,14 @@ export enum RunningPace {
 export const speedPaceRate: Record<RunningPace, number> = {
   [RunningPace.Sprint]: 1.5,
   [RunningPace.Rest]: 1,
-  [RunningPace.Exhausted]: 0.5
-}
+  [RunningPace.Exhausted]: 0.5,
+};
 
 export const staminaPaceConsumption: Record<RunningPace, number> = {
   [RunningPace.Sprint]: 15,
   [RunningPace.Rest]: 3,
-  [RunningPace.Exhausted]: 0
-}
+  [RunningPace.Exhausted]: 0,
+};
 
 export class RobotStat {
   @ApiProperty({ enum: StatType })
@@ -52,10 +55,10 @@ class RunningState {
   pace: RunningPace;
 
   @ApiProperty()
-  distanceTraveled = 0
+  distanceTraveled = 0;
 
   @ApiProperty()
-  energy = 0
+  energy = 0;
 }
 
 export class Robot {
@@ -66,7 +69,7 @@ export class Robot {
   stats: Array<RobotStat>;
 
   @ApiProperty({ enum: Color })
-  color: Color
+  color: Color;
 
   @ApiProperty({ type: RunningState })
   state: RunningState;
