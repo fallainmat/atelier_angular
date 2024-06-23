@@ -1,4 +1,4 @@
-[.columns]
+[.columns.ng-logo]
 
 == !
 

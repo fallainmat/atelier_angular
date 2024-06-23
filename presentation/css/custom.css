@@ -62,7 +62,21 @@ video {
   list-style: none;
 }
 
+.onepoint-ecole {
+  color: white;
+  margin-left: -48%;
+  margin-top: 100px;
+}
+
+.onepoint-ecole img {
+  max-width: 400px;
+}
+
 /* intro */
+
+.columns.ng-logo .slide-content {
+  align-items: center;
+}
 
 .frise {
   position: relative;
@@ -389,6 +403,8 @@ video {
 
 .defer-spa-heavy {
   position: absolute;
+  margin: auto;
+  width: 100%;
 }
 
 .defer-spa-heavy img {
@@ -396,29 +412,41 @@ video {
   top: 100px
 }
 
-.defer-spa-heavy span {
+.defer-spa-heavy p {
   position: absolute;
   top: 0;
-  display: block;
-  max-width: 110px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defer-spa-heavy p span {
+  max-width: 120px;
   text-align: center;
   font-weight: bold;
+  display: inline-block;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
 .defer-spa-heavy span.html {
-  left: 120px;
+  padding-right: 40px;
+  padding-left: 80px;
 }
 
 .defer-spa-heavy span.htmlcss {
-  left: 310px;
+
 }
 
 .defer-spa-heavy span.htmlcssjs {
-  left: 490px;
+  padding-right: 90px;
+  padding-left: 10px;
 }
 
 .defer-spa-heavy span.angular {
-  left: 710px;
+  padding-right: 90px;
+  padding-left: 30px;
 }
 
 .defer-2-col ul {
