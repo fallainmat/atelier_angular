@@ -22,7 +22,9 @@ export interface  RunningState {
 }
 
 export interface Robot {
+  id: string;
   name: string;
+  description: string;
   stats: Array<RobotStat>;
   color: string;
   state: RunningState;

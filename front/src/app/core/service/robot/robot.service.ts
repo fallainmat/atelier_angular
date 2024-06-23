@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {map, Observable} from "rxjs";
+import {Robot} from "./robot.model";
 
 export interface RobotModel {
   id: string;
@@ -15,12 +16,12 @@ export class RobotService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getRobots(): Observable<RobotModel[]> {
-    return this.httpClient.get('/assets/mock/robot.json').pipe(map((res: any) => res['robotList'] as RobotModel[]));
+  getRobots(): Observable<Robot[]> {
+    return this.httpClient.get('/assets/mock/robot.json').pipe(map((res: any) => res['robotList'] as Robot[]));
   }
 
-  getRobotById(id: string): Observable<RobotModel | undefined> {
-    return this.getRobots().pipe(map((res: RobotModel[]) => res.find((robot: RobotModel) => {
+  getRobotById(id: string): Observable<Robot | undefined> {
+    return this.getRobots().pipe(map((res: Robot[]) => res.find((robot: Robot) => {
         return id === robot['id'];
     })));
   }

@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { RobotModel } from '../../../core/service/robot/robot.service';
+import {Component, input} from '@angular/core';
+import {Robot} from "../../../core/service/robot/robot.model";
 
 @Component({
   selector: 'app-robot-detail',
@@ -10,9 +10,5 @@ import { RobotModel } from '../../../core/service/robot/robot.service';
   }
 })
 export class RobotDetailComponent {
-  robot = input.required<RobotModel>();
-
-  constructor() {
-    console.log('RobotDetailComponent created')
-  }
+  robot = input.required<Robot>();
 }
