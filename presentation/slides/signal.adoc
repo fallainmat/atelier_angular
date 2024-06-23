@@ -271,7 +271,7 @@ image::images/signal/slalom.gif[]
 * Signal Model
 * Signal Queries
 
-=== [.sub_title]#Ca donne quoi ?#
+=== [.sub_title]#ça donne quoi ?#
 
 [.control-flow-demo-image]
 image::images/common/demo.png[]

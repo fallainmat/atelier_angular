@@ -167,164 +167,152 @@ video {
 
 .module {
   position: absolute;
-  top: -150px;
-  left: -100px;
-}
-
-.component {
-  position: absolute;
-  top: -150px;
-  left: 420px;
-}
-
-.standalone {
-  position: absolute;
-  top: 150px;
-  left: -100px;
+  top: -100px;
+  left: 100px;
 }
 
 .declarations {
   position: absolute;
-  top: -90px;
-  left: -60px;
-}
-
-.imports {
-  position: absolute;
-  top: -90px;
-  left: 95px;
-}
-
-.providers {
-  position: absolute;
-  top: -90px;
-  left: 250px;
+  top: -50px;
+  left: 130px;
 }
 
 .exports {
   position: absolute;
-  top: 0;
-  left: -60px;
+  top: 50px;
+  left: 130px;
+}
+
+.imports {
+  position: absolute;
+  top: -50px;
+  left: 295px;
+}
+
+.providers {
+  position: absolute;
+  top: 50px;
+  left: 295px;
 }
 
 .schemas {
   position: absolute;
-  top: 0;
-  left: 95px;
+  top: -50px;
+  left: 460px;
 }
 
 .autres {
   position: absolute;
-  top: 0;
-  left: 250px;
+  top: 50px;
+  left: 460px;
 }
 
-.module-declaration {
+.component {
   position: absolute;
-  top: 160px;
-  left: 150px;
-}
-
-.module-declaration {
-  position: absolute;
-  top: 160px;
-  left: 150px;
+  top: -100px;
+  left: 700px;
 }
 
 .selector {
   position: absolute;
-  top: -90px;
-  left: 460px;
+  top: -50px;
+  left: 730px;
 }
 
 .templateUrls {
   position: absolute;
-  top: -90px;
-  left: 615px;
+  top: 50px;
+  left: 730px;
 }
 
 .styleUrls {
   position: absolute;
-  top: -90px;
-  left: 770px;
+  top: -50px;
+  left: 895px;
 }
 
 .changeDetection {
   position: absolute;
-  top: 0;
-  left: 460px;
+  top: 50px;
+  left: 895px;
 }
 
 .encapsulation {
   position: absolute;
-  top: 0;
-  left: 615px;
+  top: -50px;
+  left: 1050px;
 }
 
 .autres-component {
   position: absolute;
-  top: 0;
-  left: 770px;
+  top: 50px;
+  left: 1050px;
+}
+
+.standalone {
+  position: absolute;
+  top: 220px;
+  left: 100px;
 }
 
 .standalone-standalone {
   position: absolute;
-  top: 200px;
-  left: -40px;
+  top: 270px;
+  left: 150px;
 }
 
 .imports-standalone {
   position: absolute;
-  top: 300px;
-  left: -40px;
+  top: 370px;
+  left: 150px;
 }
 
 .schemas-standalone {
   position: absolute;
-  top: 200px;
-  left: 115px;
+  top: 270px;
+  left: 310px;
 }
 
 .providers-standalone {
   position: absolute;
-  top: 300px;
-  left: 115px;
+  top: 370px;
+  left: 310px;
 }
 
 .selector-standalone {
   position: absolute;
-  top: 200px;
-  left: 270px;
+  top: 270px;
+  left: 470px;
 }
 
 .changeDetection-standalone {
   position: absolute;
-  top: 300px;
-  left: 270px;
+  top: 370px;
+  left: 470px;
 }
 
 .templateUrls-standalone {
   position: absolute;
-  top: 200px;
-  left: 425px;
+  top: 270px;
+  left: 630px;
 }
 
 .encapsulation-standalone {
   position: absolute;
-  top: 300px;
-  left: 425px;
+  top: 370px;
+  left: 630px;
 }
 
 .styleUrls-standalone {
   position: absolute;
-  top: 200px;
-  left: 580px;
+  top: 270px;
+  left: 790px;
 }
 
 .autres-standalone {
   position: absolute;
-  top: 300px;
-  left: 580px;
+  top: 370px;
+  left: 790px;
 }
 
 .app-module {
@@ -468,78 +456,78 @@ video {
 
 .arbo {
   position: absolute;
-  bottom: 100px;
-  left: 400px
+  bottom: 0;
+  left: 520px
 }
 
 .arbo-2-1 {
   position: absolute;
-  bottom: 25px;
-  left: 320px
+  bottom: -75px;
+  left: 440px
 }
 
 .arbo-2-2 {
   position: absolute;
-  bottom: 25px;
-  left: 480px
+  bottom: -75px;
+  left: 600px
 }
 
 .arbo-3-1 {
   position: absolute;
-  bottom: -50px;
-  left: 160px
+  bottom: -150px;
+  left: 280px
 }
 
 .arbo-3-2 {
   position: absolute;
-  bottom: -50px;
-  left: 320px
+  bottom: -150px;
+  left: 440px
 }
 .arbo-3-3 {
   position: absolute;
-  bottom: -50px;
-  left: 480px
+  bottom: -150px;
+  left: 600px
 }
 
 .arbo-3-4 {
   position: absolute;
-  bottom: -50px;
-  left: 640px
+  bottom: -150px;
+  left: 760px
 }
 
 .arbo-4-1 {
   position: absolute;
-  bottom: -125px;
-  left: 0px
+  bottom: -225px;
+  left: 120px
 }
 
 .arbo-4-2 {
   position: absolute;
-  bottom: -125px;
-  left: 160px
+  bottom: -225px;
+  left: 280px
 }
 .arbo-4-3 {
   position: absolute;
-  bottom: -125px;
-  left: 320px
+  bottom: -225px;
+  left: 440px
 }
 
 .arbo-4-4 {
   position: absolute;
-  bottom: -125px;
-  left: 480px
+  bottom: -225px;
+  left: 600px
 }
 
 .arbo-4-5 {
   position: absolute;
-  bottom: -125px;
-  left: 640px
+  bottom: -225px;
+  left: 760px
 }
 
 .arbo-4-6 {
   position: absolute;
-  bottom: -125px;
-  left: 800px
+  bottom: -225px;
+  left: 920px
 }
 
 /* zoneless */

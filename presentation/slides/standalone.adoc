@@ -299,6 +299,18 @@ image::images/standalone/app-component.png[]
 image::images/standalone/app-config.png[]
 --
 
+=== !
+
+[source,javascript,highlight="1|2,5|3|4"]
+----
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient()
+  ]
+};
+----
+
 
 === [.sub_title]#Schematic Standalone#
 
