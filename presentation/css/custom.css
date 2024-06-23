@@ -223,6 +223,12 @@ video {
   left: 730px;
 }
 
+.changeDetection {
+  position: absolute;
+  top: 50px;
+  left: 895px;
+}
+
 .templateUrls {
   position: absolute;
   top: 50px;
@@ -232,12 +238,6 @@ video {
 .styleUrls {
   position: absolute;
   top: -50px;
-  left: 895px;
-}
-
-.changeDetection {
-  position: absolute;
-  top: 50px;
   left: 895px;
 }
 
@@ -289,25 +289,25 @@ video {
   left: 470px;
 }
 
-.changeDetection-standalone {
+.templateUrls-standalone {
   position: absolute;
   top: 370px;
   left: 470px;
 }
 
-.templateUrls-standalone {
+.styleUrls-standalone {
   position: absolute;
   top: 270px;
   left: 630px;
 }
 
-.encapsulation-standalone {
+.changeDetection-standalone {
   position: absolute;
   top: 370px;
   left: 630px;
 }
 
-.styleUrls-standalone {
+.encapsulation-standalone {
   position: absolute;
   top: 270px;
   left: 790px;

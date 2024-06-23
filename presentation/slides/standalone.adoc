@@ -206,14 +206,6 @@ image::images/standalone/selector.png[]
 
 [%step]
 --
-[.changeDetection]
-image::images/standalone/delete-module.png[]
-[.changeDetection-standalone]
-image::images/standalone/change-detection.png[]
---
-
-[%step]
---
 [.templateUrls]
 image::images/standalone/delete-module.png[]
 [.templateUrls-standalone]
@@ -222,18 +214,26 @@ image::images/standalone/template-url.png[]
 
 [%step]
 --
-[.encapsulation]
-image::images/standalone/delete-module.png[]
-[.encapsulation-standalone]
-image::images/standalone/encapsulation.png[]
---
-
-[%step]
---
 [.styleUrls]
 image::images/standalone/delete-module.png[]
 [.styleUrls-standalone]
 image::images/standalone/style-urls.png[]
+--
+
+[%step]
+--
+[.changeDetection]
+image::images/standalone/delete-module.png[]
+[.changeDetection-standalone]
+image::images/standalone/change-detection.png[]
+--
+
+[%step]
+--
+[.encapsulation]
+image::images/standalone/delete-module.png[]
+[.encapsulation-standalone]
+image::images/standalone/encapsulation.png[]
 --
 
 [%step]
