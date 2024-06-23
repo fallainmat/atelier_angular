@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HugeComponentComponent } from './huge-component.component';
 import { ContainerDirective } from '../../shared/container.directive';
 
@@ -9,12 +9,9 @@ import { ContainerDirective } from '../../shared/container.directive';
     ContainerDirective
   ],
   template: `
-    <div [appContainer]="'sky'" class="flex-1 text-white mb-2">
-      <a class="cursor-pointer" (click)="addContent()">Ajouter du contenu</a>
-      <h1 class="text-center text-4xl mb-20">Defer example</h1>
-      <p class="mb-4">{{ pageContent() }}</p>
-      <div class="text-center text-2xl border-2 p-2 rounded-sm border-white">
-
+    <div [appContainer]="'sky'" class="flex-1 text-white">
+      <h1 class="text-center text-4xl mb-10">Defer example</h1>
+      <div class="text-center text-2xl border-2 mt-4 p-2 rounded-sm border-white">
         @defer (on interaction; prefetch on hover) {
           <app-huge-component/>
         } @placeholder () {
@@ -33,14 +30,4 @@ import { ContainerDirective } from '../../shared/container.directive';
   }
 })
 export class ExampleDeferComponent {
-  pageContent = signal<string>('');
-
-  addContent() {
-    const tokens = ['Mega Man', 'Optimus Prime', 'Johnny 5', 'Wall-E'];
-    let text = '';
-    for (var i = 0; i < 80; i++) {
-      text += tokens[Math.floor(Math.random() * tokens.length)] + ' ';
-    }
-    this.pageContent.update((prev) => prev + text);
-  }
 }
