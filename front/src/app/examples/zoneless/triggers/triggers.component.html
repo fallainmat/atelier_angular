@@ -1,1 +1,17 @@
-<p>triggers.component.ts works!</p>
+<div [appContainer]="'sky'" class="text-white">
+  <p>Timier with RxJs and pipe async : <i>{{timerObs$ | async}}</i></p>
+  <div class="flex flex-col">
+    <div class="flex ">
+      <button class="m-2 h-12 pointer-events-auto rounded-md p-2 text-black bet-button bg-slate-200 hover:bg-slate-100"
+              (click)="addToView()">Add template to the view
+      </button>
+      <button class="m-2 h-12 pointer-events-auto rounded-md p-2 text-black bet-button bg-slate-200 hover:bg-slate-100"
+              (click)="clearView()">Clear
+      </button>
+    </div>
+    <ng-container #vcr></ng-container>
+    <ng-template #dynTemplate>
+      <p [appContainer]="'light'" class="text-black">This is a dynamic view</p>
+    </ng-template>
+  </div>
+</div>
