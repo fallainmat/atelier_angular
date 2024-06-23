@@ -20,7 +20,7 @@ export class RobotService {
         color: Color.Orange
       },
       {
-        name: 'Bishop',
+        name: 'Wall-E',
         color: Color.Yellow
       }
     ];

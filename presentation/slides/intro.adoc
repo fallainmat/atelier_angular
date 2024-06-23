@@ -146,6 +146,9 @@ ControlFlow
 
 === [.sub_title]#Présentation de RaceBot#
 
+[.racebot-illu]
+image::images/intro/bot-race/RaceBot.png[]
+
 [NOTE.speaker]
 --
 * Présentation de BotRace, un projet de démonstration pour illustrer les concepts d'Angular

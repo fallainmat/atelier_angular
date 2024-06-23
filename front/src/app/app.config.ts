@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideZoneChangeDetection()
-    // provideExperimentalZonelessChangeDetection()
+    // provideZoneChangeDetection()
+    provideExperimentalZonelessChangeDetection()
   ]
 };
