@@ -1,25 +1,26 @@
 .bot-point {
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   margin-bottom: 5px;
   transition: margin-left 1s linear;
   text-align: center;
+  position: relative;
 
   &[data-face=Exhausted]::before {
     content: '\01F635';
-    font-size:  17px;
+    font-size: 22px;
   }
 
   &[data-face=Rest]::before {
     content: '\01F636';
-    font-size:  17px;
+    font-size:  22px;
   }
 
   &[data-face=Sprint]::before {
     content: '\01F621';
-    font-size:  17px;
+    font-size:  22px;
   }
 }
 

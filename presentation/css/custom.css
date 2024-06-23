@@ -21,13 +21,6 @@ video {
   font-style: italic;
 }
 
-p {
-  color: var(--text);
-  font-weight: bold;
-  font-style: italic;
-  padding-top: 1px;
-}
-
 .list ul {
   columns: 2;
   column-gap: 160px;
@@ -36,11 +29,7 @@ p {
 }
 
 .list ul li {
-  color: var(--text);
-  font-weight: bold;
-  font-style: italic;
   padding-top: 1px;
-
 }
 
 /* Cover */

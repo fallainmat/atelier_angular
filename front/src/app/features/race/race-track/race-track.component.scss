@@ -10,7 +10,22 @@
   background-color: #991b1b;
   li {
     border: 2px solid white;
-    height: 34px;
+    height: 44px;
     padding-top: 2px;
   }
+}
+
+.track li {
+  position: relative;
+}
+
+.track app-race-bot {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.track .bot-name {
+  margin-left: 40px;
+  line-height: 32px;
 }

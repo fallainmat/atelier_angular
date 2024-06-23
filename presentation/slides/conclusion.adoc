@@ -22,16 +22,17 @@
 
 [.conclusion]
 ****
-[%step]
+
 --
 Github
 
 image::images/conclusion/github-atelier-angular.png[width=40%]
 --
-[%step]
+
 --
 Open Feedback
 
 image::images/conclusion/github-atelier-angular.png[width=40%]
 --
+
 ****

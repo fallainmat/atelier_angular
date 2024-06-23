@@ -13,7 +13,7 @@ image::images/zoneless/meme-zonejs.jpg[]
 [%step.list]
 * Signal
 * PipeAsync
-* ViewContainer add/remove
+* ViewContainer
 * input
 * markForCheck
 

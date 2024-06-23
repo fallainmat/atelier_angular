@@ -8,7 +8,7 @@
       }
     </p>
     <div [appContainer]="'light'" class="flex-1 flex flex-col container-bets overflow-auto">
-      @for (bet of betsSelected; track bet.id) {
+      @for (bet of betsSelected; track bet) {
         <app-bet-selected [betSelected]="bet"/>
       }
     </div>
