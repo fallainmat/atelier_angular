@@ -163,6 +163,10 @@ video {
   left: 1090px;
 }
 
+.racebot-illu img {
+  height: 500px;
+}
+
 /* standalone */
 
 .module {

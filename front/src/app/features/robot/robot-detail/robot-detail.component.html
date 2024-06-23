@@ -1,15 +1,21 @@
-@if(robot(); as robot) {
-  <div class="py-5 px-3">
-    <a class="pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bg-sky-700 hover:bg-sky-500" routerLink="/">Retour</a>
-    <div class="mt-3">
-      <pre>{{ robot | json }}</pre>
-    </div>
+<div [appContainer]="'sky'" class="flex flex-col grow">
+  <div class="mt-2">
+    <a class="p-2 pointer-events-auto rounded-md font-semibold leading-5 text-white bg-sky-700 hover:bg-sky-500"
+       routerLink="/">
+      Retour
+    </a>
   </div>
-} @else {
-  <div class="py-5 px-3">
-    <a class="pointer-events-auto rounded-md p-2 font-semibold leading-5 text-white bg-sky-700 hover:bg-sky-500" routerLink="/">Retour</a>
-    <div class="mt-3">
-      <pre>Robot introuvable</pre>
-    </div>
+  <div class="mt-3 flex ">
+    @if (robot(); as robot) {
+      <div class="relative flex-1">
+        <img [ngSrc]="'/assets/images/bots/' + robot.name + '.png'" fill
+             class="m-2" [alt]="robot.name">
+      </div>
+      <div class="flex-1">
+        <pre>{{ robot | json }}</pre>
+      </div>
+    } @else {
+      <p class="m-3 text-white text-center">Robot introuvable</p>
+    }
   </div>
-}
+</div>

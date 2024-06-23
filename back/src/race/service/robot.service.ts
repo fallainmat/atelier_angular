@@ -30,7 +30,7 @@ export class RobotService {
         image: 'johnny-5',
       },
       {
-        name: 'Bishop',
+        name: 'Wall-E',
         color: Color.Pink,
         image: 'bishop',
       },
