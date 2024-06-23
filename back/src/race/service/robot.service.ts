@@ -16,22 +16,22 @@ export class RobotService {
     const robotLis: Array<{ name: string, color: Color, image: string }> = [
       {
         name: 'Mega Man',
-        color: Color.Purple,
+        color: Color.Blue,
         image: 'mega-man',
       },
       {
         name: 'Optimus Prime',
-        color: Color.Emeraude,
+        color: Color.Red,
         image: 'optimus-prime',
       },
       {
         name: 'Johnny 5',
-        color: Color.Cyan,
+        color: Color.Purple,
         image: 'johnny-5',
       },
       {
         name: 'Wall-E',
-        color: Color.Pink,
+        color: Color.Emeraude,
         image: 'bishop',
       },
     ];

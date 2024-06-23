@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export enum Color {
-  Red = '#e74c3c',
+  Red = '#dc2626',
   Green = '#27ae60',
   Blue = '#3498db',
   Purple = '#8e44ad',
