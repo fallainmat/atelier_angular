@@ -6,7 +6,6 @@ export interface RobotModel {
   id: string;
   name: string;
   description: string;
-  image: string;
 }
 
 @Injectable({

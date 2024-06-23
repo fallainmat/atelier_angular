@@ -13,34 +13,29 @@ export class RobotService {
   private robots: Array<Robot> = [];
 
   constructor() {
-    const robotLis: Array<{ name: string, color: Color, image: string }> = [
+    const robotLis: Array<{ name: string; color: Color }> = [
       {
         name: 'Mega Man',
         color: Color.Blue,
-        image: 'mega-man',
       },
       {
         name: 'Optimus Prime',
         color: Color.Red,
-        image: 'optimus-prime',
       },
       {
         name: 'Johnny 5',
         color: Color.Purple,
-        image: 'johnny-5',
       },
       {
         name: 'Wall-E',
         color: Color.Emeraude,
-        image: 'bishop',
       },
     ];
     this.robots = robotLis.map((robotInfos) => ({
       name: robotInfos.name,
       color: robotInfos.color,
-      image: robotInfos.image,
       stats: [],
-      state: {energy: 0, distanceTraveled: 0, pace: RunningPace.Rest},
+      state: { energy: 0, distanceTraveled: 0, pace: RunningPace.Rest },
     }));
   }
 
@@ -54,8 +49,8 @@ export class RobotService {
           this.generateStat(StatType.Intelligence),
           this.generateStat(StatType.Speed),
         ],
-        state: {...robot.state, energy: stamina.value},
-      }
+        state: { ...robot.state, energy: stamina.value },
+      };
     });
   }
 
@@ -63,7 +58,7 @@ export class RobotService {
     return {
       type,
       value: Math.floor(
-          Math.random() * (statsRanges[type].max - statsRanges[type].min + 1) +
+        Math.random() * (statsRanges[type].max - statsRanges[type].min + 1) +
           statsRanges[type].min,
       ),
     };
