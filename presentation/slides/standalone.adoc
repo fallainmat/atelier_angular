@@ -308,12 +308,7 @@ image::images/standalone/app-config.png[]
 ng generate @angular/core:standalone
 --
 
+=== [.sub_title]#Tout se migre automatiquement ?#
 
-[NOTE.speaker]
---
-* Présentation de la schématics et précisant que ça ne fait pas tout.
---
-
-=== !
-
+[.control-flow-demo-image]
 image::images/common/demo.png[]

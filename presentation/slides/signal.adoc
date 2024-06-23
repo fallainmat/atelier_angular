@@ -252,7 +252,10 @@ export class AppComponent {
   }
 }
 ----
-=== !
+
+=== [.sub_title]#Rien de mieux que la pratique#
+
+[.control-flow-demo-image]
 
 image::images/common/demo.png[]
 
@@ -268,8 +271,9 @@ image::images/signal/slalom.gif[]
 * Signal Model
 * Signal Queries
 
-=== !
+=== [.sub_title]#Ca donne quoi ?#
 
+[.control-flow-demo-image]
 image::images/common/demo.png[]
 
 [%auto-animate]
