@@ -16,7 +16,7 @@ export class BetService {
   betsSelected = signal<BetSelectedModel[]>([]);
 
   bets = computed<BetModel[]>(() => {
-    const robots: Robot[] = (this.raceChanged()?.robots || []).sort(this.compareRunners);
+    const robots: Robot[] = ([...(this.raceChanged()?.robots || [])]).sort(this.compareRunners);
     const bets = this.betsTypes() || [];
     return bets.map(bet => this.configureBet(bet, robots));
   });

@@ -3,6 +3,7 @@ import { NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Robot } from '../../../core/service/robot/robot.model';
 import { ContainerDirective } from '../../../shared/container.directive';
+import { RaceBotComponent } from '../../race/race-bot/race-bot.component';
 
 @Component({
   selector: 'app-card',
@@ -13,7 +14,8 @@ import { ContainerDirective } from '../../../shared/container.directive';
     RouterLinkActive,
     NgOptimizedImage,
     NgStyle,
-    ContainerDirective
+    ContainerDirective,
+    RaceBotComponent
   ],
   templateUrl: './list-robot-card.component.html',
   styleUrl: './list-robot-card.component.scss'

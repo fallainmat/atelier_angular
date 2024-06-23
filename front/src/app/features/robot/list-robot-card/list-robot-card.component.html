@@ -1,14 +1,14 @@
 <a *ngIf="robot"
-   [routerLink]="'robot-detail/' + robot.name" routerLinkActive
->
-  <div [appContainer]="'light'" [margin]="false" class="flex flex-col mr-2"
-       [ngStyle]="{ 'background-color': robot.color }"
-  >
-    <h2 class="text-white flex-1 content-center text-center font-bold text-1s">{{ robot.name}}</h2>
+   [routerLink]="'robot-detail/' + robot.name" routerLinkActive>
+  <div [appContainer]="'light'" [margin]="false" class="flex flex-col mr-2">
+    <h2 class="text-gray-800 text-center font-bold drop-shadow-lg flex justify-center items-center">
+      <app-race-bot class="mr-2" [raceStarted]="false" [trackLength]="0" [robot]="robot" />
+      {{ robot.name}}
+    </h2>
     <ul>
       @for(stat of robot.stats; track stat.type) {
         <li class="flex justify-between mb-1">
-          <span class="flex-1 text-white">{{stat.type}}:</span>
+          <span class="flex-1 ">{{stat.type}}:</span>
           <span class="bg-white flex-1"><span class="stat-bar stat-bar-{{stat.type}}" [ngStyle]="{width: stat.value + 'px'}"></span></span>
         </li>
       }
