@@ -1,6 +1,7 @@
 @if (robot(); as robot) {
   <a class="bot-point"
      [attr.data-face]="robot.state.pace"
+     [class.started]="raceStarted()"
      [ngStyle]="{'background-color': robot.color, 'margin-left': position()  + 'px'}"></a>
 }
 

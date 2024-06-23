@@ -4,7 +4,9 @@
       @for (robot of race.robots; track robot.name) {
         <li>
           <span class="bot-name text-white">{{robot.name}}</span>
-          <app-race-bot [robot]="robot" [trackLength]="raceTrack.clientWidth"/>
+          <app-race-bot [robot]="robot"
+                        [raceStarted]="race.state === RaceState.Started"
+                        [trackLength]="raceTrack.clientWidth"/>
         </li>
       }
     </ul>

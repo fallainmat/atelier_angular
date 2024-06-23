@@ -15,6 +15,8 @@ import { NgStyle } from '@angular/common';
 export class RaceBotComponent {
   robot = input.required<Robot>()
 
+  raceStarted = input.required<boolean>();
+
   trackLength = input.required<number>();
 
   position = computed<number>(() => {
