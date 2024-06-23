@@ -1,4 +1,4 @@
-== control-flow
+== [.title]#control-flow#
 
 [.control-flow-cover]
 --
@@ -14,7 +14,7 @@ image::./images/flow/control-flow-blank.drawio.svg[]
 * A été complétement revue en V17
 --
 
-=== Directives structurelles
+=== [.sub_title]#Directives structurelles#
 
 [.code-example-lg]
 --
@@ -46,7 +46,7 @@ image::./images/flow/control-flow-blank.drawio.svg[]
 * Contrainte d'une seule directive par noeud
 --
 
-=== Pourquoi changer ?
+=== [.sub_title]#Pourquoi changer ?#
 
 image::./images/flow/why-change-everything.jpg[]
 RFC : https://github.com/angular/angular/discussions/50719
@@ -61,7 +61,7 @@ RFC : https://github.com/angular/angular/discussions/50719
 ** Préparer/faciliter le chemin vers les application zoneless
 --
 
-=== Nouvelle syntaxe
+=== [.sub_title]#Nouvelle syntaxe#
 
 [source,jsx,highlight]
 ----
@@ -79,7 +79,7 @@ RFC : https://github.com/angular/angular/discussions/50719
 *
 --
 
-=== Un autre exemple ?
+=== [.sub_title]#Un autre exemple ?#
 
 [.control-flow-demo-image]
 --
@@ -92,7 +92,7 @@ image::./images/common/demo.png[]
 * Montrer la partie du code de l'application qui affiche les différents états de la course
 --
 
-=== Migration ?
+=== [.sub_title]#Migration ?#
 
 [%step]
 
@@ -118,7 +118,7 @@ npx ng g @angular/core:control-flow \
 ** track à revoir pour que ce soit pertinent
 --
 
-=== La fin des directives structurelles ?
+=== [.sub_title]#La fin des directives structurelles ?#
 
 [%step]
 --

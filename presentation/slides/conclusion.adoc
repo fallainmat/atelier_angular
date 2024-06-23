@@ -1,7 +1,7 @@
-== Conclusion
+== [.title]#Conclusion#
 
 
-=== [.conclusion-ng-next]#@ng-next ?#
+=== [.sub_title]#@ng-next ?#
 
 [%step]
 * Finalisation de la transition Zoneless
@@ -18,11 +18,20 @@
 ** selectorless https://x.com/mgechev/status/1773493609461113003, https://dev.to/this-is-angular/episode-2420-angular-talks-at-google-io-jsworld-til-44b7
 --
 
-=== Questions ?
+=== [.sub_title]#Questions ?#
 
-* TODO QRCodes openfeadback, github
+[.conclusion]
+****
+[%step]
+--
+Github
 
-[NOTE.speaker]
+image::images/conclusion/github-atelier-angular.png[width=40%]
 --
-* Merci, questions ?
+[%step]
 --
+Open Feedback
+
+image::images/conclusion/github-atelier-angular.png[width=40%]
+--
+****

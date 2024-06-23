@@ -44,7 +44,10 @@ image::./images/onepoint.jpg[]
 --
 
 === !
-image::./images/ecole-onepoint.png[width=250, align=center]
+
+Ecole Onepoint
+
+image::./images/ecole-onepoint.png[width=30%]
 
 
 [NOTE.speaker]

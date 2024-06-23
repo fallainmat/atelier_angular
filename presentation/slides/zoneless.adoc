@@ -1,4 +1,4 @@
-== Des applications _Zoneless_
+== [.title]#Des applications _Zoneless_#
 
 image::images/zoneless/meme-zonejs.jpg[]
 
@@ -8,9 +8,9 @@ image::images/zoneless/meme-zonejs.jpg[]
 * Mais la route est encore longue
 --
 
-=== Planification ng18+
+=== [.sub_title]#Planification ng18+#
 
-[%step]
+[%step.list]
 * Signal
 * PipeAsync
 * ViewContainer add/remove
@@ -25,7 +25,7 @@ image::images/zoneless/meme-zonejs.jpg[]
 * source: https://github.com/angular/angular/blob/67b2c336bc0bdce3f7ae054c094990a9831f5b20/packages/core/src/change_detection/scheduling/zoneless_scheduling_impl.ts#L295
 --
 
-=== Experimental Zoneless
+=== [.sub_title]#Experimental Zoneless#
 
 Il est possible de tester nos application en Zoneless en v18
 
@@ -45,7 +45,7 @@ export const appConfig: ApplicationConfig = {
 * Un branche à part pour sauter d'une conf à l'autre + affichage dans le profiler de ngDebugTools ?
 --
 
-=== Mode hybride ?
+=== [.sub_title]#Mode hybride ?#
 
 [%step]
 --
@@ -60,7 +60,7 @@ Zone.js &#x1F91D; Signal
 * TODO demo ?
 --
 
-=== Un chemin vers Zoneless
+=== [.sub_title]#Un chemin vers Zoneless#
 
 [%step]
 --

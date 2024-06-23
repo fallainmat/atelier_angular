@@ -21,7 +21,7 @@ video {
   font-style: italic;
 }
 
-.text {
+p {
   color: var(--text);
   font-weight: bold;
   font-style: italic;
@@ -36,7 +36,6 @@ video {
 }
 
 .list ul li {
-  list-style: none;
   color: var(--text);
   font-weight: bold;
   font-style: italic;
@@ -325,6 +324,23 @@ video {
   left: 580px;
 }
 
+.app-module {
+  position: absolute;
+  top: 200px;
+  left: 575px;
+}
+
+.app-component {
+  position: absolute;
+  top: 500px;
+  left: 420px;
+}
+
+.app-config {
+  position: absolute;
+  top: 500px;
+  left: 690px;
+}
 /* control-flow */
 
 .code-example-lg pre.code-wrapper {
@@ -512,10 +528,12 @@ video {
 /* zoneless */
 
 /* conclusion */
+.conclusion .content {
+  display: flex;
+  flex-direction: row;
+}
 
-
-.conclusion-ng-next {
-  background: var(--ng-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.conclusion .content .openblock .content {
+  display: flex;
+  flex-direction: column;
 }

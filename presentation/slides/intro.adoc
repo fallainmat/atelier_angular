@@ -15,10 +15,7 @@ image::images/common/logo_angular_17.png[]
 * Petit laïus sur les logos Onepoint en lien avec le titre de la conférence
 --
 
-=== 12 ans...
-
-// image::images/intro/angular/chronologie-angular1.png[]
-
+=== [.sub_title]#12 ans...#
 [.frise]
 --
 
@@ -125,16 +122,16 @@ ControlFlow
 * Coup d'accelerateur avec les changements de gouvernance
 --
 
-=== Philosophie du Framework
+=== [.sub_title]#Philosophie du Framework#
 
-[%step.defer-2-col]
+[%step.list]
 * Retrocompatible
 * Complet
 * Verbeux
 * Modulaire
 * Performant
 
-=== Documentation
+=== [.sub_title]#Documentation#
 
 [%step]
 * https://v17.angular.io/docs
@@ -147,7 +144,7 @@ ControlFlow
 * Rappel que la documentation est en working progress aussi. Des éléments peuvent être manquants ou incomplets.
 --
 
-=== [.title]#Présentation de RaceBot#
+=== [.sub_title]#Présentation de RaceBot#
 
 [NOTE.speaker]
 --

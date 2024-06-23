@@ -1,4 +1,4 @@
-== Reporter à plus tard ?
+== [.title]#Reporter à plus tard ?#
 
 [.defer-cover]
 --
@@ -12,7 +12,7 @@ I will render that [.cross-word]#now# [.later-word]#later#
 * Introduction en v17
 --
 
-=== Un problème de poids
+=== [.sub_title]#Un problème de poids#
 
 [.defer-spa-heavy]
 --
@@ -29,7 +29,7 @@ image::images/defer/npm-heaviest.webp[]
 * Expliquer le principe de lazy loading
 --
 
-=== Le lazy loading dans angular
+=== [.sub_title]#Le lazy loading dans angular#
 
 [%step.code-example-lg]
 --
@@ -65,7 +65,7 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 ** création des fragment basés sur les imports EmacScript à partir d'ivy
 --
 
-=== Simplification avec @defer
+=== [.sub_title]#Simplification avec @defer#
 
 [source,jsx,highlight="1..12|1,3|2|4,6|5|7,9|8|10,12|11"]
 ----
@@ -92,9 +92,9 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 * Loading message de chargement remplaçant le placeholder si présent
 --
 
-=== triggers
+=== [.sub_title]#triggers#
 
-[%step.defer-2-col]
+[%step.list]
 * when
 * on idle
 * on interaction
@@ -114,7 +114,7 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 * prefetch peut être associé avec un trigger
 --
 
-=== @defer en vrai
+=== [.sub_title]#@defer en vrai#
 
 [.control-flow-demo-image]
 --

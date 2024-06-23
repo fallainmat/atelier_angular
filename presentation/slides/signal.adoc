@@ -260,6 +260,7 @@ image::images/common/demo.png[]
 
 image::images/signal/slalom.gif[]
 
+
 === !
 
 [%step.list]
@@ -311,4 +312,5 @@ export class TestComponent {
 
 === !
 
-image::images/signal/signal-observable.png[]
+image::images/signal/signal-observable.png[width=80%]
+
