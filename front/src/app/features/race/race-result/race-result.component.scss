@@ -1,3 +1,13 @@
+ul li:nth-child(1) {
+  font-size: 1.6em
+}
+ul li:nth-child(2) {
+  font-size: 1.4em
+}
+ul li:nth-child(3) {
+  font-size: 1.2em
+}
+
 @keyframes firework {
   0% {
     transform: translate(-50%, 36vh);
