@@ -32,7 +32,7 @@ image::images/conclusion/github-atelier-angular.png[width=40%]
 --
 Open Feedback
 
-image::images/conclusion/github-atelier-angular.png[width=40%]
+image::images/conclusion/open-feedback-breizhcamp.png[width=40%]
 --
 
 ****
