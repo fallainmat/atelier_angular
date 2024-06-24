@@ -42,6 +42,7 @@ image::./images/onepoint.jpg[background, size=cover]
 --
 image::./images/ecole-onepoint.png[width=30%]
 Ecole Onepoint
+
 --
 
 [NOTE.speaker]
