@@ -31,7 +31,7 @@ export class HomeComponent {
   bets = inject(BetService).bets;
 
   raceStartOptions: Array<{ title: string; timer: number }> = [
-    { title: 'Nouvelle course', timer: 25000 },
+    { title: 'Nouvelle course', timer: 30000 },
     { title: 'Course rapide', timer: 8000 }
   ]
 

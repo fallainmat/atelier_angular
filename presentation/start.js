@@ -21,9 +21,11 @@ const convertAsciidoc = () => {
     }
   });
   fs.cpSync('../node_modules/reveal.js', 'dist/reveal.js', {recursive: true});
+  fs.cpSync('../node_modules/highlightjs/highlight.pack.js', 'dist/highlightjs/highlight.min.js', {recursive: true});
   fs.cpSync('./slides/images', 'dist/images', {recursive: true});
   fs.copyFileSync('css/custom.css', 'dist/custom.css');
   fs.copyFileSync('../node_modules/highlightjs/styles/atom-one-dark.css', 'dist/atom-one-dark.css');
+  fs.copyFileSync('../node_modules/highlightjs/styles/a11y-light.css', 'dist/a11y-light.css');
 }
 fs.rmSync(path.resolve(__dirname, 'dist'), { recursive: true, force: true })
 convertAsciidoc();
