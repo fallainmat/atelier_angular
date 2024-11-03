@@ -3,6 +3,7 @@ import { Race, RaceState } from '../model/race.model';
 import { RobotService } from './robot.service';
 import { BehaviorSubject, filter, interval, Subject, takeUntil, tap } from 'rxjs';
 import { RunningPace, speedPaceRate, staminaPaceConsumption, StatType } from '../model/robot.model';
+import { DbService } from '../../db/service/db.service';
 
 @Injectable()
 export class RaceService implements OnApplicationShutdown {
@@ -12,23 +13,43 @@ export class RaceService implements OnApplicationShutdown {
 
   private shutdownServerEvent$ = new Subject();
 
-  constructor(private readonly robotService: RobotService) {
+  private raceHistory: Array<Race> = [];
+
+  constructor(private readonly robotService: RobotService,
+              private readonly dbService: DbService) {
     this.startRaceLoop();
+    const races = this.dbService.readCollection<Race>('races');
+    console.log(races);
+    this.raceHistory = races
+      ? races.sort((a, b) => a.startTime.getTime() - b.startTime.getTime())
+      : [];
+    const existingActiveRace = this.raceHistory.find(r =>
+      r.startTime.getTime() > new Date().getTime() && r.state !== RaceState.Finished
+    );
+    if (existingActiveRace) {
+      this.raceEvents$.next(existingActiveRace);
+      this.activeRace = existingActiveRace;
+    }
   }
 
-  onApplicationShutdown(signal?: string): void {
+  onApplicationShutdown(): void {
     this.shutdownServerEvent$.next(true);
   }
 
   create(startTime: string) {
     this.activeRace = new Race(new Date(startTime));
     this.activeRace.registerRobots(this.robotService.findAll());
+    this.dbService.addToCollection<Race>('races', this.activeRace);
     this.raceEvents$.next(this.activeRace);
     return this.activeRace;
   }
 
   getRaceEvents$() {
     return this.raceEvents$.asObservable();
+  }
+
+  getRaceHistory() {
+    return this.raceHistory;
   }
 
   private startRaceLoop() {
@@ -51,6 +72,7 @@ export class RaceService implements OnApplicationShutdown {
       race.state = RaceState.InProgress;
       this.raceEvents$.next(this.computeBotsPositions(race))
     }
+    this.dbService.updateItemInCollection<Race>('races', race);
   }
 
   private computeBotsPositions(race: Race): Race {

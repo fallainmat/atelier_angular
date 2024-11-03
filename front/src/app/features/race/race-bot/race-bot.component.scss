@@ -10,17 +10,17 @@
 
   &[data-face=Exhausted]::before {
     content: '\01F635';
-    font-size: 22px;
+    font-size: 21px;
   }
 
   &[data-face=Rest]::before {
     content: '\01F636';
-    font-size:  22px;
+    font-size:  21px;
   }
 
   &[data-face=Sprint]::before {
     content: '\01F621';
-    font-size:  22px;
+    font-size:  21px;
   }
 }
 

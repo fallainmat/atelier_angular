@@ -30,7 +30,7 @@ export class RaceStartTimerComponent {
   }
 
   private startTimer() {
-    this.raceTimerTask = setInterval(() => {
+    this.raceTimerTask = window.setInterval(() => {
       const endBetTime = this.race()?.endBetTime.getTime() || new Date().getTime();
       const remainingTime = Math.ceil((endBetTime - new Date().getTime()) / 1000);
       this.raceRemainingTime.set(remainingTime);

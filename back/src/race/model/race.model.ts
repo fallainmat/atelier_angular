@@ -3,8 +3,6 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 as uuidv4 } from 'uuid';
 
-const DELAY_BETWEEN_BETS_AND_START_MS = 3000;
-
 export enum RaceState {
   BetsOpened = 'BetsOpened',
   BetsClosed = 'BetsClosed',
@@ -14,6 +12,9 @@ export enum RaceState {
 }
 
 export class Race {
+
+  static DELAY_BETWEEN_BETS_AND_START_MS = 3000;
+
   @ApiProperty()
   uuid: string;
 
@@ -32,13 +33,10 @@ export class Race {
   @ApiProperty()
   raceLength = 1000;
 
-  constructor(startTime: Date) {
-    this.uuid = uuidv4();
-    if (startTime.getTime() < new Date().getTime() + DELAY_BETWEEN_BETS_AND_START_MS) {
-      throw new HttpException(`A race must start at least 3 seconds after its creation`, HttpStatus.BAD_REQUEST);
-    }
+  constructor(startTime: Date, endBetTime?: Date, uuid?: string) {
+    this.uuid = uuid ?? uuidv4();
     this.startTime = startTime;
-    this.endBetTime = new Date(startTime.getTime() - DELAY_BETWEEN_BETS_AND_START_MS);
+    this.endBetTime = endBetTime ?? new Date(startTime.getTime() - Race.DELAY_BETWEEN_BETS_AND_START_MS);
   }
 
   registerRobots(robots: Array<Robot>) {
