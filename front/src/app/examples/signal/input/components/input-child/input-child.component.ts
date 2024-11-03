@@ -5,13 +5,11 @@ import {AsyncPipe} from "@angular/common";
   selector: 'app-input-child',
   standalone: true,
   imports: [AsyncPipe],
-  templateUrl: './input-child.component.html',
-  styleUrl: './input-child.component.scss'
+  templateUrl: './input-child.component.html'
 })
 export class InputChildComponent {
   checked = model(false);
   disabled = input(false);
-
   toggle() {
     this.checked.set(!this.checked());
   }

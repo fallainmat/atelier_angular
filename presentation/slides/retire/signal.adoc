@@ -1,0 +1,18 @@
+=== !
+
+[%step]
+RFC https://github.com/angular/angular/discussions/49685
+
+=== !
+
+
+=== [.sub_title]#Rien de mieux que la pratique#
+
+[.control-flow-demo-image]
+image::images/common/demo.png[]
+
+
+=== [.sub_title]#ça donne quoi ?#
+
+[.control-flow-demo-image]
+image::images/common/demo.png[]

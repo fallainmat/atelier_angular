@@ -5,6 +5,7 @@ import { ExampleDeferComponent } from './defer/example-defer.component';
 import { TriggersComponent } from './zoneless/triggers/triggers.component';
 import {CounterComponent} from "./signal/counter/counter.component";
 import {InputComponent} from "./signal/input/input.component";
+import { QueriesDemoComponent } from './signal/queries/queries-link-content.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'signal/input',
     component: InputComponent
+  },
+  {
+    path: 'signal/queries',
+    component: QueriesDemoComponent
   },
   {
     path: 'zoneless/triggers',

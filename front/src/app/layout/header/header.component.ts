@@ -23,7 +23,8 @@ export class HeaderComponent {
     { title: 'Race', link: '' },
     { title: 'Defer', link: 'examples/defer/simple' },
     { title: 'Signal', link: 'examples/signal/counter' },
-    { title: 'Signal input', link: 'examples/signal/input' }
+    { title: 'Signal input', link: 'examples/signal/input' },
+    { title: 'Signal queries', link: 'examples/signal/queries' },
   ]
 
   toggleMenu() {

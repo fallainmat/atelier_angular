@@ -312,15 +312,10 @@ export const appConfig: ApplicationConfig = {
 ----
 
 
-=== [.sub_title]#Schematic Standalone#
+=== [.sub_title]#Migration ?#
 
 [%step]
---
-[.text]
-ng generate @angular/core:standalone
---
-
-=== [.sub_title]#Tout se migre automatiquement ?#
-
-[.control-flow-demo-image]
-image::images/common/demo.png[]
+[source,shell,highlight]
+----
+npx ng generate @angular/core:standalone
+----

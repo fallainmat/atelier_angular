@@ -9,8 +9,7 @@ import {InputChildComponent} from "./components/input-child/input-child.componen
     CounterChildComponent,
     InputChildComponent,
   ],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss'
+  templateUrl: './input.component.html'
 })
 export class InputComponent {
   checked = signal(false);

@@ -1,0 +1,13 @@
+
+=== [.sub_title]#Un autre exemple ?#
+
+[.control-flow-demo-image]
+--
+image::./images/common/demo.png[]
+--
+
+[NOTE.speaker]
+--
+* TODO refacto race-view template, ajouter un switch ?
+* Montrer la partie du code de l'application qui affiche les différents états de la course
+--

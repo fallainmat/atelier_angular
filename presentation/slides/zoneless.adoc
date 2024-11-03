@@ -29,7 +29,7 @@ image::images/zoneless/meme-zonejs.jpg[]
 
 Il est possible de tester nos application en Zoneless en v18
 
-[source,typescript]
+[source,typescript,highlight=..|4]
 ----
 export const appConfig: ApplicationConfig = {
   providers: [

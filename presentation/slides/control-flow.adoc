@@ -74,23 +74,6 @@ RFC : https://github.com/angular/angular/discussions/50719
 }
 ----
 
-[NOTE.speaker]
---
-*
---
-
-=== [.sub_title]#Un autre exemple ?#
-
-[.control-flow-demo-image]
---
-image::./images/common/demo.png[]
---
-
-[NOTE.speaker]
---
-* TODO refacto race-view template, ajouter un switch ?
-* Montrer la partie du code de l'application qui affiche les différents états de la course
---
 
 === [.sub_title]#Migration ?#
 
@@ -104,7 +87,7 @@ Ou avec un schematic
 
 [source,shell,highlight]
 ----
-npx ng g @angular/core:control-flow \
+npx ng generate @angular/core:control-flow \
   --path ./src/app/examples/control-flow
 ----
 --

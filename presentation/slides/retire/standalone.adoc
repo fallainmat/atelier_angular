@@ -1,0 +1,4 @@
+=== [.sub_title]#Tout se migre automatiquement ?#
+
+[.control-flow-demo-image]
+image::images/common/demo.png[]
