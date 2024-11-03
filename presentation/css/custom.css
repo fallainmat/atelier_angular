@@ -34,6 +34,17 @@ video {
 
 /* Cover */
 
+section.cover {
+
+  .cover-qrcode-game img {
+    position: absolute;
+    bottom: -20%;
+    right: 0;
+    width: 20%;
+  }
+}
+
+
 /* whoami */
 
 .whoami {
@@ -537,12 +548,16 @@ video {
 /* zoneless */
 
 /* conclusion */
-.conclusion .content {
+.conclusion > .content {
   display: flex;
   flex-direction: row;
 }
 
-.conclusion .content .openblock .content {
+.conclusion .code {
+  flex: 1;
+}
+
+.conclusion .code > .content {
   display: flex;
   flex-direction: column;
 }

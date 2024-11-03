@@ -23,16 +23,18 @@
 [.conclusion]
 ****
 
+[.code.github]
 --
 Github
 
 image::images/conclusion/github-atelier-angular.png[width=40%]
 --
 
+[.code.feedback]
 --
 Open Feedback
 
-image::images/conclusion/open-feedback-breizhcamp.png[width=40%]
+image::images/conclusion/qrcode-openfeedbackpng[width=40%]
 --
 
 ****
