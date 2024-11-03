@@ -125,18 +125,31 @@ ControlFlow
 === [.sub_title]#Philosophie du Framework#
 
 [%step.list]
-* Retrocompatible
 * Complet
-* Verbeux
-* Modulaire
 * Performant
+* [.cross-word]#Verbeux# Expressif
+* Retrocompatible
 
 === [.sub_title]#Documentation#
 
-[%step]
-* https://v17.angular.io/docs
+[.two-columns]
+****
 
-* https://angular.dev/
+[step=1]
+--
+https://v17.angular.io/docs
+--
+
+[.ng-doc.cross-word,step=2]
+--
+--
+
+[step=2]
+--
+https://angular.dev/
+--
+
+****
 
 
 [NOTE.speaker]
