@@ -1,11 +1,20 @@
 [.cover.title]
 === Angular change de logo,pass:q[<br>] mais pas que!
 
+[.cover-bdxio-logo]
+--
+image::images/bdxio-logo.png[]
+--
+
 image::./images/common/logo_angular_17.png[width=250, align=center]
 
 [.cover-qrcode-game]
 --
 image::images/cover/qrcode-onepoint-game.svg[]
+--
+[.cover-bdxio]
+--
+image::images/cover/bdxio-cover.png[]
 --
 
 == !

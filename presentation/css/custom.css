@@ -32,15 +32,47 @@ video {
   padding-top: 1px;
 }
 
+footer {
+  z-index: 1000;
+  background: white;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  bottom: 0;
+  min-height: 80px;
+  text-align: center;
+}
+
+footer .onepoint-logo {
+  margin-top: 10px;
+}
+
 /* Cover */
 
 section.cover {
+  height: 90%;
+  overflow: hidden;
+
+  .cover-bdxio-logo img {
+    position: absolute;
+    z-index: 1000;
+    bottom: 22%;
+    right: 2%;
+    width: 15%;
+  }
 
   .cover-qrcode-game img {
     position: absolute;
-    bottom: -20%;
-    right: 0;
-    width: 20%;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+  }
+
+  .cover-bdxio img {
+    position: absolute;
+    bottom: -40%;
+    right: -10%;
+    width: 80%;
   }
 }
 

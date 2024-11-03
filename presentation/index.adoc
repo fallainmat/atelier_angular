@@ -1,3 +1,4 @@
+:docinfo: private
 :source-highlighter: highlight.js
 // :highlightjs-theme: atom-one-dark.css
 :highlightjs-theme: a11y-light.css
