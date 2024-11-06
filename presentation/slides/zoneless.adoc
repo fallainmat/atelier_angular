@@ -10,12 +10,16 @@ image::images/zoneless/meme-zonejs.jpg[]
 
 === [.sub_title]#Planification ng18+#
 
-[%step.list]
+[%step]
+--
+
+[.list]
 * Signal
 * PipeAsync
 * ViewContainer
 * input
 * markForCheck
+--
 
 [NOTE.speaker]
 --

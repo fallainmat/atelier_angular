@@ -74,6 +74,11 @@ RFC : https://github.com/angular/angular/discussions/50719
 }
 ----
 
+[%step,source,jsx,highlight]
+----
+@let
+----
+
 
 === [.sub_title]#Migration ?#
 

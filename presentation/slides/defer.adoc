@@ -53,8 +53,6 @@ import('./lazy.component').then((m) => m.LazyComponent)
 ----
 --
 
-[%step]
-Micro frontend / module federation https://www.angulararchitects.io/blog/the-microfrontend-revolution-part-2-module-federation-with-angular/
 
 [NOTE.speaker]
 --
@@ -94,7 +92,9 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 
 === [.sub_title]#triggers#
 
-[%step.list]
+[%step]
+--
+[.list]
 * when
 * on idle
 * on interaction
@@ -103,6 +103,7 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 * on timer
 * on immediate
 * prefetch
+--
 
 [NOTE.speaker]
 --
@@ -112,25 +113,4 @@ Micro frontend / module federation https://www.angulararchitects.io/blog/the-mic
 * interaction (click, keydown)
 * on hover (mouseenter, focusin)
 * prefetch peut être associé avec un trigger
---
-
-=== [.sub_title]#@defer en vrai#
-
-[.control-flow-demo-image]
---
-image::./images/common/demo.png[]
---
-
-[NOTE.speaker]
---
-* Ouvrir le composant dans l'url `example/defer/simple`
-* Montrer le code expliquer le comportement
-* faire un démo à blanc pour montrer le chargement
-* Tiens on ne vois pas le loading ? Réponse : Si le chargement au prefetch est suffisament rapide alors le chargement n'apparait même pas (le delay permet de régler le seuil)
-* Démo en augmentant le délais
-* Changer l'interraction pour un timer, on voit que le prefetch n'a plus aucune intérêt
-* Ajouter du texte en haut pour montre le chargement on viewport
-* Couper le réseau pour montrer l'erreur
-* Un mot sur l'accessibilité
-* Ouverture, hydratation partielle ?
 --

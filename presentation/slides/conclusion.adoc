@@ -6,8 +6,8 @@
 [%step]
 * Finalisation de la transition Zoneless
 * Forms with Signal
-* hydratation partielle
 * SelectorLess component
+* hydratation partielle
 
 [NOTE.speaker]
 --

@@ -1,88 +1,90 @@
 == [.title]#Standalone#
 
 === !
+
+[%step.fade-right]
+****
 --
 [.module]
 image::images/standalone/module.png[]
 --
-[%step]
+
 --
 [.declarations]
 image::images/standalone/declarations.png[]
 --
 
-[%step]
 --
 [.exports]
 image::images/standalone/exports.png[]
 --
 
-
-[%step]
 --
 [.imports]
 image::images/standalone/imports.png[]
 --
 
-[%step]
 --
 [.providers]
 image::images/standalone/providers.png[]
 --
 
-[%step]
 --
 [.schemas]
 image::images/standalone/schemas.png[]
 --
 
-[%step]
 --
 [.autres]
 image::images/standalone/autres.png[]
 --
+****
 
-[%step]
+
+[%step.fade-right]
+****
 --
 [.component]
 image::images/standalone/component.png[]
 --
 
-[%step]
+
 --
 [.selector]
 image::images/standalone/selector.png[]
 --
 
-[%step]
+
 --
 [.templateUrls]
 image::images/standalone/template-url.png[]
 --
 
-[%step]
+
 --
 [.styleUrls]
 image::images/standalone/style-urls.png[]
 --
 
-[%step]
+
 --
 [.changeDetection]
 image::images/standalone/change-detection.png[]
 --
 
-[%step]
+
 --
 [.encapsulation]
 image::images/standalone/encapsulation.png[]
 --
 
-[%step]
+
 --
 [.autres-component]
 image::images/standalone/autres.png[]
 --
+
+****
 
 === !
 
@@ -147,18 +149,17 @@ image::images/standalone/encapsulation.png[]
 image::images/standalone/autres.png[]
 --
 [%step]
+****
 --
 [.standalone]
 image::images/standalone/standalone.png[]
 --
 
-[%step]
 --
 [.standalone-standalone]
 image::images/standalone/standalone-standalone.png[]
 --
 
-[%step]
 --
 [.declarations]
 image::images/standalone/delete-module.png[]
@@ -166,7 +167,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/delete-module.png[]
 --
 
-[%step]
 --
 [.imports]
 image::images/standalone/delete-module.png[]
@@ -174,7 +174,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/imports.png[]
 --
 
-[%step]
 --
 [.schemas]
 image::images/standalone/delete-module.png[]
@@ -182,7 +181,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/schemas.png[]
 --
 
-[%step]
 --
 [.providers]
 image::images/standalone/delete-module.png[]
@@ -190,13 +188,14 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/providers.png[]
 --
 
-[%step]
 --
 [.autres]
 image::images/standalone/delete-module.png[]
 --
+****
 
 [%step]
+****
 --
 [.selector]
 image::images/standalone/delete-module.png[]
@@ -204,7 +203,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/selector.png[]
 --
 
-[%step]
 --
 [.templateUrls]
 image::images/standalone/delete-module.png[]
@@ -212,7 +210,7 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/template-url.png[]
 --
 
-[%step]
+
 --
 [.styleUrls]
 image::images/standalone/delete-module.png[]
@@ -220,7 +218,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/style-urls.png[]
 --
 
-[%step]
 --
 [.changeDetection]
 image::images/standalone/delete-module.png[]
@@ -228,7 +225,6 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/change-detection.png[]
 --
 
-[%step]
 --
 [.encapsulation]
 image::images/standalone/delete-module.png[]
@@ -236,17 +232,17 @@ image::images/standalone/delete-module.png[]
 image::images/standalone/encapsulation.png[]
 --
 
-[%step]
 --
 [.autres-component]
 image::images/standalone/delete-module.png[]
 [.autres-standalone]
 image::images/standalone/autres.png[]
 --
+****
 
 === !
 
-[source,javascript,highlight="1|2|3|4|5"]
+[source,javascript,highlight="..|3|4"]
 ----
 @Component({
   selector: 'layout-root',
@@ -268,40 +264,41 @@ export class LayoutComponent {}
 
 === [.sub_title]#Bootstrap Angular#
 
-[%step]
---
-[.bootstrap-module]
-image::images/standalone/bootstrap-module.png[]
---
+=== !
 
-[%step]
---
-[.app-module]
-image::images/standalone/app-module.png[]
---
+main.ts
+[source,typescript,highlight]
+----
+platformBrowserDynamic().bootstrapModule(AppModule)
+                        .catch(err => console.error(err));
+----
 
-[%step]
---
-[.bootstrap-application]
-image::images/standalone/bootstrap-application.png[]
---
-
-
-[%step]
---
-[.app-component]
-image::images/standalone/app-component.png[]
---
-
-[%step]
---
-[.app-config]
-image::images/standalone/app-config.png[]
---
+app.module.ts
+[source,typescript,highlight]
+----
+@NgModule({
+    declarations: [AppComponent],
+    imports: [
+        HttpClientModule,
+        CommonModule,
+        AppRoutingModule
+    ],
+    bootstrap: [AppComponent]}
+)
+export class AppModule {}
+----
 
 === !
 
-[source,javascript,highlight="1|2,5|3|4"]
+main.ts
+[source,typescript,highlight]
+----
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
+----
+
+app.config.ts
+[source,typescript,highlight]
 ----
 export const appConfig: ApplicationConfig = {
   providers: [
