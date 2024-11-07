@@ -176,6 +176,37 @@ export class WritableSignalComponent {
 }
 ----
 
+=== !
+
+[source,typescript, highlight="4|5|8|9"]
+----
+export class WritableSignalComponent {
+  count: WritableSignal<number> = signal(0);
+
+  incrementValue() {
+    this.count.update((value) => value + 1);
+  }
+
+  resetValue() {
+    this.count.set(0);
+  }
+}
+----
+
+=== !
+
+[source,typescript, highlight="7"]
+----
+@Component({
+  template: `
+    <p>{{count()}}</p>
+  `,
+})
+export class WritableSignalComponent {
+  count: WritableSignal<number> = signal(0, { equal: (a, b) => a === 3 });
+}
+----
+
 === [.sub_title]#Signaux Read-only#
 
 
@@ -221,6 +252,25 @@ export class AppComponent {
   }
 }
 ----
+=== !
+
+[source,typescript, highlight="4..6|1,12|3|11|2,7..9|13"]
+----
+  constructor() {
+    effect((onCleanup: Function) => {
+      this.count.set(0)
+      if(this.count() === 3) {
+        //REQUEST HTTP
+      }
+      onCleanup(() => {
+        //UNSUBSCRIBE
+      });
+    }, {
+      allowSignalWrites: true,
+      injector: this.injector,
+      manualCleanup: true
+    });
+----
 
 [%auto-animate]
 === [.sub_title]#Preview Time#
@@ -231,7 +281,7 @@ image::images/signal/slalom.gif[]
 [%auto-animate]
 === [.sub_title]#Bindings#
 
-[source,typescript,data-id=component, highlight="..|2|3,5"]
+[source,typescript,data-id=component, highlight="2|3|4..6"]
 ----
 export class InputChildComponent {
   disabled = input(false);
