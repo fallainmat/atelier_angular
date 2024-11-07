@@ -19,18 +19,15 @@ image::./images/flow/control-flow-blank.drawio.svg[]
 [.code-example-lg]
 --
 
-[source,html,highlight="1..2,6..9|3..5|10..12"]
+[source,html,highlight="1,3|4..6|2|7..9"]
 ----
-<ng-container
-    *ngIf="messages$ | async as messages; else noMessages">
-  <p *ngFor="let message of messages; trackBy: trackByFn">
-    {{message.body}}
-  </p>
+<ng-container *ngIf="robots() as robotList; else noRunner">
+    <app-card *ngFor="let robot of robotList" class="flex-1" [robot]="robot"></app-card>
 </ng-container>
-<ng-template #noMessages>
-    <p>No messages</p>
+<ng-template #noRunner>
+    <p>Aucun participant</p>
 </ng-template>
-<ng-template [ngIf]="messages$ | async" let-messages>
+<ng-template [ngIf]="robots()" let-robotList>
   ...
 </ng-template>
 ----
@@ -65,18 +62,18 @@ RFC : https://github.com/angular/angular/discussions/50719
 
 [source,jsx,highlight]
 ----
-@if (messages$ | async; as messages) {
-  @for (message of messages; track message.id) {
-    <p>{{ message.body }}</p>
-  }
+@if (robots(); as robots) {
+    @for (robot of robots; track robot.name) {
+      <app-card class="flex-1" [robot]="robot"/>
+    }
 } @else {
-  <p>No messages<p>
+    <p>Aucun participant</p>
 }
 ----
 
 [%step,source,jsx,highlight]
 ----
-@let
+@let robotList = robots();
 ----
 
 
