@@ -1,9 +1,15 @@
 <div class="flex flex container-robot overflow-auto">
-  @if (robots(); as robots) {
-    @for (robot of robots; track robot.name) {
-      <app-card class="flex-1" [robot]="robot"/>
+  @if (robots(); as robotList) {
+    @defer (when robotList.length > 0) {
+      @for (robot of robotList; track robot.name) {
+        <app-card class="flex-1" [robot]="robot"/>
+      }
+    } @placeholder (minimum 200ms) {
+      <p>En attente de participants</p>
+    } @error {
+      <p>Erreur lors du chargement des participants</p>
+    } @loading (after 200ms; minimum 1s) {
+      <p>Chargement des participants...</p>
     }
-  } @else {
-    <p>Aucun participant</p>
   }
 </div>

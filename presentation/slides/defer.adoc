@@ -65,19 +65,21 @@ import('./lazy.component').then((m) => m.LazyComponent)
 
 === [.sub_title]#Simplification avec @defer#
 
-[source,jsx,highlight="1..12|1,3|2|4,6|5|7,9|8|10,12|11"]
+[source,jsx,highlight="1..14|1,5|2..4|6,8|7|9,11|10|12,14|13"]
 ----
-@defer (when list?.length > 0 ) {
-  <gros-composant [participants]="list" />
+@defer (when robotList.length > 0) {
+  @for (robot of robotList; track robot.name) {
+    <app-card class="flex-1" [robot]="robot"/>
+  }
 }
 @placeholder (minimum 200ms) {
-  <p>Le contenu par défaut</p>
+  <p>En attente de participants</p>
 }
 @error {
-  <p>Erreur lors de la création</p>
+  <p>Erreur lors du chargement des participants</p>
 }
-@loading(after 200ms; minimum 1s) {
-  <p>Chargement du composant...</p>
+@loading (after 200ms; minimum 1s) {
+  <p>Chargement des participants...</p>
 }
 ----
 
