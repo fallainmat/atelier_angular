@@ -3,5 +3,7 @@
     @for (robot of robots; track robot.name) {
       <app-card class="flex-1" [robot]="robot"/>
     }
+  } @else {
+    <p>Aucun participant</p>
   }
 </div>
